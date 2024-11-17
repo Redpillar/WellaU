@@ -1,33 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <a-config-provider
-    :theme="css"
-  >
-  </a-config-provider>
-    <a-button type="primary">
-      Primary Button
-    </a-button>
-    <a-button type="primary">Primary Button</a-button>
-    <a-button>Default Button</a-button>
-    <a-button type="dashed">Dashed Button</a-button>
-    <a-button type="text">Text Button</a-button>
-    <a-button type="link">Link Button</a-button>
-    <a-radio :checked="checked">Radio</a-radio>
-
-
-
+    <BackButton v-if="backBtnShow" />
+    <div id="content" :page="pageStatus">
+      <router-view />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import BackButton from './components/BackButton';
 import './assets/css/common.css';
 
 export default {
   name: 'App',
+  props : {},
   components: {
-    HelloWorld
+    BackButton
   },
+  computed : {
+    pageStatus(){
+      return this.$store.state.pageStatus
+    },
+    backBtnShow(){
+      let temp = true;
+      if(this.pageStatus === "listPage"){
+        temp = false
+      }
+      return temp;
+    }
+  },
+
   data : ()=>{
     return {
       checked : true,
@@ -44,7 +45,20 @@ export default {
         },
       }
     }
-  }
+  },
+  created(){},
+  mounted(){},
+  watch : {
+    $route(to) {
+      let path = (to.fullPath.replace(/(^\/)/,'') === "")?"listPage":to.fullPath.replace(/(^\/)/,'');
+      console.log("path : ",path)
+      this.$store.state.pageStatus = path;
+    },
+    pageStatus(){
+      console.log("this.pageStatus : ",this.pageStatus)
+    }
+  },
+  methods : {},
 }
 </script>
 
@@ -53,8 +67,5 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
