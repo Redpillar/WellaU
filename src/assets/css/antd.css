@@ -1,0 +1,13 @@
+
+
+:where(.css-dev-only-do-not-override-upxs1x).ant-btn-primary{
+    color:red;
+}
+:where(.css-dev-only-do-not-override-upxs1x).ant-btn-primary:not(:disabled):hover{
+    color:black;
+}
+
+
+.width100per{
+    width:100%;
+}

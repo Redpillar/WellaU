@@ -25,7 +25,7 @@
         top:10rem;
         right:10rem;
         &> button{
-            display:none;
+            /* display:none; */
             /* height:50rem;
             padding:5rem;
             font-size:14rem;

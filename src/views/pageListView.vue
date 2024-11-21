@@ -72,7 +72,7 @@
                     name : "로그인",
                     type : "화면",
                     page : 3,
-                    path : "/page01"
+                    path : "/login"
                 },
                 {
                     category : "로그인",
@@ -80,7 +80,7 @@
                     name : "회원가입 > 비밀번호등록, 프로필등록",
                     type : "화면",
                     page : 4,
-                    path : "/page01"
+                    path : "/searchPassWord"
                 },
                 {
                     category : "로그인",
@@ -88,7 +88,7 @@
                     name : "비밀번호 재설정 > 휴대폰 인증",
                     type : "알림",
                     page : 5,
-                    path : "/page01"
+                    path : "/resetPassWord"
                 },
                 {
                     category : "가입하기",

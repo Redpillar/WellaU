@@ -1,8 +1,7 @@
 <template>
-    페이지01 컴퍼넌트입니다.
     <hr />
     <div style='height:150rem; background:gray'>
-        <LeftOutlined />
+        페이지01 컴퍼넌트입니다.
     </div>
     <hr />
     value1 : {{value1}}
