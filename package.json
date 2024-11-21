@@ -1,8 +1,7 @@
 {
-  "name": "vue2",
+  "name": "wellau",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://redpillar.github.io/WellaU/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

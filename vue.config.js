@@ -8,6 +8,6 @@
 //     : 'docs'
 // }
 module.exports = {
-  publicPath: '/testVue/',
+  publicPath: '/WellaU/',
   outputDir: './docs'
 }
