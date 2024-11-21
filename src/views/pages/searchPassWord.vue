@@ -9,7 +9,7 @@
         <a-input v-model:value="textFieldId" class="middle-input" placeholder="휴대폰 번호" />
         <div class="check-code-input-box">
             <a-input v-model:value="textFieldCode" placeholder="인증코드 입력" />
-            <span>3분 0초</span>
+            <span>{{time.m}}분 {{time.s}}초</span>
         </div>
         <a-button :disabled="disabled" class="submit-bt-style width100per">전송</a-button>
     </div>
@@ -26,6 +26,10 @@
             textFieldId : "",
             textFieldCode : "",
             disabled : true,
+            time : {
+                m : 3,
+                s : 0,
+            }
         }},
         created(){},
         mounted(){},
