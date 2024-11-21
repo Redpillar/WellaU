@@ -1,6 +1,6 @@
 <template>
     <div class="BackBtnWrapper">
-        <button @click="click">리스트 페이지 이동</button>
+        <a-button type="primary" @click="click">리스트 페이지 이동</a-button>
     </div>
 </template>
 <script>
@@ -22,15 +22,16 @@
 <style type="scss" scoped>
     .BackBtnWrapper{
         position:fixed;
-        top:0%;
-        right:10%;
+        top:10rem;
+        right:10rem;
         &> button{
-            height:50rem;
+            display:none;
+            /* height:50rem;
             padding:5rem;
             font-size:14rem;
             font-weight:bold;
             color:#fff;
-            border-radius:5rem;
+            border-radius:5rem; */
             background:black;
         }
     }

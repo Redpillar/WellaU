@@ -1,4 +1,11 @@
 <template>
+    like : {{like}}
+    headerData : {{headerData}}
+    <Header-vue v-if="haderShow" :value="headerData" @headerChangeEv="headerChangeEv">
+      <template #title>
+        {{ headerText }}
+      </template>
+    </Header-vue>
     <BackButton v-if="backBtnShow" />
     <div id="content" :page="pageStatus">
       <router-view />
@@ -6,13 +13,18 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import BackButton from './components/BackButton';
-import './assets/css/common.css';
+import {ref} from 'vue'
 
 export default {
   name: 'App',
   props : {},
+  setup(){
+    const headerText = ref("setup 헤더 텍스트입니다!!");
+    return {
+      headerText,
+    }
+  },
   components: {
     BackButton
   },
@@ -26,12 +38,22 @@ export default {
         temp = false
       }
       return temp;
+    },
+    haderShow(){
+      let temp = true;
+      if(this.pageStatus === "listPage"){
+        temp = false
+      }
+      return temp;
     }
   },
-
   data : ()=>{
     return {
       checked : true,
+      headerData : {
+        type : 'type02',
+        like : true,
+      },
       css : {
         token: {
           Button: {
@@ -51,14 +73,15 @@ export default {
   watch : {
     $route(to) {
       let path = (to.fullPath.replace(/(^\/)/,'') === "")?"listPage":to.fullPath.replace(/(^\/)/,'');
-      console.log("path : ",path)
       this.$store.state.pageStatus = path;
     },
-    pageStatus(){
-      console.log("this.pageStatus : ",this.pageStatus)
+  },
+  methods : {
+    headerChangeEv(data){
+      console.log(data);
+      this.headerData.like = data.like;
     }
   },
-  methods : {},
 }
 </script>
 

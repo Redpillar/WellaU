@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Test-component />
         <div class="top">화면설계서 버전 : v1.14, 총 페이지 : {{pageList.length}}</div>
         <table cellspacing="0" cellapdding="0">
             <colgroup>
@@ -255,14 +256,6 @@
                     name : "내정보 > 사진변경",
                     type : "화면",
                     page : 38,
-                    path : "/page01"
-                },
-                {
-                    category : "메뉴",
-                    os : "WEB",
-                    name : "FAQ",
-                    type : "화면",
-                    page : 44,
                     path : "/page01"
                 },
                 {
