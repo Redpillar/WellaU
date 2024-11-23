@@ -48,7 +48,7 @@ export default [
         name : "회원가입 > 휴대폰인증​",
         type : "화면",
         page : 12,
-        path : "/"
+        path : "/joinPhone"
     },
     {
         category : "가입하기",
@@ -69,7 +69,7 @@ export default [
     },
     {
         category : "메인",
-        os : "AOS​",
+        os : "AOS",
         name : "메인 > 배터리최적화끄기​",
         type : "화면",
         page : 16,
@@ -78,7 +78,7 @@ export default [
     },
     {
         category : "메인",
-        os : "AOS​",
+        os : "AOS",
         name : "메인 > 위치권한허용​",
         type : "화면",
         page : 17,
@@ -87,7 +87,7 @@ export default [
     },
     {
         category : "메인",
-        os : "AOS​",
+        os : "AOS",
         name : "메인 > 위치권한허용​",
         type : "화면",
         page : 18,
@@ -96,7 +96,7 @@ export default [
     },
     {
         category : "메인",
-        os : "AOS​",
+        os : "AOS",
         name : "메인 > 알림권한허용​",
         type : "화면",
         page : 19,
@@ -105,7 +105,7 @@ export default [
     },
     {
         category : "메인",
-        os : "AOS​",
+        os : "AOS",
         name : "메인 > 알림권한허용​",
         type : "화면",
         page : 20,
@@ -114,7 +114,7 @@ export default [
     },
     {
         category : "메인",
-        os : "AOS​",
+        os : "AOS",
         name : "메인 > 그룹 (그룹없음)​",
         type : "화면",
         page : 21,
@@ -141,7 +141,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "그룹생성​",
         type : "화면",
         page : 24,
@@ -150,7 +150,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "메인 > 그룹 (그룹있음​)",
         type : "화면",
         page : 25,
@@ -159,7 +159,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "초대코드공유​​",
         type : "화면",
         page : 26,
@@ -168,7 +168,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "메인 > 그룹 (그룹변경)​",
         type : "화면",
         page : 27,
@@ -177,7 +177,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "위치정보 상세​",
         type : "화면",
         page : 28,
@@ -186,7 +186,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "위치정보 상세 > 위치공유​",
         type : "화면",
         page : 29,
@@ -195,7 +195,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "위치정보 상세 > 위치공유(Web)",
         type : "화면",
         page : 30,
@@ -204,7 +204,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "위치정보 상세 > 위치기록​​",
         type : "화면",
         page : 31,
@@ -212,7 +212,7 @@ export default [
     },
     {
         category : "메인",
-        os : "WEB​",
+        os : "WEB",
         name : "알림함​",
         type : "화면",
         page : 32,
@@ -220,7 +220,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "메뉴​",
         type : "화면",
         page : 33,
@@ -228,7 +228,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "그룹관리​",
         type : "화면",
         page : 34,
@@ -236,7 +236,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "위치공유상태 보기​",
         type : "화면",
         page : 35,
@@ -244,7 +244,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "배터리 부족 알림 설정​",
         type : "화면",
         page : 37,
@@ -252,7 +252,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "그룹설정 > 그룹원관리 (그룹장)​",
         type : "화면",
         page : 39,
@@ -260,7 +260,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "그룹설정 - 그룹장​",
         type : "화면",
         page : 40,
@@ -268,7 +268,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "그룹설정 > 그룹 지우기 (그룹장)​",
         type : "화면",
         page : 41,
@@ -276,7 +276,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "그룹나가기 - 그룹원​",
         type : "화면",
         page : 42,
@@ -284,7 +284,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "안심존 목록​",
         type : "화면",
         page : 43,
@@ -292,7 +292,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "안심존 생성​",
         type : "화면",
         page : 44,
@@ -300,7 +300,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "안심존 보기​",
         type : "화면",
         page : 45,
@@ -308,7 +308,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "안심존 수정​",
         type : "화면",
         page : 46,
@@ -316,7 +316,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "근접알림설정​",
         type : "화면",
         page : 47,
@@ -324,7 +324,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "근접 알림 수정​",
         type : "화면",
         page : 48,
@@ -332,7 +332,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "SOS 요청, 취소​",
         type : "화면",
         page : 49,
@@ -340,7 +340,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "SOS 상세​",
         type : "화면",
         page : 50,
@@ -348,7 +348,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "내정보 > 사진변경​",
         type : "화면",
         page : 51,
@@ -356,7 +356,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "내정보 > 이름변경​",
         type : "화면",
         page : 52,
@@ -364,7 +364,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "내정보 > 휴대폰 변경​",
         type : "화면",
         page : 53,
@@ -372,7 +372,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "내정보 > 생년월일 변경​",
         type : "화면",
         page : 54,
@@ -380,7 +380,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "내정보 > 비밀번호 변경​",
         type : "화면",
         page : 55,
@@ -388,7 +388,7 @@ export default [
     },
     {
         category : "메뉴​",
-        os : "WEB​",
+        os : "WEB",
         name : "공지사항​",
         type : "화면",
         page : 56,

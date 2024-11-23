@@ -119,6 +119,10 @@
 <script setup>
 </script>
 <style type="scss" scoped>
+    .guide-wrapper{
+        height:100%;
+        overflow:auto;
+    }
     .guide-category-wrapper{
         border-bottom:2rem solid #ccc;
         padding:0 0 30rem 0;

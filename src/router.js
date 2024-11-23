@@ -10,6 +10,8 @@ import groupCheck from './views/pages/groupCheck'
 import createdGroup from './views/pages/createdGroup'
 import shareGroup from './views/pages/shareGroup'
 import groupMain from './views/pages/groupMain'
+/* 가입하기 */
+import joinPhone from './views/pages/joinPhone'
 
 import testVue from './views/pages/testVue'
 import vuePage01 from './views/pages/vuePage01'
@@ -43,6 +45,11 @@ const routes = [
     {
         path : '/resetPassWord',
         component : resetPassWord,
+    },
+    /* 가입하기 */
+    {
+        path : '/joinPhone',
+        component : joinPhone,
     },
     {
         path : '/groupMainFirst',

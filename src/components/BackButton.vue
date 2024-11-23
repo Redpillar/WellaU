@@ -24,6 +24,7 @@
         position:fixed;
         top:10rem;
         right:10rem;
+        z-index:1;
         &> button{
             /* display:none; */
             /* height:50rem;

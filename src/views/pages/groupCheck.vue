@@ -13,8 +13,10 @@
                 <div class="text">홍길동 가족방</div>
             </div>
             <div class="label-img-text-area">
-                <div class="label">그룹명</div>
-                <div class="img"></div>
+                <div class="label">그룹장</div>
+                <div class="img">
+                    <img :src="require('../../assets/img/dummy-profile01.jpeg')" alt="그룹장 사진입니다." />
+                </div>
                 <div class="text">홍길동 가족방</div>
             </div>
             <div class="title-info-style">

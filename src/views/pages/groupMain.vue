@@ -31,6 +31,7 @@
                     <div class="tit">내 프로필 공개</div>
                     <div class="info">그룹원에게 내 프로필 사진을 공개합니다.  비활성 시 기본 프로필 아이콘이 노출됩니다.</div>
                 </div>
+                <input type="checkbox" />
                 <div class="title-info-style">
                     <div class="float-input-area"><a-switch v-model:checked="checked2" /></div>
                     <div class="tit">내 연락처 공개</div>

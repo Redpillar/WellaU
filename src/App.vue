@@ -1,5 +1,6 @@
 <template>
   <div class="app-wrapper" :class="[{map:map}]">
+    <BackButton v-if="backBtnShow" />
     <Header-vue v-if="haderShow"
       type = "type2"
       :value="headerData"
@@ -23,6 +24,7 @@
 
 <script>
 import {ref} from 'vue'
+import BackButton from './components/BackButton'
 export default {
   name: 'App',
   props : {},
@@ -32,15 +34,17 @@ export default {
       headerText,
     }
   },
-  components: {},
+  components: {
+    BackButton
+  },
   computed : {
     pageStatus(){
       return this.$store.state.pageStatus
     },
     backBtnShow(){
-      let temp = true;
-      if(this.pageStatus === "listPage"){
-        temp = false
+      let temp = false;
+      if(this.pageStatus === "login" || this.pageStatus === "groupMain"){
+        temp = true;
       }
       return temp;
     },
@@ -63,6 +67,7 @@ export default {
         popShow : true,
         inputVal : "",
         maxlength : 20,
+        backShow : false,
       },
     }
   },
@@ -146,6 +151,7 @@ export default {
   height:100%;
   #content{
     flex:1;
+    height:100%;
     &[page=listPage]{
       overflow:auto;
     }
