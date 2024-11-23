@@ -1,6 +1,6 @@
 <template>
     <div class="login-logo">LOGO</div>
-    <div class="content-wrapper">
+    <div class="content-wrapper jCenter">
         <a-input v-model:value="textFieldId" placeholder="휴대폰 번호" />
         <a-input-password v-model:value="textFieldPw" class="middle-input" placeholder="비밀번호" />
         <a-button :disabled="disabled" class="width100per">시작하기</a-button>
@@ -27,14 +27,6 @@
     }
 </script>
 <style type="scss" scoped>
-    .content-wrapper{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        flex-direction:column;
-        height:100%;
-        padding:0 20rem;
-    }
     .login-logo{
         position:absolute;
         top:10%;

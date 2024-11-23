@@ -1,16 +1,35 @@
 import {createRouter,createWebHistory} from 'vue-router'
-import pageListView from './views/pageListView'
+import mainPageView from './views/mainPageView'
 import loginVue from './views/pages/loginVue'
 import searchPassWord from './views/pages/searchPassWord'
 import resetPassWord from './views/pages/resetPassWord'
+import groupMainFirst from './views/pages/groupMainFirst'
+import joinGroup from './views/pages/joinGroup'
+import joinGroupInvite from './views/pages/joinGroupInvite'
+import groupCheck from './views/pages/groupCheck'
+import createdGroup from './views/pages/createdGroup'
+import shareGroup from './views/pages/shareGroup'
+import groupMain from './views/pages/groupMain'
+
+import testVue from './views/pages/testVue'
 import vuePage01 from './views/pages/vuePage01'
+
+/* Guide */
+import GuideHeader from './views/pages/guide/GuideHeader'
+import GuideDesign from './views/pages/guide/GuideDesign'
 
 
 const routes = [
     {
         path : '/',
         components : {
-            default : pageListView
+            default : mainPageView
+        },
+    },
+    {
+        path : '/test',
+        components : {
+            default : testVue
         },
     },
     {
@@ -26,8 +45,45 @@ const routes = [
         component : resetPassWord,
     },
     {
+        path : '/groupMainFirst',
+        component : groupMainFirst,
+    },
+    {
+        path : '/joinGroup',
+        component : joinGroup,
+    },
+    {
+        path : '/joinGroup/invite',
+        component : joinGroupInvite,
+    },
+    {
+        path : '/groupCheck',
+        component : groupCheck,
+    },
+    {
+        path : '/createdGroup',
+        component : createdGroup,
+    },
+    {
+        path : '/shareGroup',
+        component : shareGroup,
+    },
+    {
+        path : '/groupMain',
+        component : groupMain,
+    },
+    {
         path : '/page01',
         component : vuePage01,
+    },
+    // Guide
+    {
+        path : '/GuideHeader',
+        component : GuideHeader,
+    },
+    {
+        path : '/GuideDesign',
+        component : GuideDesign,
     },
 ]
 

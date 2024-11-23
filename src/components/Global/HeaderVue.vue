@@ -9,7 +9,7 @@
                 <MenuOutlined v-if="type == 'type5'" @click="menuIconClickEv" />
             </div>
             <!-- center area -->
-            <div class="header-area-center" :style="headerAreaCenterStyle" v-if="type == 'type1' || type == 'type2' || type == 'type3' || type == 'type5'">
+            <div class="header-area-center" :style="headerAreaCenterStyle" v-if="type == 'type1' || type == 'type2' || type == 'type3' || type == 'type5'" @click="titleClick">
                 <slot name="title"></slot>
             </div>
             <!-- right area -->
@@ -52,14 +52,6 @@
                         popShow : false,
                         inputVal : "",
                         maxlength : 10,
-                    }
-                }
-            },
-            headerData : {
-                type : Object,
-                default : ()=>{
-                    return {
-                        like : false,
                     }
                 }
             },
@@ -161,14 +153,15 @@
             pickerTimeOnOk(val){
                 console.log("pickerTimeOnOk : ",val)
             },
+            titleClick(){
+                this.$emit("titleClick")
+            }
         },
         watch : {
             value : {
                 immediate : true,
                 deep : true,
                 handler : function(n){
-                    console.log("n.headerShow : ",n.headerShow)
-                    this.headerShow = n.headerShow
                     this.type = n.type;
                     this.like = n.like;
                     this.valueAlert = n.alert;

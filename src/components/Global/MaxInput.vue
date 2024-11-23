@@ -4,54 +4,42 @@
         <div class="textFieldMixmunNumBox">{{textField.length}}/{{maxlength}}</div>    
     </div>
 </template>
-<script>
-    export default {
-        name : "MaxInput",
-        props : {
-            value : {
-                type : String,
-                default : ()=>{
-                    return "";
-                }
-            },
-            maxlength : {
-                type : Number,
-                default : ()=>{
-                    return 10;
-                }
-            },
-            placeholder : {
-                type : String,
-                default : ()=>{
-                    return "";
-                }
+<script setup>
+    import { ref,defineProps,defineEmits,defineModel } from 'vue'
+    const props = defineProps({
+        value : {
+            type : String,
+            default : ()=>{
+                return "";
             }
         },
-        components : {},
-        computed : {},
-        data(){return{
-            textField : "",
-        }},
-        created(){},
-        mounted(){},
-        methods : {
-            enterEv(){
-                this.$emit("enterEv",this.textField)
-            },
-            inputEv(){
-                this.$emit("imput")
+        maxlength : {
+            type : Number,
+            default : ()=>{
+                return 10;
             }
         },
-        watch : {
-            value : {
-                immediate : true,
-                handler : function(n,o){
-                    if(n !== o){
-                        this.textField = n;
-                    }
-                }
+        placeholder : {
+            type : String,
+            default : ()=>{
+                return "";
             }
-        },
+        }
+    })
+    const emit = defineEmits(["inputEv","enterEv"])
+    const model = defineModel("value")
+    const placeholder = ref(props.placeholder)
+    const maxlength = ref(props.maxlength)
+    const textField = ref(props.value);
+
+    const inputEv = ()=>{
+        emit("emit",textField.value)
+        model.value = textField.value
+    }
+    
+    const enterEv = ()=>{
+        emit("enterEv",textField.value)
+        model.value = textField.value
     }
 </script>
 <style type="scss" scoped>

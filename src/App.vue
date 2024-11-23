@@ -1,5 +1,5 @@
 <template>
-  <div class="app-wrapper">
+  <div class="app-wrapper" :class="[{map:map}]">
     <Header-vue v-if="haderShow"
       type = "type2"
       :value="headerData"
@@ -9,6 +9,7 @@
       @groupClicEv1="groupClicEv1"
       @groupClicEv2="groupClicEv2"
       @maxInputEvent="maxInputEvent"
+      @titleClick="titleClick"
     >
       <template #title>
         {{ headerText }}
@@ -17,33 +18,16 @@
     <div id="content" :page="pageStatus">
       <router-view />
     </div>
-    <!-- <a-button type="primary" @click="headerData.popShow = !headerData.popShow">Popup</a-button>
-
-    {{aSelect}}
-    <a-select
-      ref="select"
-      v-model:value="aSelect"
-      @change="handleChange"
-      style="width: 120px"
-    >
-      <a-select-option value="type1">type1</a-select-option>
-      <a-select-option value="type2">type2</a-select-option>
-      <a-select-option value="type3">type3</a-select-option>
-      <a-select-option value="type4">type4</a-select-option>
-      <a-select-option value="type5">type5</a-select-option>
-      <a-select-option value="type6">type6</a-select-option>
-    </a-select> -->
   </div>
 </template>
 
 <script>
 import {ref} from 'vue'
-
 export default {
   name: 'App',
   props : {},
   setup(){
-    const headerText = ref("setup 헤더 텍스트입니다!!");
+    const headerText = ref("");
     return {
       headerText,
     }
@@ -80,44 +64,11 @@ export default {
         inputVal : "",
         maxlength : 20,
       },
-      css : {
-        token: {
-          Button: {
-            colorPrimary : 'skyblue',
-            borderRadius : 4,
-            fontColor : 'red',
-          },
-          Radio : {
-            colorPrimary : 'green',
-          },
-        },
-      },
-      aSelect : "type1",
     }
   },
   created(){},
-  mounted(){},
-  watch : {
-    $route(to) {
-      let path = (to.fullPath.replace(/(^\/)/,'') === "")?"listPage":to.fullPath.replace(/(^\/)/,'');
-      this.$store.state.pageStatus = path;
-    },
-    pageStatus(n,o){
-      if(n !== o){
-        switch (n){
-          case "pageListView" :
-            this.headerData.type = "type1";
-            this.headerText = "";
-            break;
-          case "resetPassWord" :
-            this.headerData.type = "type1";
-            this.headerText = "";
-            break;
-          default : 
-            break;
-        }
-      }
-    },
+  mounted(){
+    this.checkePath(this.pageStatus);
   },
   methods : {
     // 즐겨 찾기 클릭 이벤트
@@ -145,10 +96,39 @@ export default {
     maxInputEvent(val){
       console.log("maxInputEvent : ",val)
     },
+    // 헤더 타이틀 클릭 이벤트
+    titleClick(){
+      console.log("titleClick");
+    },
     handleChange(sel){
       console.log("sel : ",sel)
       this.headerData.type = sel;
+    },
+    checkePath(path){
+      switch (path){
+        case "groupMainFirst" :
+          this.headerData.type = "type6";
+          this.headerText = "";
+          break;
+        case "groupMain" :
+          this.headerData.type = "type5";
+          this.headerText = "그룹1";
+          break;
+        default : 
+          this.headerData.type = "type1";
+          this.headerText = "";
+          break;
+      }
     }
+  },
+  watch : {
+    $route(to) {
+      let path = (to.fullPath.replace(/(^\/)/,'') === "")?"listPage":to.fullPath.replace(/(^\/)/,'');
+      this.$store.state.pageStatus = path;
+    },
+    pageStatus(n,o){
+      if(n !== o) this.checkePath(n);
+    },
   },
 }
 </script>
@@ -166,6 +146,9 @@ export default {
   height:100%;
   #content{
     flex:1;
+    &[page=listPage]{
+      overflow:auto;
+    }
   }
 }
 </style>
