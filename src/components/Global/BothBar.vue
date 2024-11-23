@@ -6,6 +6,7 @@
                 <slot name="content">
                 </slot>
             </div>
+            <div class="bothBar-deem" v-if="deemShow"></div>
         </div>
     </div>
 </template>
@@ -16,6 +17,7 @@
     const swiperChecked = ref({time:null,arr:[],type:null,first:null});
     const minHeight = 100;
     const maxHeight = window.innerHeight - 100;
+    const deemShow = ref(false);
     let animationTimer = null;
     const targetChecked = (target)=>{
         const tagArr = ['a','button','select','input'];
@@ -40,11 +42,13 @@
         return checked || parehtChecked || tagChecked >= 0? true : false;
     }
     const touchStart = ($ev)=>{
-        if(!animationTimer) clearInterval(animationTimer);
+        clearInterval(animationTimer);
         toutchTargetChecked.value = targetChecked($ev.target);
         points.value.s = $ev.targetTouches[0].pageY;
         if(!swiperChecked.value.first) swiperChecked.value.first = points.value.h;
         points.value.cuh = points.value.h;
+        console.log("===== start =====")
+        console.log("toutchTargetChecked.value : ",toutchTargetChecked.value)
         if(!toutchTargetChecked.value){
             $ev.preventDefault();
             swiperChecked.value.arr[0] = $ev.targetTouches[0].pageY
@@ -52,7 +56,13 @@
         }
     }
     const touchMoved = ($ev)=>{
-        if(toutchTargetChecked.value) return
+        console.log("===== move =====")
+        console.log("toutchTargetChecked.value : ",toutchTargetChecked.value)
+        deemShow.value =  true;
+        if(toutchTargetChecked.value){
+            deemShow.value =  false;
+            return
+        }
         const touchPoint = $ev.targetTouches[0].pageY;
         const diff = points.value.s - touchPoint;
         const calc = points.value.cuh + diff;
@@ -95,10 +105,12 @@
                 case "up" :
                     // points.value.h = maxHeight;
                     animation(points.value.h, maxHeight)
+                    swiperChecked.value.first = maxHeight;
                     break;
                 default : 
                     // points.value.h = minHeight;
                     animation(points.value.h, minHeight)
+                    swiperChecked.value.first = minHeight;
                     break;
             }
         }else if((points.value.h !== minHeight && swiperChecked.value.type === 'down') || (points.value.h !== maxHeight && swiperChecked.value.type === 'up')){
@@ -108,7 +120,7 @@
         swiperChecked.value.arr = [];
         swiperChecked.value.type = null;
         swiperChecked.value.time = null;
-        swiperChecked.value.first = null;
+        // swiperChecked.value.first = null;
         
     }
     const animation = (s,e)=>{
@@ -116,7 +128,7 @@
         const interValTime = 10;
         const dis = (s > e) ? s - e : e - s;
         const maxDistance = window.innerHeight - 200;
-        const maxTime = 250;
+        const maxTime = 500;
         const oneTime = maxDistance / (maxTime / interValTime);
         const totalTime = (dis / oneTime) * interValTime;
         const len = totalTime / interValTime;
@@ -129,7 +141,10 @@
                 priceHeight = (points.value.h + step <= e) ? e : points.value.h - step
             }
             points.value.h = priceHeight;
-            if((priceHeight >= e && s < e) || (priceHeight <= e && s > e)) clearInterval(animationTimer)
+            if((priceHeight >= e && s < e) || (priceHeight <= e && s > e)){
+                clearInterval(animationTimer)
+                deemShow.value =  false;
+            }
         },interValTime)
     }
     const bothBarWrapperStyle = computed(()=>{
@@ -172,5 +187,13 @@
     }
     .bothBar-content{
         padding:20rem;
+    }
+    .bothBar-deem{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,0);
     }
 </style>
