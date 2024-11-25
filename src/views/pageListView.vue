@@ -6,8 +6,9 @@
                 <col style="width:20%" />
                 <col style="width:20%" />
                 <col style="width:20%" />
+                <col style="width:10%" />
                 <col style="width:20%" />
-                <col style="width:20%" />
+                <col style="width:10%" />
             </colgroup>
             <thead>
                 <tr>
@@ -22,6 +23,9 @@
                     </th>
                     <th>
                         피피티 번호
+                    </th>
+                    <th>
+                        Path
                     </th>
                     <th>
                         완료
@@ -41,6 +45,9 @@
                     </td>
                     <td>
                         {{page.page}}
+                    </td>
+                    <td>
+                        {{page.path}}
                     </td>
                     <td>
                         {{page.status ? page.status : "-"}}
@@ -95,6 +102,7 @@
                 padding:10rem;
                 font-size:15rem;
                 color:#fff;
+                word-break:break-all;
                 background:rgba(0,0,0,0.35);
                 &:first-child{
                     text-align:center;

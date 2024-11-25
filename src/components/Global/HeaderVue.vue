@@ -14,13 +14,13 @@
             </div>
             <!-- right area -->
             <div class="header-area-right">
-                <RedoOutlined v-if="type == 'type3'" />
-                 <a-button type="link" v-if="type == 'type2'" @click="clickNextEvent">계속하기</a-button>
-                 <WechatOutlined v-if="type == 'type6'" @click="groupClicEv2" />
-                 <AliwangwangOutlined v-if="type == 'type6'" @click="groupClicEv1" />
-                 <div class="alert-icon-wrapper" v-if="type == 'type5' || type == 'type6'">
-                    <BellFilled @click="alertIconClick" />
-                    <span class="num">{{valueAlert}}</span>
+                <RedoOutlined v-if="type == 'type3'" @click="resetIconClick" />
+                <a-button type="link" v-if="type == 'type2'" @click="clickNextEvent">계속하기</a-button>
+                <WechatOutlined v-if="type == 'type6'" @click="groupClicEv1" />
+                <AliwangwangOutlined v-if="type == 'type6'" @click="groupClicEv2" />
+                <div class="alert-icon-wrapper" v-if="type == 'type5' || type == 'type6'">
+                   <BellFilled @click="alertIconClick" />
+                   <span class="num">{{valueAlert}}</span>
                 </div>
             </div>
             <!-- header pop up -->
@@ -82,8 +82,10 @@
             },
             headerAreaCenterStyle(){
                 const style = {};
+                console.log("this.type : ",this.type);
                 if(this.type === 'type3' || this.type === 'type5'){
                     style.textAlign = "center"
+                    style.justifyContent = "center"
                 }
                 return style
             }
@@ -114,27 +116,33 @@
             backBtnEvent(){
                 this.$router.go(-1);
             },
-            starIconClick(){
-                const value = !this.like;
-                const data = {like:value}
-                this.$emit("headerChangeEv",data)
-            },
-            // 계속하기 클릭 이벤트
+            // Type2 : 계속하기 클릭 이벤트
             clickNextEvent(){
                 this.$emit("clickNextEvent");
             },
-            // 햄버거 메뉴 클릭
-            menuIconClickEv(){
+            // Type3 : reset Icon 클릭 이벤트
+            resetIconClick(){
+                this.$emit("resetIconClick");
             },
-            // 알림 아이콘 클릭
+            // Type3 : 즐겨찾기 아이콘 클릭 이벤트
+            starIconClick(){
+                const value = !this.like;
+                const data = {like:value}
+                this.$emit("starIconClick",data)
+            },
+            // Type5 : 햄버거 메뉴 클릭
+            menuIconClickEv(){
+                this.$emit("menuIconClickEv")
+            },
+            // Type5, Type6 : 알림 아이콘 클릭
             alertIconClick(){
                 this.$emit("alertIconClick")
             },
-            // 그룹아이콘 클릭1
+            // Type6 : 그룹아이콘 클릭1
             groupClicEv1(){
                 this.$emit("groupClicEv1");
             },
-            // 그룹아이콘 클릭2
+            // Type6 : 그룹아이콘 클릭2
             groupClicEv2(){
                 this.$emit("groupClicEv2")
             },
@@ -162,6 +170,9 @@
                 immediate : true,
                 deep : true,
                 handler : function(n){
+                    console.log("------------------------------------------------")
+                    console.log("this.$el : ",this.$el)
+                    console.log("n : ",n)
                     this.type = n.type;
                     this.like = n.like;
                     this.valueAlert = n.alert;
@@ -185,7 +196,6 @@
             }
         }
         &.type5{
-
             .header-wrapper{
                 justify-content:space-between;
                 &> .header-area-left{
@@ -218,20 +228,20 @@
                 z-index:5;
                 display:flex;
                 align-items:center;
-                height: 30rem;
+                height: 45rem;
             }
             &> .header-area-center{
                 flex:1;
                 display:flex;
                 align-items:center;
-                height: 30rem;
+                height: 45rem;
             }
             &> .header-area-right{
                 position:relative;
                 z-index:5;
                 display:flex;
                 align-items:center;
-                height: 30rem;
+                height: 45rem;
                 .css-dev-only-do-not-override-1p3hq3p.ant-btn.ant-btn-link{
                     color:#000;
                 }

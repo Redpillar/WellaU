@@ -2,9 +2,10 @@
   <div class="app-wrapper" :class="[{map:map}]">
     <BackButton v-if="backBtnShow" />
     <Header-vue v-if="haderShow"
-      type = "type2"
       :value="headerData"
-      @headerChangeEv="headerChangeEv"
+      @menuIconClickEv="menuIconClickEv"
+      @resetIconClick="resetIconClick"
+      @starIconClick="starIconClick"
       @clickNextEvent="clickNextEvent"
       @alertIconClick="alertIconClick"
       @groupClicEv1="groupClicEv1"
@@ -19,21 +20,18 @@
     <div id="content" :page="pageStatus">
       <router-view />
     </div>
+    <!-- modal -->
+    <ModalBox v-model:modalShow="modalShow" :padding="0">
+      <ListSelectBox v-model:value="listSelectBoxValue" :outLine="false" :list="listSelectBoxList" @listClick="listSelectBoxListClick" @btnClick="listSelectBoxBtnClick" />
+    </ModalBox>
   </div>
 </template>
 
 <script>
-import {ref} from 'vue'
 import BackButton from './components/BackButton'
 export default {
   name: 'App',
   props : {},
-  setup(){
-    const headerText = ref("");
-    return {
-      headerText,
-    }
-  },
   components: {
     BackButton
   },
@@ -43,7 +41,7 @@ export default {
     },
     backBtnShow(){
       let temp = false;
-      if(this.pageStatus === "login" || this.pageStatus === "groupMain"){
+      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime"){
         temp = true;
       }
       return temp;
@@ -69,6 +67,56 @@ export default {
         maxlength : 20,
         backShow : false,
       },
+      headerText : "",
+      modalShow : false,
+      listSelectBoxValue : "",
+      listSelectBoxList : [
+        {
+            text : "가족이랑",
+            value : "가족이랑",
+            checked : false,
+        },
+        {
+            text : "친구들이랑",
+            value : "친구들이랑",
+            checked : false,
+        },
+        {
+            text : "그룹1",
+            value : "그룹1",
+            checked : false,
+        },
+        {
+            text : "그룹2",
+            value : "그룹2",
+            checked : false,
+        },
+        {
+            text : "그룹3",
+            value : "그룹3",
+            checked : false,
+        },
+        {
+            text : "그룹4",
+            value : "그룹4",
+            checked : false,
+        },
+        {
+            text : "그룹5",
+            value : "그룹5",
+            checked : false,
+        },
+        {
+            text : "그룹6",
+            value : "그룹6",
+            checked : false,
+        },
+        {
+            text : "그룹7",
+            value : "그룹7",
+            checked : false,
+        },
+      ]
     }
   },
   created(){},
@@ -76,24 +124,32 @@ export default {
     this.checkePath(this.pageStatus);
   },
   methods : {
-    // 즐겨 찾기 클릭 이벤트
-    headerChangeEv(data){
-      console.log(data);
-      this.headerData.like = data.like;
-    },
-    // 계속하기 클릭 이벤트
+    // Type2 : 계속하기 클릭 이벤트
     clickNextEvent(){
       console.log("clickNextEvent !!!!")
     },
-    // 알림 아이콘 클릭
+    // Type3 : reset Icon 클릭 이벤트
+    resetIconClick(){
+      console.log("reset Icon")
+    },
+    // Type3 : 즐겨찾기 아이콘 클릭 이벤트
+    starIconClick(data){
+      console.log(data);
+      this.headerData.like = data.like;
+    },
+    // Type5 : 햄버거 메뉴 클릭
+    menuIconClickEv(){
+      console.log("햄버거 메뉴")
+    },
+    // Type5, Type6 : 알림 아이콘 클릭
     alertIconClick(){
       console.log("alertIconClick !!!!")
     },
-    // 그룹아이콘 클릭1
+    // Type6 : 그룹아이콘 클릭1
     groupClicEv1(){
       console.log("groupClicEv1 !!!!")
     },
-    // 그룹아이콘 클릭2
+    // Type6 : 그룹아이콘 클릭2
     groupClicEv2(){
       console.log("groupClicEv2 !!!!")
     },
@@ -103,7 +159,12 @@ export default {
     },
     // 헤더 타이틀 클릭 이벤트
     titleClick(){
-      console.log("titleClick");
+      const path = this.$route.path 
+      console.log("path : ",path)
+      if(path === '/groupMain'){
+        console.log("this.modalShow : ",this.modalShow)
+        this.modalShow = true;
+      }
     },
     handleChange(sel){
       console.log("sel : ",sel)
@@ -111,6 +172,18 @@ export default {
     },
     checkePath(path){
       switch (path){
+        case "locationSharingDoneTime" :
+          this.headerData.type = "type3";
+          this.headerText = "live.udiya.com";
+          break;
+        case "locationSharing" :
+          this.headerData.type = "type3";
+          this.headerText = "live.udiya.com";
+          break;
+        case "locationDetail" :
+          this.headerData.type = "type4";
+          this.headerText = "";
+          break;
         case "groupMainFirst" :
           this.headerData.type = "type6";
           this.headerText = "";
@@ -124,7 +197,20 @@ export default {
           this.headerText = "";
           break;
       }
-    }
+    },
+    // 모달 그룹선택 셀럭트 박스 list 클릭 이벤트
+    listSelectBoxListClick(){
+      console.log("this.listSelectBoxValue : ",this.listSelectBoxValue)
+      const checkedList = this.listSelectBoxList.find((l)=>l.value === this.listSelectBoxValue);
+      this.headerText = checkedList.value
+      console.log("checkedList : ",checkedList)
+      this.modalShow = false;
+    },
+    // 모달 그룹선택 셀럭트 박스 그룹 만들기 버튼 이번트
+    listSelectBoxBtnClick(){
+      this.modalShow = false;
+      this.$router.push("/createdGroup")
+    },
   },
   watch : {
     $route(to) {
@@ -151,8 +237,8 @@ export default {
   height:100%;
   #content{
     flex:1;
-    height:100%;
-    &[page=listPage]{
+    /* overflow:auto; */
+    &[page=listPage], &[page=GuideDesign], &[page=GuideHeader]{
       overflow:auto;
     }
   }

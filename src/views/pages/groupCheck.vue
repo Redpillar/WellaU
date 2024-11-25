@@ -1,5 +1,5 @@
 <template>
-    <div class="content-wrapper child100per onePage">
+    <div class="content-wrapper onePage">
         <div class="content-scroll">
             <div class="title-wrappper">
                 <h2 class="title">
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="btn-set">
-            <a-button :disabled="btnDisabled">참여 완료</a-button>
+            <a-button class="wellau-btn" :disabled="btnDisabled">참여 완료</a-button>
         </div>
     </div>
 </template>

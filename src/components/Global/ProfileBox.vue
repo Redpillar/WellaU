@@ -3,7 +3,7 @@
         <div class="inner-wrapper">
             <div class="picture">
                 <div class="kingIcon" v-if="props.king">
-                    <ThunderboltOutlined />
+                    <CrownFilled />
                 </div>
                 <div class="birthdayIcon" v-if="props.birthday">
                     <GiftOutlined />
@@ -17,6 +17,11 @@
             <div class="infomation">
                 <div class="name">
                     {{props.name}}
+                    <div class="battery-icon" v-if="props.battery">
+                        <span class="bar" :style="barStyle"></span>
+                        <svg  viewBox="0 0 416 168"><path class="cls-1" stroke-width="20rem" stroke="currentColor" fill="none" d="M464.44,256.25h26.78C506,256.25,518,269,518,284.6v18.3c0,15.59-11.09,28.35-24.65,28.35H468.69" transform="translate(-112 -209.75)"/><rect stroke-width="20rem" stroke="#1d1d1b" fill="none" class="cls-1" x="10" y="10" width="345" height="148" rx="56.69"/></svg>
+                        <span class="text">{{props.battery}}%</span>
+                    </div>
                 </div>
                 <p class="content" v-if="props.conText.length > 0">
                     {{props.conText}}
@@ -29,8 +34,8 @@
     </div>
 </template>
 <script setup>
-    import { defineProps } from 'vue'
-    import { GiftOutlined,ThunderboltOutlined } from '@ant-design/icons-vue'
+    import { computed,defineProps } from 'vue'
+    import { GiftOutlined,CrownFilled } from '@ant-design/icons-vue'
     const props = defineProps({
         name : {
             type : String,
@@ -65,6 +70,21 @@
                 return false;
             }
         },
+        battery : {
+            type : Number,
+            default : ()=>{
+                return null;
+            }
+        }
+    })
+    const barStyle = computed(()=>{
+        const style = {};
+        if(props.battery){
+            const per = props.battery * 0.01;
+            const width = `calc((100% - 11rem) * ${per})`
+            style.width = width;
+        }
+        return style;
     })
 </script>
 <style type="scss" scoped>
@@ -120,10 +140,10 @@
                 }
                 .kingIcon{
                     position:absolute;
-                    top:0;
-                    left:0;
+                    top:-2rem;
+                    left:50%;
                     z-index:5;
-                    transform:translate(100%,-50%);
+                    transform:translate(-50%,-50%);
                     font-size:20rem;
                 }
             }
@@ -134,9 +154,37 @@
                 flex-direction:column;
                 padding:0 0 0 15rem;
                 &> .name{
+                    display:flex;
                     font-size:16rem;
                     line-height:1;
                     font-weight:bold;
+                    &> .battery-icon{
+                        position:relative;
+                        width:40rem;
+                        margin:0 0 0 5rem;
+                        &> .bar{
+                            position:absolute;
+                            left:3rem;
+                            top:3rem;
+                            bottom:4rem;
+                            z-index:2;
+                            width:calc((100% - 11rem) * 1);
+                            border-radius:7rem;
+                            background:black;
+                        }
+                        &> svg{
+                            position:relative;
+                            z-index:5;
+                        }
+                        &> .text{
+                            position:absolute;
+                            right:0;
+                            top:calc(50% - 1rem);
+                            transform:translate(100%,-50%);
+                            font-size:12rem;
+                            line-height:1;
+                        }
+                    }
                 }
                 &> p{
                     padding:5rem 0 0 0;
@@ -149,6 +197,9 @@
         &> .right-area{
             display:flex;
             align-items:center;
+        }
+        &+ .profileBox-warpper{
+            margin-top:20rem;
         }
     }
 </style>

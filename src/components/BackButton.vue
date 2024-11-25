@@ -22,9 +22,9 @@
 <style type="scss" scoped>
     .BackBtnWrapper{
         position:fixed;
-        top:10rem;
+        top:40rem;
         right:10rem;
-        z-index:1;
+        z-index:1000;
         &> button{
             /* display:none; */
             /* height:50rem;

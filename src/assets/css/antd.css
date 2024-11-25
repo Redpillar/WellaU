@@ -1,11 +1,170 @@
+/* input text field */
+.wellau-input.ant-input[type = text],
+.wellau-input.ant-input-affix-wrapper.ant-input-password
+{
+    padding:12rem 0;
+    border-width:0 0 1rem 0;
+    border-radius:0;
+    border-color:#BDBDBD;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+.wellau-input.ant-input[type = text]:hover,.wellau-input.ant-input[type = text]:focus,
+.wellau-input.ant-input-affix-wrapper.ant-input-password.ant-input-affix-wrapper-focused
+{
+    outline:none;
+    border-color:#BDBDBD;
+    box-shadow:none;
+}
+
+/* input password */
+.wellau-input .ant-input[type = password]{
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
 
 
-:where(.css-dev-only-do-not-override-upxs1x).ant-btn-primary{
+/* :where(.css-dev-only-do-not-override-1p3hq3p).ant-btn */
+.wellau-btn:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn{
+    height:40rem;
+    border-radius: 4rem;
+    border: 1rem solid #BDBDBD;
+    background: #fff;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 23.8rem */
+    color:#333;
+}
+.wellau-btn:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn-default:not(:disabled):hover{
+    color:#333;
+    border: 1rem solid #BDBDBD;
+}
+.wellau-btn:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn-default:not(:disabled):active{
+    color:#333;
+    border: 1rem solid #BDBDBD;
+}
+.wellau-btn:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn:not(:disabled):focus-visible{
+    color:#333;
+    border: 1rem solid #BDBDBD;
+}
+
+/* button primary */
+.wellau-btn.ant-btn.ant-btn-primary{
+    height:49rem;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 18rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 25.2rem */
+    color:#fff;
+    border-radius: 4rem;
+    background: #1677FF;
+}
+.wellau-btn.ant-btn.ant-btn-primary[disabled]{
+    cursor: not-allowed;
+    border-color: #d9d9d9;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.04);
+    box-shadow: none;
+    
+}
+
+.wellau-input.ant-input-affix-wrapper-disabled.ant-input-password{
+    opacity:0.8;
+    background:transparent;
+}
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-input-disabled, :where(.css-dev-only-do-not-override-1p3hq3p).ant-input[disabled]{
+    opacity:0.4;
+    background:transparent;
+}
+
+
+
+
+/*
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn-link:not(:disabled):active
+*/
+/* button link */
+.ant-btn-link,.ant-btn-link:active,.ant-btn-link:hover,
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn-link:not(:disabled):active,
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn-link:not(:disabled):hover
+{
+    padding:4rem 12rem;
+    font-family:"Noto Sans KR", sans-serif;
+    color:#333;
+    font-size: 15rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 21rem */
+    border-width:0;
+}
+
+:where(.css-dev-only-do-not-override-urems1x).ant-btn-primary{
     color:red;
 }
-:where(.css-dev-only-do-not-override-upxs1x).ant-btn-primary:not(:disabled):hover{
+:where(.css-dev-only-do-not-override-urems1x).ant-btn-primary:not(:disabled):hover{
     color:black;
 }
+
+
+/* select */
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-select-single.wellau-select{
+    vertical-align:top;
+}
+.ant-select-focused:where(.css-dev-only-do-not-override-1p3hq3p).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector.wellau-select{
+    vertical-align:top;
+    border-color:#bdbdbd;
+
+}
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-select-single:not(.ant-select-customize-input).wellau-select .ant-select-selector{
+    display:flex;
+    align-items:center;
+    padding:0;
+    outline:none;
+    box-shadow:none !important;
+    &:before{
+        content:"";
+        position:absolute;
+        right:0;
+        top:50%;
+        z-index:1000;
+        width:20rem;
+        height:20rem;
+        transform:translate(0,-50%);
+        background:url(../img/wellau-select-arrow.svg) no-repeat center;
+    }
+}
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-select:not(.ant-select-customize-input).wellau-select .ant-select-selector{
+    height:40rem;
+    border-width:0 0 1rem 0;
+    border-color:#bdbdbd !important;
+    border-radius:0;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 23.8px */
+    color:#999;
+    outline:none;
+}
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-select.wellau-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+    border-color:#bdbdbd;
+}
+:where(.css-dev-only-do-not-override-1p3hq3p).ant-select-single.wellau-select .ant-select-selector .ant-select-selection-item{
+    display:flex;
+    align-items:center;
+    line-height:1;
+}
+
+
+
 
 
 .width100per{

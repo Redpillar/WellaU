@@ -1,12 +1,11 @@
 <template>
     <div id="bothBar">
-        <div class="bothBar-wrapper" :style="bothBarWrapperStyle" @touchstart="touchStart" @touchmove="touchMoved" @touchend="touchEnd">
+        <div class="bothBar-wrapper" :class=[{deem:deemShow}] :style="bothBarWrapperStyle" @touchstart="touchStart" @touchmove="touchMoved" @touchend="touchEnd">
             <div class="bothBar-thumn" ></div>
             <div class="bothBar-content">
                 <slot name="content">
                 </slot>
             </div>
-            <div class="bothBar-deem" v-if="deemShow"></div>
         </div>
     </div>
 </template>
@@ -42,22 +41,18 @@
         return checked || parehtChecked || tagChecked >= 0? true : false;
     }
     const touchStart = ($ev)=>{
-        clearInterval(animationTimer);
         toutchTargetChecked.value = targetChecked($ev.target);
         points.value.s = $ev.targetTouches[0].pageY;
         if(!swiperChecked.value.first) swiperChecked.value.first = points.value.h;
         points.value.cuh = points.value.h;
-        console.log("===== start =====")
-        console.log("toutchTargetChecked.value : ",toutchTargetChecked.value)
         if(!toutchTargetChecked.value){
+            clearInterval(animationTimer);
             $ev.preventDefault();
             swiperChecked.value.arr[0] = $ev.targetTouches[0].pageY
             swiperChecked.value.time = new Date().getTime();
         }
     }
     const touchMoved = ($ev)=>{
-        console.log("===== move =====")
-        console.log("toutchTargetChecked.value : ",toutchTargetChecked.value)
         deemShow.value =  true;
         if(toutchTargetChecked.value){
             deemShow.value =  false;
@@ -168,6 +163,17 @@
         min-height:100rem;
         overflow:hidden;
         background:#fff;
+        &.deem{
+            &:after{
+                content:"";
+                position:absolute;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                background:rgba(0,0,0,0);
+            }
+        }
     }
     .bothBar-thumn{
         position:relative;
@@ -178,6 +184,7 @@
             position:absolute;
             top:50%;
             left:50%;
+            z-index:100;
             width:60rem;
             height:5rem;
             border-radius:5rem;

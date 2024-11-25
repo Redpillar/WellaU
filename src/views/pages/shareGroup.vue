@@ -1,5 +1,5 @@
 <template>
-    <div class="content-wrapper child100per onePage">
+    <div class="content-wrapper onePage">
         <div class="content-scroll">
             <div class="title-wrappper">
                 <h2 class="title">
@@ -14,8 +14,8 @@
                 </div>
             </div>
             <div class="btn-set horizontal">
-                <a-button>계속하기</a-button>
-                <a-button>공유하기</a-button>
+                <a-button class="wellau-btn">계속하기</a-button>
+                <a-button class="wellau-btn">공유하기</a-button>
             </div>
         </div>
     </div>

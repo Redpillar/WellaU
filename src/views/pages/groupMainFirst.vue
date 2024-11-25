@@ -1,5 +1,5 @@
 <template>
-    <div class="content-wrapper child100per full">
+    <div class="content-wrapper full">
         <div class="content-scroll">
             <div class="mapArea dummy-back">
                 <button class="mapBtn">

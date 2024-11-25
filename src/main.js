@@ -4,8 +4,10 @@ import store from './store/storage'
 // import { createNaverMap } from "vue3-naver-maps";
 import Antd from 'ant-design-vue'
 import Components from './components/Global/'
+import './assets/css/font.css'
 import './assets/css/common.css'
 import './assets/css/antd.css'
+import './assets/css/guide.css'
 import 'ant-design-vue/dist/reset.css'
 // createApp(App).mount('#app')
 

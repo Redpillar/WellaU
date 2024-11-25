@@ -1,5 +1,5 @@
 <template>
-    <div class="content-wrapper child100per onePage">
+    <div class="content-wrapper onePage">
         <div class="content-scroll">
             <div class="title-wrappper">
                 <h2 class="title">
@@ -7,10 +7,10 @@
                 </h2>
             </div>
             <p class="content-text-info">그룹명을 입력해주세요</p>
-            <a-input class="textAlignCenter" v-model:value="textField" placeholder="그룹명" @input="textFieldInput" />
+            <a-input class="textAlignCenter wellau-input" v-model:value="textField" placeholder="그룹명" @input="textFieldInput" />
         </div>
         <div class="btn-set">
-            <a-button :disabled="btnDisabled" @click="btnClick">만들기</a-button>
+            <a-button class="wellau-btn" :disabled="btnDisabled" @click="btnClick">만들기</a-button>
         </div>
     </div>
 </template>

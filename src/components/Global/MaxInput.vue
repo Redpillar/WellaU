@@ -1,6 +1,6 @@
 <template>
     <div class="maxInput-wrapper">
-        <a-input v-model:value="textField" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" />
+        <a-input v-model:value="textField" class="wellau-input" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" />
         <div class="textFieldMixmunNumBox">{{textField.length}}/{{maxlength}}</div>    
     </div>
 </template>
@@ -45,8 +45,17 @@
 <style type="scss" scoped>
 
     .textFieldMixmunNumBox{
-        font-size:12rem;
-        color:#ccc;
-        text-align:right;
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+        height:16rem;
+        padding:0 5rem 0 0;
+        margin:6rem 0 6rem 0;
+        font-family: "Noto Sans";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 18.2px */
+        color:#333;
     }
 </style>

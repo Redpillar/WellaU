@@ -1,12 +1,17 @@
 <template>
-    <div class="login-logo">LOGO</div>
+    <!-- <div class="login-logo">LOGO</div> -->
     <div class="content-wrapper jCenter">
-        <a-input v-model:value="textFieldId" placeholder="휴대폰 번호" />
-        <a-input-password v-model:value="textFieldPw" class="middle-input" placeholder="비밀번호" />
-        <a-button :disabled="disabled" class="width100per">시작하기</a-button>
-        <div>
-            <a-button type="link">가입하기</a-button> | 
-            <a-button type="link">비밀번호 찾기</a-button>
+        <div class="content-scroll">
+            <a-input v-model:value="textFieldId" class="wellau-input" placeholder="휴대폰 번호" />
+            <a-input-password v-model:value="textFieldPw" class="wellau-input" placeholder="비밀번호" />
+            <a-input-password v-model:value="textFieldPw" placeholder="비밀번호" />
+            <div class="btn-set">
+                <a-button type="primary" class="wellau-btn" :disabled="disabled">시작하기</a-button>
+            </div>
+            <div class="link-text-btn-set">
+                <a-button type="link">가입하기</a-button><i class="gap-line-icon" />
+                <a-button type="link">비밀번호 찾기</a-button>
+            </div>
         </div>
     </div>
 </template>
@@ -39,8 +44,5 @@
         font-size:20rem;
         color:#fff;
         background:black;
-    }
-    .middle-input{
-        margin:10rem 0;
     }
 </style>

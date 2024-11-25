@@ -5,7 +5,7 @@
         <div>childValue : {{childValue}}</div>
         <testComponent v-model:value="childValue" @input="childInputEv" />
     </div>
-    <MapPin icon="yellow" />
+    <MapPin icon="yellow" :photo="photo" />
     <MapPin icon="people" />
     <MapPin icon="house" />
     <div style="display:inline-flex; flex-direction:column">
@@ -39,6 +39,10 @@
     const popEv = ()=>{
         popShow.value = true;
     }
+    const photo = ref({
+        src : require('../../assets/img/dummy-profile01.jpeg'),
+        alt : '홍길동님의 프로필 사진입니다'
+    })
 </script>
 <!--
 <script>

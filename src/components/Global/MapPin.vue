@@ -11,7 +11,9 @@
         </div>
         <div class="mapPin-pieChart" :style="mapPinCircleStyle" v-if="piechartShow">
         </div>
-        <div class="mapPin-icon-circle" :style="mapPinIconCircleStyle" v-if="iconShow"></div>
+        <div class="mapPin-icon-circle" :style="mapPinIconCircleStyle" v-if="iconShow">
+            <img :src="props.photo.src" :alt="props.photo.alt" v-if="props.photo.src !== '' " />
+        </div>
         <svg class="mapPin-pin" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 138 182.2" style="enable-background:new 0 0 138 182.2;" xml:space="preserve">
             <path class="st0" d="M136.6,69.1c0,37.4-30.4,79.3-67.7,111.3C35.9,153,1.3,106.5,1.3,69.1S31.6,1.4,68.9,1.4S136.6,31.7,136.6,69.1 z"/>
@@ -31,7 +33,7 @@
         width : {
             type : Number,
             default : ()=>{
-                return 90;
+                return 50;
             }
         },
         per : {
@@ -56,6 +58,15 @@
             type : Boolean,
             default : ()=>{
                 return false;
+            }
+        },
+        photo : {
+            type : Object,
+            default : ()=>{
+                return {
+                    src : "",
+                    alt : "",
+                }
             }
         }
     })
@@ -83,7 +94,7 @@
     })
     const mapPinIconCircleStyle = computed(()=>{
         const style = {};
-        const diffPrice = (props.icon !== "yellow") ? 30 : 20;
+        const diffPrice = (props.icon !== "yellow") ? 20 : 10;
         style.width = props.width - diffPrice + "rem";
         style.height = props.width - diffPrice + "rem";
         style.top = (diffPrice / 2) + "rem";
@@ -131,8 +142,8 @@
             position:absolute;
             top:50%;
             left:50%;
-            width:calc(100% - 20rem);
-            height:calc(100% - 20rem);
+            width:calc(100% - 10rem);
+            height:calc(100% - 10rem);
             border-radius:50%;
             transform:translate(-50%,-50%);
             background:#000;
@@ -145,7 +156,16 @@
         z-index:50;
         width:70rem;
         border-radius:50%;
+        overflow:hidden;
         background:yellow;
+        &> img{
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:100%;
+            height:100%;
+            transform:translate(-50%,-50%);
+        }
     }
     .mapPinPop{
         position:absolute;

@@ -1,24 +1,33 @@
 import {createRouter,createWebHistory} from 'vue-router'
-import mainPageView from './views/mainPageView'
-import loginVue from './views/pages/loginVue'
-import searchPassWord from './views/pages/searchPassWord'
-import resetPassWord from './views/pages/resetPassWord'
-import groupMainFirst from './views/pages/groupMainFirst'
-import joinGroup from './views/pages/joinGroup'
-import joinGroupInvite from './views/pages/joinGroupInvite'
-import groupCheck from './views/pages/groupCheck'
-import createdGroup from './views/pages/createdGroup'
-import shareGroup from './views/pages/shareGroup'
-import groupMain from './views/pages/groupMain'
+import mainPageView from '@views/mainPageView'
+import loginVue from '@pages/loginVue'
+import searchPassWord from '@pages/searchPassWord'
+import searchPassWordCode from '@pages/searchPassWordCode'
+import resetPassWord from '@pages/resetPassWord'
+import groupMainFirst from '@pages/groupMainFirst'
+import joinGroup from '@pages/joinGroup'
+import joinGroupInvite from '@pages/joinGroupInvite'
+import groupCheck from '@pages/groupCheck'
+import createdGroup from '@pages/createdGroup'
+import shareGroup from '@pages/shareGroup'
+import groupMain from '@pages/groupMain'
+import locationDetail from '@pages/locationDetail'
+import locationSharing from '@pages/locationSharing'
+import locationSharingDoneTime from '@pages/locationSharingDoneTime'
 /* 가입하기 */
-import joinPhone from './views/pages/joinPhone'
+import joinPhoneInput from '@pages/joinPhoneInput'
+import joinPhoneCheck from '@pages/joinPhoneCheck'
+import enterPassword from '@pages/enterPassword'
+import enterProfile from '@pages/enterProfile'
+import provisionAgree from '@pages/provisionAgree'
+import authorityCheck from '@pages/authorityCheck'
 
-import testVue from './views/pages/testVue'
-import vuePage01 from './views/pages/vuePage01'
+import testVue from '@pages/testVue'
+import vuePage01 from '@pages/vuePage01'
 
 /* Guide */
-import GuideHeader from './views/pages/guide/GuideHeader'
-import GuideDesign from './views/pages/guide/GuideDesign'
+import GuideHeader from '@pages/guide/GuideHeader'
+import GuideDesign from '@pages/guide/GuideDesign'
 
 
 const routes = [
@@ -43,14 +52,39 @@ const routes = [
         component : searchPassWord,
     },
     {
+        path : '/searchPassWordCode',
+        component : searchPassWordCode,
+    },
+    {
         path : '/resetPassWord',
         component : resetPassWord,
     },
     /* 가입하기 */
     {
-        path : '/joinPhone',
-        component : joinPhone,
+        path : '/joinPhoneInput',
+        component : joinPhoneInput,
     },
+    {
+        path : '/joinPhoneCheck',
+        component : joinPhoneCheck,
+    },
+    {
+        path : '/enterPassword',
+        component : enterPassword,
+    },
+    {
+        path : '/enterProfile',
+        component : enterProfile,
+    },
+    {
+        path : '/provisionAgree',
+        component : provisionAgree,
+    },
+    {
+        path : '/authorityCheck',
+        component : authorityCheck,
+    },
+
     {
         path : '/groupMainFirst',
         component : groupMainFirst,
@@ -79,6 +113,21 @@ const routes = [
         path : '/groupMain',
         component : groupMain,
     },
+    {
+        path : '/locationDetail',
+        component : locationDetail,
+    },
+    {
+        path : '/locationSharing',
+        component : locationSharing,
+    },
+    {
+        path : '/locationSharingDoneTime',
+        component : locationSharingDoneTime,
+    },
+
+
+
     {
         path : '/page01',
         component : vuePage01,

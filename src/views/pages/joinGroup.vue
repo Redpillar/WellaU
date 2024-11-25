@@ -1,10 +1,12 @@
 <template>
     <div class="content-wrapper onePage">
-        <div class="joinGroup-img">
+        <div class="content-scroll">
+            <div class="joinGroup-img">
+            </div>
         </div>
         <div class="btn-set">
-            <a-button @click="click">그룹 참여하기</a-button>
-            <a-button>새로운 그룹 생성하기</a-button>
+            <a-button  class="wellau-btn" @click="click">그룹 참여하기</a-button>
+            <a-button  class="wellau-btn">새로운 그룹 생성하기</a-button>
         </div>
     </div>
 </template>
@@ -19,8 +21,7 @@
     .joinGroup-img{
         flex:1;
         width:100%;
-        height:calc(100% - 300rem);
-        margin-bottom:20rem;
+        height:100%;
         background:#ddd;
     }
 </style>

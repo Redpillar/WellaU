@@ -13,7 +13,8 @@ export default [
         name : "스플래시​",
         type : "화면",
         page : 8,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "로그인",
@@ -36,6 +37,15 @@ export default [
     {
         category : "로그인",
         os : "WEB",
+        name : "비밀번호 재설정 > 휴대폰 인증 - 인증코드 입력​",
+        type : "화면",
+        page : 10,
+        path : "/searchPassWordCode",
+        status : "완료",
+    },
+    {
+        category : "로그인",
+        os : "WEB",
         name : "비밀번호 재설정​",
         type : "화면",
         page : 11,
@@ -45,18 +55,48 @@ export default [
     {
         category : "가입하기",
         os : "WEB",
-        name : "회원가입 > 휴대폰인증​",
+        name : "회원가입 > 휴대폰인증​(입력)",
         type : "화면",
         page : 12,
-        path : "/joinPhone"
+        path : "/joinPhoneInput",
+        status : "완료",
     },
     {
         category : "가입하기",
         os : "WEB",
-        name : "회원가입 > 비밀번호등록, 프로필등록​",
+        name : "회원가입 > 휴대폰인증​(인증)",
+        type : "화면",
+        page : 12,
+        path : "/joinPhoneCheck",
+        status : "완료",
+    },
+    {
+        category : "가입하기",
+        os : "WEB",
+        name : "회원가입 > 비밀번호등록",
         type : "화면",
         page : 13,
-        path : "/",
+        path : "/enterPassword",
+        status : "진행중",
+    },
+    {
+        category : "가입하기",
+        os : "WEB",
+        name : "회원가입 > 프로필등록​",
+        type : "화면",
+        page : 13,
+        path : "/enterProfile",
+        status : "진행중",
+    },
+    {
+        category : "가입하기",
+        os : "WEB",
+        name : "회원가입 > 약관동의",
+        type : "화면",
+        page : 14,
+        path : "/provisionAgree",
+        status : "완료",
+
     },
     {
         category : "가입하기",
@@ -64,7 +104,8 @@ export default [
         name : "회원가입 > 권한허용​",
         type : "화면",
         page : 15,
-        path : "/"
+        path : "/authorityCheck",
+        status : "완료",
 
     },
     {
@@ -73,7 +114,8 @@ export default [
         name : "메인 > 배터리최적화끄기​",
         type : "화면",
         page : 16,
-        path : "/"
+        path : "/",
+        status : "",
 
     },
     {
@@ -82,7 +124,8 @@ export default [
         name : "메인 > 위치권한허용​",
         type : "화면",
         page : 17,
-        path : "/"
+        path : "/",
+        status : "",
 
     },
     {
@@ -91,7 +134,8 @@ export default [
         name : "메인 > 위치권한허용​",
         type : "화면",
         page : 18,
-        path : "/"
+        path : "/",
+        status : "",
 
     },
     {
@@ -100,7 +144,8 @@ export default [
         name : "메인 > 알림권한허용​",
         type : "화면",
         page : 19,
-        path : "/"
+        path : "/",
+        status : "",
 
     },
     {
@@ -109,7 +154,8 @@ export default [
         name : "메인 > 알림권한허용​",
         type : "화면",
         page : 20,
-        path : "/"
+        path : "/",
+        status : "",
 
     },
     {
@@ -172,7 +218,8 @@ export default [
         name : "메인 > 그룹 (그룹변경)​",
         type : "화면",
         page : 27,
-        path : "/"
+        path : "/groupMain",
+        status : "완료",
 
     },
     {
@@ -181,7 +228,8 @@ export default [
         name : "위치정보 상세​",
         type : "화면",
         page : 28,
-        path : "/"
+        path : "/locationDetail",
+        status : "완료",
 
     },
     {
@@ -190,7 +238,8 @@ export default [
         name : "위치정보 상세 > 위치공유​",
         type : "화면",
         page : 29,
-        path : "/"
+        path : "/locationDetail",
+        status : "완료",
 
     },
     {
@@ -199,7 +248,18 @@ export default [
         name : "위치정보 상세 > 위치공유(Web)",
         type : "화면",
         page : 30,
-        path : "/"
+        path : "/locationSharing",
+        status : "완료",
+
+    },
+    {
+        category : "메인",
+        os : "WEB",
+        name : "위치정보 상세 > 위치공유(Web) - 시간만료",
+        type : "화면",
+        page : 30,
+        path : "/locationSharingDoneTime",
+        status : "진행중",
 
     },
     {
@@ -208,7 +268,8 @@ export default [
         name : "위치정보 상세 > 위치기록​​",
         type : "화면",
         page : 31,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메인",
@@ -216,7 +277,8 @@ export default [
         name : "알림함​",
         type : "화면",
         page : 32,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -224,7 +286,8 @@ export default [
         name : "메뉴​",
         type : "화면",
         page : 33,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -232,7 +295,8 @@ export default [
         name : "그룹관리​",
         type : "화면",
         page : 34,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -240,7 +304,8 @@ export default [
         name : "위치공유상태 보기​",
         type : "화면",
         page : 35,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -248,7 +313,8 @@ export default [
         name : "배터리 부족 알림 설정​",
         type : "화면",
         page : 37,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -256,7 +322,8 @@ export default [
         name : "그룹설정 > 그룹원관리 (그룹장)​",
         type : "화면",
         page : 39,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -264,7 +331,8 @@ export default [
         name : "그룹설정 - 그룹장​",
         type : "화면",
         page : 40,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -272,7 +340,8 @@ export default [
         name : "그룹설정 > 그룹 지우기 (그룹장)​",
         type : "화면",
         page : 41,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -280,7 +349,8 @@ export default [
         name : "그룹나가기 - 그룹원​",
         type : "화면",
         page : 42,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -288,7 +358,8 @@ export default [
         name : "안심존 목록​",
         type : "화면",
         page : 43,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -296,7 +367,8 @@ export default [
         name : "안심존 생성​",
         type : "화면",
         page : 44,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -304,7 +376,8 @@ export default [
         name : "안심존 보기​",
         type : "화면",
         page : 45,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -312,7 +385,8 @@ export default [
         name : "안심존 수정​",
         type : "화면",
         page : 46,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -320,7 +394,8 @@ export default [
         name : "근접알림설정​",
         type : "화면",
         page : 47,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -328,7 +403,8 @@ export default [
         name : "근접 알림 수정​",
         type : "화면",
         page : 48,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -336,7 +412,8 @@ export default [
         name : "SOS 요청, 취소​",
         type : "화면",
         page : 49,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -344,7 +421,8 @@ export default [
         name : "SOS 상세​",
         type : "화면",
         page : 50,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -352,7 +430,8 @@ export default [
         name : "내정보 > 사진변경​",
         type : "화면",
         page : 51,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -360,7 +439,8 @@ export default [
         name : "내정보 > 이름변경​",
         type : "화면",
         page : 52,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -368,7 +448,8 @@ export default [
         name : "내정보 > 휴대폰 변경​",
         type : "화면",
         page : 53,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -376,7 +457,8 @@ export default [
         name : "내정보 > 생년월일 변경​",
         type : "화면",
         page : 54,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -384,7 +466,8 @@ export default [
         name : "내정보 > 비밀번호 변경​",
         type : "화면",
         page : 55,
-        path : "/"
+        path : "/",
+        status : "",
     },
     {
         category : "메뉴​",
@@ -392,7 +475,8 @@ export default [
         name : "공지사항​",
         type : "화면",
         page : 56,
-        path : "/"
+        path : "/",
+        status : "",
     },
     // {
     //     category : "로그인",
