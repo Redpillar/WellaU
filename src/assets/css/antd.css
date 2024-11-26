@@ -30,6 +30,45 @@
 }
 
 
+/* checkbox */
+
+.wellau-checkbox :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox .ant-checkbox-inner{
+    width:24rem;
+    height:24rem;
+    border-radius:50%;
+}
+.wellau-checkbox :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox-checked:after{
+    border-radius:50%;
+}
+.wellau-checkbox :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox-checked .ant-checkbox-inner:after{
+    left:32%;
+    width:8rem;
+}
+.wellau-checkbox :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox+span{
+    font-family:"Noto Sans KR", sans-serif;
+    color:#333;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 23.8px */
+}
+.wellau-checkbox.sizeBig :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox .ant-checkbox-inner{
+    width:28rem;
+    height:28rem;
+}
+.wellau-checkbox.sizeBig :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox-checked .ant-checkbox-inner:after{
+    left:30%;
+    width:12rem;
+}
+.wellau-checkbox.sizeBig :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox+span{
+    color:#333;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 28px */
+}
+
+
 /* :where(.css-dev-only-do-not-override-1p3hq3p).ant-btn */
 .wellau-btn:where(.css-dev-only-do-not-override-1p3hq3p).ant-btn{
     height:40rem;

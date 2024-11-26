@@ -157,22 +157,14 @@ body{
 /* checkbox-list */
 .checkbox-list{
     .total{
-        .ant-checkbox-wrapper{
-            .ant-checkbox + span{
-                font-size:18rem;
-            }
-        }
-        border-bottom:1rem solid #000;
+        padding:0 0 20rem 0;
         margin:0 0 10rem 0;
+        border-bottom:1rem solid #000;
     }
     .list{
-        .ant-checkbox-wrapper{
-            .ant-checkbox + span{
-                text-decoration:underline;
-            }
-            &+ .ant-checkbox-wrapper{
-                margin-top:5rem;
-            }
+        &> li{
+            padding:16rem 0;
+            border-bottom:1px solid #E0E0E0;
         }
     }
     &+ .btn-set{
