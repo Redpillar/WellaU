@@ -20,6 +20,7 @@ import joinPhoneCheck from '@pages/joinPhoneCheck'
 import enterPassword from '@pages/enterPassword'
 import enterProfile from '@pages/enterProfile'
 import provisionAgree from '@pages/provisionAgree'
+import provisionView from '@pages/provisionView'
 import authorityCheck from '@pages/authorityCheck'
 
 import testVue from '@pages/testVue'
@@ -79,6 +80,10 @@ const routes = [
     {
         path : '/provisionAgree',
         component : provisionAgree,
+    },
+    {
+        path : '/provisionView',
+        component : provisionView,
     },
     {
         path : '/authorityCheck',

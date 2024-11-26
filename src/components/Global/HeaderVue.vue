@@ -3,7 +3,9 @@
         <div class="header-wrapper">
             <!-- left area -->
             <div class="header-area-left">
-                <LeftOutlined v-if="type == 'type1' || type == 'type2' || type == 'type4' || type == 'type6'" @click="backBtnEvent" />
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" v-if="type == 'type1' || type == 'type2' || type == 'type4' || type == 'type6'" @click="backBtnEvent">
+                    <path d="M15.8526 3.0561L6.76165 11.8306C6.48478 12.1063 6.46849 12.5432 6.71279 12.8378L6.76165 12.8913L15.8522 21.9417C15.8897 21.979 15.9404 22 15.9933 22H17.5567C17.6671 22 17.7567 21.9105 17.7567 21.8C17.7567 21.7468 17.7355 21.6958 17.6978 21.6583L8.38992 12.3908L17.6882 3.34334C17.7673 3.26631 17.7691 3.13969 17.692 3.06052C17.6544 3.02183 17.6027 3 17.5487 3H15.9915C15.9397 3 15.8899 3.02011 15.8526 3.0561Z" fill="#333333"/>
+                </svg>
                 <StarOutlined v-if="type == 'type3' && !like" @click='starIconClick' />
                 <StarFilled :style='starFilledStyle' v-if="type == 'type3' && like" @click='starIconClick' />
                 <MenuOutlined v-if="type == 'type5'" @click="menuIconClickEv" />
@@ -38,7 +40,7 @@
 </template>
 <script>
     import {ref,onMounted} from 'vue'
-    import {LeftOutlined,StarOutlined,StarFilled,RedoOutlined,MenuOutlined,BellFilled,AliwangwangOutlined,WechatOutlined} from '@ant-design/icons-vue'
+    import {StarOutlined,StarFilled,RedoOutlined,MenuOutlined,BellFilled,AliwangwangOutlined,WechatOutlined} from '@ant-design/icons-vue'
     export default {
         name : "HeaderVue",
         props : {
@@ -57,7 +59,6 @@
             },
         },
         components : {
-            "LeftOutlined" : LeftOutlined,
             "StarOutlined" : StarOutlined,
             "StarFilled" : StarFilled,
             "RedoOutlined" : RedoOutlined,
@@ -190,7 +191,6 @@
         z-index:100;
         background:#fff;
         &.type6{
-
             .header-wrapper{
                 justify-content:space-between;
             }
@@ -221,6 +221,7 @@
             display:flex;
             align-items:flex-start;
             /* height: 30rem; */
+            padding:0 12rem;
             font-size:20rem;
             font-weight:bold;
             &> .header-area-left{
@@ -229,6 +230,9 @@
                 display:flex;
                 align-items:center;
                 height: 45rem;
+                .anticon.anticon-left{
+                    font-size:23rem;
+                }
             }
             &> .header-area-center{
                 flex:1;

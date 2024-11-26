@@ -101,6 +101,16 @@ export default [
     {
         category : "가입하기",
         os : "WEB",
+        name : "회원가입 > 약관동의 - 약관보기",
+        type : "화면",
+        page : 14,
+        path : "/provisionView",
+        status : "완료",
+
+    },
+    {
+        category : "가입하기",
+        os : "WEB",
         name : "회원가입 > 권한허용​",
         type : "화면",
         page : 15,

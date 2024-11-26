@@ -172,10 +172,6 @@ export default {
     },
     checkePath(path){
       switch (path){
-        case "locationSharingDoneTime" :
-          this.headerData.type = "type3";
-          this.headerText = "live.udiya.com";
-          break;
         case "locationSharing" :
           this.headerData.type = "type3";
           this.headerText = "live.udiya.com";
@@ -235,12 +231,13 @@ export default {
   display:flex;
   flex-direction:column;
   height:100%;
+  overflow:auto;
   #content{
     flex:1;
-    /* overflow:auto; */
-    &[page=listPage], &[page=GuideDesign], &[page=GuideHeader]{
+    overflow:auto;
+    /* &[page=listPage], &[page=GuideDesign], &[page=GuideHeader]{
       overflow:auto;
-    }
+    } */
   }
 }
 </style>

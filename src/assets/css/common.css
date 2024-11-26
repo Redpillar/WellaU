@@ -56,6 +56,10 @@ body{
     &+ .btn-set{
         padding-top:30rem;
     }
+    &.flexMode{
+        display:flex;
+        flex-direction:column;
+    }
 }
 
 
@@ -64,6 +68,9 @@ body{
 .title-wrappper{
     width:100%;
     padding:0 0 90rem;
+    &.pb15{
+        padding-bottom:15rem;
+    }
 }
 .title{
     width:100%;
@@ -448,4 +455,22 @@ table.guide-table{
     width:1rem;
     height:22rem;
     background: rgba(204, 204, 204, 0.93);
+}
+
+/* bg-gray-info-box */
+.bg-gray-info-box{
+    display:flex;
+    flex:1;
+    overflow:auto;
+    background:#F5F5F5;
+    &> .bg-gray-info-box-scroll{
+        flex:1;
+        padding:10rem;
+        overflow:auto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 22.4px */
+        color:#333;
+    }
 }
