@@ -145,26 +145,24 @@ body{
     position:relative;
     font-size:0;
     overflow:hidden;
-    .wrapper-select-set{
-        width:calc(100% + 18rem);
+}
+.wrapper-select-set{
+    width:calc(100% + 18rem);
+}
+.wrapper-select-set-list{
+    display:inline-block;
+    width:calc(100% / 3);
+    padding-right:18rem;
+    &> .ant-select{
+        width:100%;
     }
-    .wrapper-select-set{
-        &> div{
-            display:inline-block;
-            width:calc(100% / 3);
-            padding-right:18rem;
-            &> .ant-select{
-                width:100%;
-            }
-            .ant-select{
-                &> .ant-select-arrow{
-                    right:21rem;
-                }
-            }
-            &:only-child{
-                width:100%;
-            }
+    .ant-select{
+        &> .ant-select-arrow{
+            right:21rem;
         }
+    }
+    &:only-child{
+        width:100%;
     }
 }
 

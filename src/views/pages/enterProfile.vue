@@ -10,7 +10,7 @@
             <p  class="content-text-info">성별을 선택해주세요</p>
             <div class="sleect-set">
                 <div class="wrapper-select-set">
-                    <div>
+                    <div class="wrapper-select-set-list">
                         <a-select v-model:value="selectSex" :showArrow="false" class="wellau-select" placeholder="성별" :options="optionsSex"/>
                     </div>
                 </div>
@@ -18,13 +18,13 @@
             <p  class="content-text-info">생일을 입력해주세요</p>
             <div class="sleect-set">
                 <div class="wrapper-select-set">
-                    <div>
+                    <div class="wrapper-select-set-list">
                         <a-select v-model:value="selectYear" :showArrow="false" class="wellau-select" placeholder="년" :options="optionsYear" @change="setDate"/>
                     </div>
-                    <div>
+                    <div class="wrapper-select-set-list">
                         <a-select v-model:value="selectMonth" :showArrow="false" class="wellau-select" placeholder="월" :options="optionsMonth" @change="setDate"/>
                     </div>
-                    <div>
+                    <div class="wrapper-select-set-list">
                         <a-select v-model:value="selectDate" :showArrow="false" class="wellau-select" placeholder="일" :options="optionsDate"/>
                     </div>
                 </div>

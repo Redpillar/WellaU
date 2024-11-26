@@ -88,8 +88,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 23.8rem */
-    /* color:#333; */
-    color:red;
+    color:#333;
 }
 .wellau-btn.ant-btn-default:not(:disabled):hover{
     color:#333;
