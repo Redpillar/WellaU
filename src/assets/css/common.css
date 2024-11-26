@@ -148,15 +148,22 @@ body{
     .wrapper-select-set{
         width:calc(100% + 18rem);
     }
-    .ant-select{
-        display:inline-block;
-        width:calc(100% / 3);
-        padding-right:18rem;
-        &> .ant-select-arrow{
-            right:21rem;
-        }
-        &:only-child{
-            width:100%;
+    .wrapper-select-set{
+        &> div{
+            display:inline-block;
+            width:calc(100% / 3);
+            padding-right:18rem;
+            &> .ant-select{
+                width:100%;
+            }
+            .ant-select{
+                &> .ant-select-arrow{
+                    right:21rem;
+                }
+            }
+            &:only-child{
+                width:100%;
+            }
         }
     }
 }

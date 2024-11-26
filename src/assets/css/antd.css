@@ -155,15 +155,15 @@
 
 
 /* select */
-:where(.css-dev-only-do-not-override-1p3hq3p).ant-select-single.wellau-select{
+.ant-select-single.wellau-select{
     vertical-align:top;
 }
-.ant-select-focused:where(.css-dev-only-do-not-override-1p3hq3p).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector.wellau-select{
+.ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector.wellau-select{
     vertical-align:top;
     border-color:#bdbdbd;
 
 }
-:where(.css-dev-only-do-not-override-1p3hq3p).ant-select-single:not(.ant-select-customize-input).wellau-select .ant-select-selector{
+.ant-select-single:not(.ant-select-customize-input).wellau-select .ant-select-selector{
     display:flex;
     align-items:center;
     padding:0;
@@ -181,7 +181,7 @@
         background:url(../img/wellau-select-arrow.svg) no-repeat center;
     }
 }
-:where(.css-dev-only-do-not-override-1p3hq3p).ant-select:not(.ant-select-customize-input).wellau-select .ant-select-selector{
+.ant-select:not(.ant-select-customize-input).wellau-select .ant-select-selector{
     height:40rem;
     border-width:0 0 1rem 0;
     border-color:#bdbdbd !important;
@@ -193,10 +193,10 @@
     color:#999;
     outline:none;
 }
-:where(.css-dev-only-do-not-override-1p3hq3p).ant-select.wellau-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+.ant-select.wellau-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
     border-color:#bdbdbd;
 }
-:where(.css-dev-only-do-not-override-1p3hq3p).ant-select-single.wellau-select .ant-select-selector .ant-select-selection-item{
+.ant-select-single.wellau-select .ant-select-selector .ant-select-selection-item{
     display:flex;
     align-items:center;
     line-height:1;
