@@ -19,6 +19,15 @@
     border-color:#BDBDBD;
     box-shadow:none;
 }
+.wellau-input.ant-input-affix-wrapper-disabled.ant-input-password{
+    opacity:0.8;
+    background:transparent;
+}
+.wellau-input.ant-input-disabled, .wellau-input.ant-input[disabled]{
+    opacity:0.4;
+    background:transparent;
+}
+
 
 /* input password */
 .wellau-input .ant-input[type = password]{
@@ -69,9 +78,8 @@
 }
 
 
-/* :where(.css-dev-only-do-not-override-1p3hq3p).ant-btn */
 .wellau-btn.ant-btn{
-    height:40rem;
+    height:40rem !important;
     border-radius: 4rem;
     border: 1rem solid #BDBDBD;
     background: #fff;
@@ -80,7 +88,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 23.8rem */
-    color:#333;
+    /* color:#333; */
+    color:red;
 }
 .wellau-btn.ant-btn-default:not(:disabled):hover{
     color:#333;
@@ -96,8 +105,8 @@
 }
 
 /* button primary */
-.wellau-btn.ant-btn.ant-btn-primary{
-    height:49rem;
+.wellau-btn.ant-btn.ant-btn.ant-btn-primary{
+    height:49rem !important;
     font-family:"Noto Sans KR", sans-serif;
     font-size: 18rem;
     font-style: normal;
@@ -114,15 +123,6 @@
     background-color: rgba(0, 0, 0, 0.04);
     box-shadow: none;
     
-}
-
-.wellau-input.ant-input-affix-wrapper-disabled.ant-input-password{
-    opacity:0.8;
-    background:transparent;
-}
-:where(.css-dev-only-do-not-override-1p3hq3p).ant-input-disabled, :where(.css-dev-only-do-not-override-1p3hq3p).ant-input[disabled]{
-    opacity:0.4;
-    background:transparent;
 }
 
 

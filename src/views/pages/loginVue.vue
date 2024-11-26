@@ -4,7 +4,6 @@
         <div class="content-scroll">
             <a-input v-model:value="textFieldId" class="wellau-input" placeholder="휴대폰 번호" />
             <a-input-password v-model:value="textFieldPw" class="wellau-input" placeholder="비밀번호" />
-            <a-input-password v-model:value="textFieldPw" placeholder="비밀번호" />
             <div class="btn-set">
                 <a-button type="primary" class="wellau-btn" :disabled="disabled">시작하기</a-button>
             </div>
