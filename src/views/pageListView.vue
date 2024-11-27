@@ -1,6 +1,6 @@
 <template>
     <div class="listWrap">
-        <div class="top">화면설계서 버전 : v1.15, 총 페이지 : {{pageList.length}}</div>
+        <div class="top">버전 : v1.15, 총 페이지 : {{pageList.length}} 완료 : {{success}} 진행율 : {{(success / (pageList.length * 0.01)).toFixed(1)}}%</div>
         <table cellspacing="0" cellapdding="0">
             <colgroup>
                 <col style="width:20%" />
@@ -75,6 +75,7 @@
     const trClick = (path)=>{
         router.push(path);
     }
+    const success = ref(pageListData.filter(a => a.status === '완료').length);
 </script>
 <style type="scss" scoped>
     .listWrap{

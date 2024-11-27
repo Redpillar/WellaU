@@ -55,12 +55,12 @@
             <div class="area-box">
                 <h3>VIEW(TYPE2)</h3>
                 <div class="view header-design-box">
-                    <Header-vue v-model:value="type2"></Header-vue>
+                    <Header-vue v-model:value="type2" @clickRigntBtnEvent="clickRigntBtnEvent"></Header-vue>
                 </div>
                 <h3>Source</h3>
                 <div class="source-box">
                     &lt;html&gt;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;Header-vue v-model:value="type2" @clickNextEvent="clickNextEvent" &gt;&lt;/Header-vue&gt;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;Header-vue v-model:value="type2" @clickRigntBtnEvent="clickRigntBtnEvent" &gt;&lt;/Header-vue&gt;<br />
                     &lt;/ html&gt;<br />
                     &lt;scrit setup&gt;<br />
                     import { ref } from 'vue'<br />
@@ -68,9 +68,9 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;headerShow : true,<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;type : 'type2',<br />
                     })<br />
-                    // Type2 : 계속하기 클릭 이벤트<br />
-                    clickNextEvent(){<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;this.$emit("clickNextEvent");<br />
+                    // Type2 : 오른쪽버튼 클릭 이벤트<br />
+                    clickRigntBtnEvent(){<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.$emit("clickRigntBtnEvent");<br />
                     },<br />
                     &lt;/scrit&gt;<br />
                 </div>
@@ -319,8 +319,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>clickNextEvent</td>
-                    <td>Type2 : 계속하기 클릭 이벤트</td>
+                    <td>clickRigntBtnEvent</td>
+                    <td>Type2 : 오른쪽 버튼 클릭 이벤트</td>
                     <td></td>
                 </tr>
                 <tr>

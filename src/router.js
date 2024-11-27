@@ -14,6 +14,41 @@ import groupMain from '@pages/groupMain'
 import locationDetail from '@pages/locationDetail'
 import locationSharing from '@pages/locationSharing'
 import locationSharingDoneTime from '@pages/locationSharingDoneTime'
+import recordLocation from '@pages/recordLocation'
+import alertPage from '@pages/alertPage'
+
+/* 메뉴 */
+import groupManagement from '@pages/groupManagement'
+import locationSharingStatus from '@pages/locationSharingStatus'
+import inactiveSensing from '@pages/inactiveSensing'
+import batteryAlert from '@pages/batteryAlert'
+import sosSetting from '@pages/sosSetting'
+import memberSetting from '@pages/memberSetting'
+import removeGroup from '@pages/removeGroup'
+import removeGrodupCheckNumber from '@pages/removeGrodupCheckNumber'
+import safeZoneList from '@pages/safeZoneList'
+import createSafezone from '@pages/createSafezone'
+import searchAddress from '@pages/searchAddress'
+import safeZoneView from '@pages/safeZoneView'
+import safeZoneEidt from '@pages/safeZoneEidt'
+import proximityAlertSetting from '@pages/proximityAlertSetting'
+import proximityAlertEnter from '@pages/proximityAlertEnter'
+import proximityAlertEdit from '@pages/proximityAlertEdit'
+import sosView from '@pages/sosView'
+import sosViewCancel from '@pages/sosViewCancel'
+import sosDetail from '@pages/sosDetail'
+import myProfileEditPhoto from '@pages/myProfileEditPhoto'
+import nameChange from '@pages/nameChange'
+import phoneChange from '@pages/phoneChange'
+import phoneChangeCheck from '@pages/phoneChangeCheck'
+import birthChange from '@pages/birthChange'
+import passwordChange from '@pages/passwordChange'
+import noticeView from '@pages/noticeView'
+import faqView from '@pages/faqView'
+import settingView from '@pages/settingView'
+import openSauceLicenses from '@pages/openSauceLicenses'
+import conditionsUse from '@pages/conditionsUse'
+
 /* 가입하기 */
 import joinPhoneInput from '@pages/joinPhoneInput'
 import joinPhoneCheck from '@pages/joinPhoneCheck'
@@ -129,6 +164,135 @@ const routes = [
     {
         path : '/locationSharingDoneTime',
         component : locationSharingDoneTime,
+    },
+    {
+        path : '/recordLocation',
+        component : recordLocation,
+    },
+    {
+        path : '/alertPage',
+        component : alertPage,
+    },
+    /* 메뉴 */
+    {
+        path : '/groupManagement',
+        component : groupManagement,
+    },
+    {
+        path : '/locationSharingStatus',
+        component : locationSharingStatus,
+    },
+    {
+        path : '/inactiveSensing',
+        component : inactiveSensing,
+    },
+    {
+        path : '/batteryAlert',
+        component : batteryAlert,
+    },
+    {
+        path : '/sosSetting',
+        component : sosSetting,
+    },
+    {
+        path : '/memberSetting',
+        component : memberSetting,
+    },
+    {
+        path : '/removeGroup',
+        component : removeGroup,
+    },
+    {
+        path : '/removeGrodupCheckNumber',
+        component : removeGrodupCheckNumber,
+    },
+    {
+        path : '/safeZoneList',
+        component : safeZoneList,
+    },
+    {
+        path : '/createSafezone',
+        component : createSafezone,
+    },
+    {
+        path : '/searchAddress',
+        component : searchAddress,
+    },
+    {
+        path : '/safeZoneView',
+        component : safeZoneView,
+    },
+    {
+        path : '/safeZoneEidt',
+        component : safeZoneEidt,
+    },
+    {
+        path : '/proximityAlertSetting',
+        component : proximityAlertSetting,
+    },
+    {
+        path : '/proximityAlertEnter',
+        component : proximityAlertEnter,
+    },
+    {
+        path : '/proximityAlertEdit',
+        component : proximityAlertEdit,
+    },
+    {
+        path : '/sosView',
+        component : sosView,
+    },
+    {
+        path : '/sosViewCancel',
+        component : sosViewCancel,
+    },
+    {
+        path : '/sosDetail',
+        component : sosDetail,
+    },
+    {
+        path : '/myProfileEditPhoto',
+        component : myProfileEditPhoto,
+    },
+    {
+        path : '/nameChange',
+        component : nameChange,
+    },
+    {
+        path : '/phoneChange',
+        component : phoneChange,
+    },
+    {
+        path : '/phoneChangeCheck',
+        component : phoneChangeCheck,
+    },
+    {
+        path : '/birthChange',
+        component : birthChange,
+    },
+    {
+        path : '/passwordChange',
+        component : passwordChange,
+    },
+    {
+        path : '/noticeView',
+        component : noticeView,
+    },
+    {
+        path : '/faqView',
+        component : faqView,
+    },
+    {
+        path : '/settingView',
+        component : settingView,
+    },
+    {
+        path : '/openSauceLicenses',
+        component : openSauceLicenses,
+    },
+    {
+        path : '/conditionsUse',
+        component : conditionsUse,
     },
 
 

@@ -1,13 +1,13 @@
 <template>
     <div class="list-select-box" :style="listSelectBoxStyle">
-        <div class="list-select-box-tit">그룹을 선택해주세요.</div>
+        <div class="list-select-box-tit">{{props.title}}</div>
         <div class="list-select-box-list">
             <ul>
                 <li v-for="(list,index) in props.list" :key="'list_'+index" :class="{checked:list.checked}" @click="listClick(list,index)">{{list.text}}</li>
             </ul>
         </div>
-        <div class="list-select-box-btn" @click.stop="btnClick">
-            + 그룹 만들기
+        <div class="list-select-box-btn" @click.stop="btnClick" v-if="props.buttonShow">
+            {{props.buttonText}}
         </div>
     </div>
 </template>
@@ -15,6 +15,18 @@
     import { computed,watch,defineProps,defineModel,defineEmits } from 'vue'
     const props = defineProps({
         value : {
+            type : String,
+            default : ()=>{
+                return null;
+            }
+        },
+        title : {
+            type : String,
+            default : ()=>{
+                return null;
+            }
+        },
+        buttonText : {
             type : String,
             default : ()=>{
                 return null;
@@ -37,7 +49,13 @@
             default : ()=>{
                 return true;
             }
-        }
+        },
+        buttonShow : {
+            type : Boolean,
+            default : ()=>{
+                return false;
+            }
+        },
     })
     const emits = defineEmits(["btnClick","listClick"])
     const model = defineModel("value")

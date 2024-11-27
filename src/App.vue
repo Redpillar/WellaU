@@ -6,7 +6,7 @@
       @menuIconClickEv="menuIconClickEv"
       @resetIconClick="resetIconClick"
       @starIconClick="starIconClick"
-      @clickNextEvent="clickNextEvent"
+      @clickRigntBtnEvent="clickRigntBtnEvent"
       @alertIconClick="alertIconClick"
       @groupClicEv1="groupClicEv1"
       @groupClicEv2="groupClicEv2"
@@ -17,12 +17,13 @@
         {{ headerText }}
       </template>  
     </Header-vue>
+    <lnbVue v-model:open="lnbOpen" />
     <div id="content" :page="pageStatus">
       <router-view />
     </div>
     <!-- modal -->
     <ModalBox v-model:modalShow="modalShow" :padding="0">
-      <ListSelectBox v-model:value="listSelectBoxValue" :outLine="false" :list="listSelectBoxList" @listClick="listSelectBoxListClick" @btnClick="listSelectBoxBtnClick" />
+      <ListSelectBox v-model:value="listSelectBoxValue" title="그룹을 선택해주세요." buttonText="+ 그룹 만들기" :outLine="false" :list="listSelectBoxList" @listClick="listSelectBoxListClick" @btnClick="listSelectBoxBtnClick" />
     </ModalBox>
   </div>
 </template>
@@ -41,14 +42,14 @@ export default {
     },
     backBtnShow(){
       let temp = false;
-      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime"){
+      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel"){
         temp = true;
       }
       return temp;
     },
     haderShow(){
       let temp = true;
-      if(this.pageStatus === "listPage" || this.pageStatus === "login"){
+      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel"){
         temp = false
       }
       return temp;
@@ -66,6 +67,7 @@ export default {
         inputVal : "",
         maxlength : 20,
         backShow : false,
+        rightBtnText : "계속하기",
       },
       headerText : "",
       modalShow : false,
@@ -116,7 +118,8 @@ export default {
             value : "그룹7",
             checked : false,
         },
-      ]
+      ],
+      lnbOpen : false,
     }
   },
   created(){},
@@ -125,8 +128,8 @@ export default {
   },
   methods : {
     // Type2 : 계속하기 클릭 이벤트
-    clickNextEvent(){
-      console.log("clickNextEvent !!!!")
+    clickRigntBtnEvent(){
+      console.log("clickRigntBtnEvent !!!!")
     },
     // Type3 : reset Icon 클릭 이벤트
     resetIconClick(){
@@ -139,6 +142,7 @@ export default {
     },
     // Type5 : 햄버거 메뉴 클릭
     menuIconClickEv(){
+      this.lnbOpen = true;
       console.log("햄버거 메뉴")
     },
     // Type5, Type6 : 알림 아이콘 클릭
@@ -172,6 +176,133 @@ export default {
     },
     checkePath(path){
       switch (path){
+        case "conditionsUse" :
+          this.headerData.type = "type1";
+          this.headerText = "이용약관";
+          break;
+        case "openSauceLicenses" :
+          this.headerData.type = "type1";
+          this.headerText = "오픈소스 라이센스";
+          break;
+        case "settingView" :
+          this.headerData.type = "type1";
+          this.headerText = "설정";
+          break;
+        case "faqView" :
+          this.headerData.type = "type1";
+          this.headerText = "FAQ";
+          break;
+        case "noticeView" :
+          this.headerData.type = "type1";
+          this.headerText = "공지사항";
+          break;
+        case "passwordChange" :
+          this.headerData.type = "type1";
+          this.headerText = "비밀번호 변경";
+          break;
+        case "birthChange" :
+          this.headerData.type = "type1";
+          this.headerText = "생일 변경";
+          break;
+        case "phoneChangeCheck" :
+          this.headerData.type = "type1";
+          this.headerText = "휴대폰 변경";
+          break;
+        case "phoneChange" :
+          this.headerData.type = "type1";
+          this.headerText = "휴대폰 변경";
+          break;
+        case "nameChange" :
+          this.headerData.type = "type1";
+          this.headerText = "이름 변경";
+          break;
+        case "myProfileEditPhoto" :
+          this.headerData.type = "type1";
+          this.headerText = "내 정보";
+          break;
+        case "sosDetail" :
+          this.headerData.type = "type4";
+          this.headerText = "";
+          break;
+        case "proximityAlertEdit" :
+          this.headerData.type = "type1";
+          this.headerText = "근접 알림 설정";
+          break;
+        case "proximityAlertEnter" :
+          this.headerData.type = "type2";
+          this.headerText = "근접 알림 등록";
+          this.headerData.rightBtnText = "저장"
+          break;
+        case "proximityAlertSetting" :
+          this.headerData.type = "type1";
+          this.headerText = "근접 알림 설정";
+          break;
+        case "safeZoneEidt" :
+          this.headerData.type = "type1";
+          this.headerText = "안심존 설정";
+          break;
+        case "safeZoneView" :
+          this.headerData.type = "type2";
+          this.headerText = "안심존 사용자 설정";
+          this.headerData.rightBtnText = "저장"
+          break;
+        case "searchAddress" :
+          this.headerData.type = "type1";
+          this.headerText = "주소 검색";
+          break;
+        case "createSafezone" :
+          this.headerData.type = "type2";
+          this.headerText = "안심존 설정";
+          this.headerData.rightBtnText = "계속하기"
+          break;
+        case "safeZoneList" :
+          this.headerData.type = "type1";
+          this.headerText = "안심존 설정";
+          break;
+        case "removeGrodupCheckNumber" :
+          this.headerData.type = "type1";
+          this.headerText = "그룹 지우기";
+          break;
+        case "removeGroup" :
+          this.headerData.type = "type1";
+          this.headerText = "그룹 지우기";
+          break;
+        case "memberSetting" :
+          this.headerData.type = "type1";
+          this.headerText = "그룹 설정";
+          break;
+        case "sosSetting" :
+          this.headerData.type = "type1";
+          this.headerText = "SOS 설정​";
+          break;
+        case "batteryAlert" :
+          this.headerData.type = "type1";
+          this.headerText = "배터리 부족 알림";
+          break;
+        case "inactiveSensing" :
+          this.headerData.type = "type1";
+          this.headerText = "비활동 감지 기능 설정​";
+          break;
+        case "locationSharingStatus" :
+          this.headerData.type = "type1";
+          this.headerText = "위치 공유 상태";
+          break;
+        case "groupManagement" :
+          this.headerData.type = "type1";
+          this.headerText = "그룹관리";
+          break;
+        case "alertPage" :
+          this.headerData.type = "type1";
+          this.headerText = "알림함";
+          break;
+        case "recordLocation" :
+          this.headerData.type = "type1";
+          this.headerText = "위치 기록";
+          break;
+        case "locationSharingDoneTime" :
+          this.headerData.type = "type3";
+          this.headerText = "live.udiya.com";
+          break;
         case "locationSharing" :
           this.headerData.type = "type3";
           this.headerText = "live.udiya.com";

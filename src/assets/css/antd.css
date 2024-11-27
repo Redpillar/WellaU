@@ -28,6 +28,29 @@
     background:transparent;
 }
 
+/* clear */
+.wellau-input.ant-input-affix-wrapper{
+    padding:12rem 0;
+    border-width:0 0 1rem 0;
+    border-radius:0;
+    border-color:#BDBDBD;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+.wellau-input.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
+    border-color:#BDBDBD;
+    border-right-width:0;
+    box-shadow:none;
+}
+
+/* search input component */
+.search-input .wellau-input.ant-input-affix-wrapper >input.ant-input{
+    width:calc(100% - 60rem);    
+}
+
 
 /* input password */
 .wellau-input .ant-input[type = password]{
@@ -76,6 +99,17 @@
     font-weight: 700;
     line-height: 140%; /* 28px */
 }
+.wellau-checkbox.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled):after{
+    display:none;
+}
+
+/* radio */
+.wellau-radio-group{
+    width:100%;
+}
+
+
+/* btn */
 
 
 .wellau-btn.ant-btn{
@@ -211,4 +245,19 @@
 
 .textAlignCenter{
     text-align:center;
+}
+
+
+
+/* slider */
+.wellau-slider.ant-slider .ant-slider-track{
+  background-color:red;   
+}
+.wellau-slider.ant-slider .ant-slider-rail{
+    background:#000;
+}
+
+.wellau-slider.ant-slider .ant-slider-handle::after{
+    box-shadow:0 0 0 2px red;
+    /* box-shadow:0 0 0 2px #91caff; */
 }

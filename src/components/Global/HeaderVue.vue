@@ -17,23 +17,13 @@
             <!-- right area -->
             <div class="header-area-right">
                 <RedoOutlined v-if="type == 'type3'" @click="resetIconClick" />
-                <a-button type="link" v-if="type == 'type2'" @click="clickNextEvent">계속하기</a-button>
+                <a-button type="link" v-if="type == 'type2'" @click="clickRigntBtnEvent">{{rightBtnText}}</a-button>
                 <WechatOutlined v-if="type == 'type6'" @click="groupClicEv1" />
                 <AliwangwangOutlined v-if="type == 'type6'" @click="groupClicEv2" />
                 <div class="alert-icon-wrapper" v-if="type == 'type5' || type == 'type6'">
                    <BellFilled @click="alertIconClick" />
                    <span class="num">{{valueAlert}}</span>
                 </div>
-            </div>
-            <!-- header pop up -->
-            <div class="header-pop" v-if="popShow">
-                <slot name="headerPop">
-                    <div v-if="type == 'type2'">
-                        <MaxInput v-model:value="inputVal" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
-                        <div class="header-pop-s-tit">안심존 실행 시간을 설정해 주세요</div>
-                        <a-time-picker v-model:value="toTime" /> - <a-time-picker v-model:value="fromTime" />
-                    </div>
-                </slot>
             </div>
         </div>
     </div>
@@ -54,6 +44,7 @@
                         popShow : false,
                         inputVal : "",
                         maxlength : 10,
+                        rightBtnText : "계속하기"
                     }
                 }
             },
@@ -104,6 +95,7 @@
             fromTime : "",
             maxInputPlaceholder : "안심존 이름을 입력해 주세요!!!!",
             pickerTime : "",
+            rightBtnText : "",
         }},
         setup(){
             const timeType = ref("");
@@ -117,9 +109,9 @@
             backBtnEvent(){
                 this.$router.go(-1);
             },
-            // Type2 : 계속하기 클릭 이벤트
-            clickNextEvent(){
-                this.$emit("clickNextEvent");
+            // Type2 : 오른쪽버튼 클릭 이벤트
+            clickRigntBtnEvent(){
+                this.$emit("clickRigntBtnEvent");
             },
             // Type3 : reset Icon 클릭 이벤트
             resetIconClick(){
@@ -137,6 +129,7 @@
             },
             // Type5, Type6 : 알림 아이콘 클릭
             alertIconClick(){
+                this.$router.push("/alertPage");
                 this.$emit("alertIconClick")
             },
             // Type6 : 그룹아이콘 클릭1
@@ -180,6 +173,7 @@
                     this.popShow = n.popShow;
                     this.inputVal = n.inputVal;
                     this.maxlength = n.maxlength;
+                    this.rightBtnText = n.rightBtnText;
                 }
             },
         }

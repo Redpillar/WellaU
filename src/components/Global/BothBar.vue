@@ -19,6 +19,11 @@
     const deemShow = ref(false);
     let animationTimer = null;
     const targetChecked = (target)=>{
+        const etcParentClass = ['.step-box'];
+        let etParentCheck = false;
+        etcParentClass.forEach((checkClass)=>{
+            if(target.closest(checkClass)) etParentCheck = true;
+        })
         const tagArr = ['a','button','select','input'];
         const targetTag = (target.tagName) ? target.tagName.toLowerCase() : null;
         const parentTag = (target.parentNode && target.parentNode.tagName) ? target.parentNode.tagName.toLowerCase() : null;
@@ -38,7 +43,8 @@
         const parent = (target.parentNode)?target.parentNode:null;
         const parentCl = (parent && parent.getAttribute("class"))?parent.getAttribute("class"):null;
         const parehtChecked = (parentCl)?parentCl.match(/ant-/g):null;
-        return checked || parehtChecked || tagChecked >= 0? true : false;
+        // true 리턴 시 터치 이벤트 막기
+        return checked || parehtChecked || tagChecked >= 0 || etParentCheck ? true : false;
     }
     const touchStart = ($ev)=>{
         toutchTargetChecked.value = targetChecked($ev.target);
@@ -120,6 +126,7 @@
     }
     const animation = (s,e)=>{
         if(!animationTimer) clearInterval(animationTimer);
+        if(s === e) return;
         const interValTime = 10;
         const dis = (s > e) ? s - e : e - s;
         const maxDistance = window.innerHeight - 200;
@@ -161,6 +168,8 @@
         right:0;
         max-height:calc(100vh - 100rem);
         min-height:100rem;
+        display:flex;
+        flex-direction:column;
         overflow:hidden;
         background:#fff;
         &.deem{
@@ -193,7 +202,9 @@
         }
     }
     .bothBar-content{
-        padding:20rem;
+        flex:1;
+        padding:0 20rem 20rem 20rem;
+        overflow:auto;
     }
     .bothBar-deem{
         position:absolute;

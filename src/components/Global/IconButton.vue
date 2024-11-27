@@ -2,11 +2,14 @@
     <button class="icon-button" :disabled="props.disabled" @click.stop="click">
         <PhoneFilled v-if="props.icon === 'phone'" />
         <MessageFilled v-if="props.icon === 'text'" />
+        <ShareAltOutlined v-if="props.icon === 'sharing'" />
+        <MinusCircleOutlined v-if="props.icon === 'minus'" />
+        <PartitionOutlined v-if="props.icon === 'group'" />
     </button>
 </template>
 <script setup>
     import { defineProps,defineEmits } from 'vue'
-    import { PhoneFilled,MessageFilled } from '@ant-design/icons-vue';
+    import { PhoneFilled,MessageFilled,ShareAltOutlined,MinusCircleOutlined,PartitionOutlined } from '@ant-design/icons-vue';
 
     const props = defineProps({
         icon : {
@@ -25,6 +28,7 @@
     const emits = defineEmits(['click'])
 
     const click = ()=>{
+        console.log("===========")
         emits("click",props.icon);
     }
 </script>

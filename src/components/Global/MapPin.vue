@@ -1,12 +1,12 @@
 <template>
-    <div class="mapPin-wrapper" :style="mapPinWrapperStyle">
+    <div class="mapPin-wrapper" :style="mapPinWrapperStyle" @click.stop="click">
         <div class="mapPinPop" v-if="popShow">
             <div class="mapPinPop-con">
                 <slot>
                 </slot>
             </div>
             <div class="mapPinPop-btn">
-                <a-button type="primary" @click="popClose">확인</a-button>
+                <a-button type="primary" @click.stop="popClose">확인</a-button>
             </div>
         </div>
         <div class="mapPin-pieChart" :style="mapPinCircleStyle" v-if="piechartShow">
@@ -14,15 +14,15 @@
         <div class="mapPin-icon-circle" :style="mapPinIconCircleStyle" v-if="iconShow">
             <img :src="props.photo.src" :alt="props.photo.alt" v-if="props.photo.src !== '' " />
         </div>
-        <svg class="mapPin-pin" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 138 182.2" style="enable-background:new 0 0 138 182.2;" xml:space="preserve">
+        <div class="mapPin-sos" v-if="sos" @click.stop>SOS</div>
+        <svg class="mapPin-pin" viewBox="0 0 138 182.2">
             <path class="st0" d="M136.6,69.1c0,37.4-30.4,79.3-67.7,111.3C35.9,153,1.3,106.5,1.3,69.1S31.6,1.4,68.9,1.4S136.6,31.7,136.6,69.1 z"/>
         </svg>
 
     </div>
 </template>
 <script setup>
-    import { ref,computed,watch,watchEffect,defineProps,defineModel } from 'vue'
+    import { ref,computed,defineProps,defineEmits,defineModel } from 'vue'
     const props = defineProps({
         value : {
             type : Boolean,
@@ -68,8 +68,15 @@
                     alt : "",
                 }
             }
+        },
+        sos : {
+            type : Boolean,
+            default : ()=>{
+                return false;
+            }
         }
     })
+    const emits = defineEmits(['click','mapPinPopupEv'])
     const model = defineModel('popShow');
     const popupShow = ref(true)
     const piechartShow = ref(props.type === 'pie' ? true : false);
@@ -77,6 +84,7 @@
     const popClose = ()=>{
         popupShow.value = false;
         model.value = false;
+        emits("mapPinPopupEv");
     }
     const mapPinWrapperStyle= computed(()=>{
         const style = {};
@@ -108,15 +116,9 @@
         }
         return style;
     })
-    watchEffect(()=>{return props.popHow},(n)=>{
-            console.log("watchEffect : ",n)
-    })
-    watch(
-        ()=>{ return props.popShow },
-        (n)=>{
-            console.log("n : ",n.value)
-        }
-    )
+    const click = ()=>{
+        emits('click')
+    }
 </script>
 <style type="scss" scoped>
     .mapPin-wrapper{
@@ -173,7 +175,7 @@
         left:50%;
         z-index:100;
         padding:10rem;
-        transform:translate(-50%,-100%);
+        transform:translate(-50%,calc(-100% - 10rem));
         border:1px solid #ededed;
         border-radius:5rem;
         background:#fff;
@@ -188,5 +190,19 @@
         display:flex;
         justify-content:flex-end;
         width:100%;
+    }
+    .mapPin-sos{
+        position:absolute;
+        top:0;
+        right:0;
+        z-index:100;
+        padding:5rem 15rem;
+        font-size:12rem;
+        line-height:1;
+        color:#fff;
+        font-weight:bold;
+        border-radius:10rem;
+        transform:translate(100%,0);
+        background:red;
     }
 </style>
