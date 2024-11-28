@@ -3,12 +3,14 @@
         <div class="header-wrapper">
             <!-- left area -->
             <div class="header-area-left">
-                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" v-if="type == 'type1' || type == 'type2' || type == 'type4' || type == 'type6'" @click="backBtnEvent">
-                    <path d="M15.8526 3.0561L6.76165 11.8306C6.48478 12.1063 6.46849 12.5432 6.71279 12.8378L6.76165 12.8913L15.8522 21.9417C15.8897 21.979 15.9404 22 15.9933 22H17.5567C17.6671 22 17.7567 21.9105 17.7567 21.8C17.7567 21.7468 17.7355 21.6958 17.6978 21.6583L8.38992 12.3908L17.6882 3.34334C17.7673 3.26631 17.7691 3.13969 17.692 3.06052C17.6544 3.02183 17.6027 3 17.5487 3H15.9915C15.9397 3 15.8899 3.02011 15.8526 3.0561Z" fill="#333333"/>
-                </svg>
+                <i class="arrow-left-icon">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" v-if="type == 'type1' || type == 'type2' || type == 'type4' || type == 'type6'" @click="backBtnEvent">
+                        <path d="M15.8526 3.0561L6.76165 11.8306C6.48478 12.1063 6.46849 12.5432 6.71279 12.8378L6.76165 12.8913L15.8522 21.9417C15.8897 21.979 15.9404 22 15.9933 22H17.5567C17.6671 22 17.7567 21.9105 17.7567 21.8C17.7567 21.7468 17.7355 21.6958 17.6978 21.6583L8.38992 12.3908L17.6882 3.34334C17.7673 3.26631 17.7691 3.13969 17.692 3.06052C17.6544 3.02183 17.6027 3 17.5487 3H15.9915C15.9397 3 15.8899 3.02011 15.8526 3.0561Z" fill="#333333"/>
+                    </svg>
+                </i>
                 <StarOutlined v-if="type == 'type3' && !like" @click='starIconClick' />
                 <StarFilled :style='starFilledStyle' v-if="type == 'type3' && like" @click='starIconClick' />
-                <MenuOutlined v-if="type == 'type5'" @click="menuIconClickEv" />
+                <i class="ham-menu" v-if="type == 'type5'" @click="menuIconClickEv"><MenuOutlined /></i>
             </div>
             <!-- center area -->
             <div class="header-area-center" :style="headerAreaCenterStyle" v-if="type == 'type1' || type == 'type2' || type == 'type3' || type == 'type5'" @click="titleClick">
@@ -20,10 +22,12 @@
                 <a-button type="link" v-if="type == 'type2'" @click="clickRigntBtnEvent">{{rightBtnText}}</a-button>
                 <WechatOutlined v-if="type == 'type6'" @click="groupClicEv1" />
                 <AliwangwangOutlined v-if="type == 'type6'" @click="groupClicEv2" />
-                <div class="alert-icon-wrapper" v-if="type == 'type5' || type == 'type6'">
-                   <BellFilled @click="alertIconClick" />
-                   <span class="num">{{valueAlert}}</span>
-                </div>
+                <i class="alert-icon">
+                    <div class="alert-icon-wrapper" v-if="type == 'type5' || type == 'type6'">
+                    <BellFilled @click="alertIconClick" />
+                    <span class="num">{{valueAlert}}</span>
+                    </div>
+                </i>
             </div>
         </div>
     </div>
@@ -215,7 +219,6 @@
             display:flex;
             align-items:flex-start;
             /* height: 30rem; */
-            padding:0 12rem;
             font-size:20rem;
             font-weight:bold;
             &> .header-area-left{
@@ -246,23 +249,29 @@
             }
         }
     }
-    .alert-icon-wrapper{
-        position:realtive;
-        &> .num{
-            position:absolute;
-            top:0;
-            right:0;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            width:10rem;
-            height:10rem;
-            font-size:8rem;
-            line-height:1;
-            font-weight:bold;
-            color:#fff;
-            border-radius:5rem;
-            background:red;
+    .alert-icon{
+        height:100%;
+        display:flex;
+        align-items:center;
+        padding:0 12rem;
+        .alert-icon-wrapper{
+            position:realtive;
+            &> .num{
+                position:absolute;
+                top:10rem;
+                right:10rem;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:10rem;
+                height:10rem;
+                font-size:8rem;
+                line-height:1;
+                font-weight:bold;
+                color:#fff;
+                border-radius:5rem;
+                background:red;
+            }
         }
     }
     .header-pop{
@@ -275,5 +284,19 @@
     }
     .header-pop-s-tit{
         font-size:12rem;
+    }
+    .ham-menu{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100%;
+        padding:0 12rem;
+    }
+    .arrow-left-icon{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100%;
+        padding:0 12rem 0 5rem;
     }
 </style>

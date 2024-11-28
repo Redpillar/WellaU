@@ -1,7 +1,7 @@
 <template>
     <div class="safe-zone-list-vbox">
         <i class="icon">
-            <BulbFilled />
+            <EnvironmentOutlined />
         </i>
         <div class="text">
             <div class="name">{{props.name}}</div>
@@ -11,7 +11,7 @@
     </div>
 </template>
 <script setup>
-    import { BulbFilled } from '@ant-design/icons-vue'
+    import { EnvironmentOutlined } from '@ant-design/icons-vue'
     import { defineProps } from 'vue'
     const props = defineProps({
         name : {
