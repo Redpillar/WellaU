@@ -6,6 +6,9 @@
                 <li v-for="(list,index) in props.list" :key="'list_'+index" :class="{checked:list.checked}" @click="listClick(list,index)">{{list.text}}</li>
             </ul>
         </div>
+        <div class="both-area">
+            <slot name="both"></slot>
+        </div>
         <div class="list-select-box-btn" @click.stop="btnClick" v-if="props.buttonShow">
             {{props.buttonText}}
         </div>
@@ -53,7 +56,7 @@
         buttonShow : {
             type : Boolean,
             default : ()=>{
-                return false;
+                return true;
             }
         },
     })
@@ -77,7 +80,7 @@
         emits("listClick",list.value);
     }
     const btnClick = ()=>{
-        emits("btnClick")
+        emits("btnClick",model.value)
     }
     watch(()=>props.value,(n)=>{
         props.list.forEach((l)=>{

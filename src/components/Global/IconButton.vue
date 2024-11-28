@@ -28,7 +28,6 @@
     const emits = defineEmits(['click'])
 
     const click = ()=>{
-        console.log("===========")
         emits("click",props.icon);
     }
 </script>

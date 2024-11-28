@@ -36,6 +36,12 @@
     })
 </script>
 <style type="scss" scoped>
+    .step-box{
+        ul{
+            padding:0;
+            margin:0;
+        }
+    }
     .step-box-list{
         position:relative;
         display:flex;

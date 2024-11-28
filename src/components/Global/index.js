@@ -8,10 +8,12 @@ import ModalBox from './ModalBox'
 import ListSelectBox from './ListSelectBox'
 import IconButtonBox from './IconButtonBox'
 import IconButton from './IconButton'
+import AlertBox from './AlertBox'
 import StepBox from './StepBox'
 import SafeZoneList from './SafeZoneList'
 import SearchInput from './SearchInput'
 import AccordionBox from './AccordionBox'
+import PcLnb from './PcLnb'
 
 
 export default {
@@ -26,9 +28,11 @@ export default {
         app.component("ListSelectBox",ListSelectBox)
         app.component("IconButtonBox",IconButtonBox)
         app.component("IconButton",IconButton)
+        app.component("AlertBox",AlertBox)
         app.component("StepBox",StepBox)
         app.component("SafeZoneList",SafeZoneList)
         app.component("SearchInput",SearchInput)
         app.component("AccordionBox",AccordionBox)
+        app.component("PcLnb",PcLnb)
     }
 }

@@ -10,8 +10,6 @@
                 <span>{{time.m}}분 {{time.s}}초</span>
             </div>
             <div class="btn-set">
-            </div>
-            <div class="btn-set">
                 <a-button class="wellau-btn" :disabled="disabled" @click="modalOpen">인증번호 재 발송</a-button>
                 <a-button type="primary" class="wellau-btn" :disabled="disabled">계속하기</a-button>
             </div>

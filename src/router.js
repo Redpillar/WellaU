@@ -17,6 +17,10 @@ import locationSharingDoneTime from '@pages/locationSharingDoneTime'
 import recordLocation from '@pages/recordLocation'
 import alertPage from '@pages/alertPage'
 
+/* 메인 */
+import batteryOff from '@pages/batteryOff'
+import accessRight from '@pages/accessRight'
+
 /* 메뉴 */
 import groupManagement from '@pages/groupManagement'
 import locationSharingStatus from '@pages/locationSharingStatus'
@@ -48,6 +52,7 @@ import faqView from '@pages/faqView'
 import settingView from '@pages/settingView'
 import openSauceLicenses from '@pages/openSauceLicenses'
 import conditionsUse from '@pages/conditionsUse'
+import paymentView from '@pages/paymentView'
 
 /* 가입하기 */
 import joinPhoneInput from '@pages/joinPhoneInput'
@@ -57,6 +62,9 @@ import enterProfile from '@pages/enterProfile'
 import provisionAgree from '@pages/provisionAgree'
 import provisionView from '@pages/provisionView'
 import authorityCheck from '@pages/authorityCheck'
+
+/* PC */
+import pcView from '@pages/pcView'
 
 import testVue from '@pages/testVue'
 import vuePage01 from '@pages/vuePage01'
@@ -173,6 +181,16 @@ const routes = [
         path : '/alertPage',
         component : alertPage,
     },
+    /* 메인 */
+    {
+        path : '/batteryOff',
+        component : batteryOff,
+    },
+    {
+        path : '/accessRight',
+        component : accessRight,
+    },
+
     /* 메뉴 */
     {
         path : '/groupManagement',
@@ -293,6 +311,15 @@ const routes = [
     {
         path : '/conditionsUse',
         component : conditionsUse,
+    },
+    {
+        path : '/paymentView',
+        component : paymentView,
+    },
+    // PC
+    {
+        path : '/pcView',
+        component : pcView,
     },
 
 

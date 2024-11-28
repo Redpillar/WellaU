@@ -35,7 +35,7 @@
                 <div class="title-info-style">
                     <div class="l">
                         <div class="tit">알림 설정</div>
-                        <div class="info">
+                        <div class="info f">
                             서비스 알림 받기
                             <div class="r"><a-switch v-model:checked="serviceAlert" /></div>
                         </div>

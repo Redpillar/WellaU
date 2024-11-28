@@ -1,29 +1,31 @@
 <template>
     <div id="lnb" :class="(props.open) ? 'open' : 'close'">
-        <div class="lnb-wrapper">
-            <button class="lnb-clse-btn" @click="lnbCloseBtClick"><CloseOutlined /></button>
-            <div class="lnb-profile">
-                <div class="picture">
-                    <img :src="props.profile.img.src" :alt="props.profile.img.alt" />
+        <div class="hidden-box">
+            <div class="lnb-wrapper">
+                <button class="lnb-clse-btn" @click="lnbCloseBtClick"><CloseOutlined /></button>
+                <div class="lnb-profile">
+                    <div class="picture">
+                        <img :src="props.profile.img.src" :alt="props.profile.img.alt" />
+                    </div>
+                    <div class="name">
+                        {{props.profile.name}}
+                    </div>
                 </div>
-                <div class="name">
-                    {{props.profile.name}}
+                <div class="lnb-menu">
+                    <div class="lnb-menu-top">
+                        <div class="menu" @click="gotoMenu('/groupManagement')">그룹 관리</div>
+                        <div class="menu" @click="gotoMenu('/proximityAlertSetting')">근접알림 설정</div>
+                    </div>
+                    <div class="lnb-menu-both">
+                        <div class="menu" @click="gotoMenu('/myProfileEditPhoto')">내 정보</div>
+                        <div class="menu" @click="gotoMenu('/noticeView')">공지사항</div>
+                        <div class="menu" @click="gotoMenu('/faqView')">FAQ</div>
+                        <div class="menu" @click="gotoMenu('/settingView')">설정</div>
+                    </div>
                 </div>
-            </div>
-            <div class="lnb-menu">
-                <div class="lnb-menu-top">
-                    <div class="menu" @click="gotoMenu('/groupManagement')">그룹 관리</div>
-                    <div class="menu" @click="gotoMenu('/')">근접알림 설정</div>
+                <div class="lnb-log-out" @click="modalOpen">
+                    로그아웃    
                 </div>
-                <div class="lnb-menu-both">
-                    <div class="menu" @click="gotoMenu('/')">내 정보</div>
-                    <div class="menu" @click="gotoMenu('/')">공지사항</div>
-                    <div class="menu" @click="gotoMenu('/')">FAQ</div>
-                    <div class="menu" @click="gotoMenu('/')">설정</div>
-                </div>
-            </div>
-            <div class="lnb-log-out" @click="modalOpen">
-                로그아웃    
             </div>
         </div>
     </div>
@@ -104,20 +106,30 @@
         &.open{
             width:100%;
             background:rgba(0,0,0,0.45);
-            .lnb-wrapper{
-                left:0;
+            .hidden-box{
+                right:0;
             }        
         }
     }
-    .lnb-wrapper{
+    .hidden-box{
         position:fixed;
-        left:-100%;
+        top:0;
+        left:0;
+        right:100%;
+        bottom:0;
+        transition:right ease .5s;
+        overflow:hidden;
+    }
+    .lnb-wrapper{
+        position:absolute;
+        top:0;
+        right:0;
         display:flex;
         flex-direction:column;
         width:calc(100vw - 50rem);
         height:100%;
+        margin:0 50rem 0 0;
         overflow:auto;
-        transition:all ease .5s;
         background:#fff;
     }
     .lnb-profile{

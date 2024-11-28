@@ -69,7 +69,7 @@
 </script>
 <style type="scss" scoped>
     .dummy-back{
-        background:url(../../assets/img/dummy-map.png) no-repeat center;
+        background:url(@img/dummy-map.png) no-repeat center;
     }
     .addGroupPersonBtn{
         margin-bottom:20rem;

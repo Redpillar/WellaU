@@ -331,7 +331,7 @@
                 <div class="view">
                     <!-- modal -->
                     <ModalBox v-model:modalShow="modalShow" :padding="0">
-                    <ListSelectBox v-model:value="listSelectBoxValue" title="그룹을 선택해주세요." buttonText="+ 그룹 만들기" :outLine="false" :list="listSelectBoxList" @listClick="listSelectBoxListClick" @btnClick="listSelectBoxBtnClick" />
+                        <ListSelectBox v-model:value="listSelectBoxValue" title="그룹을 선택해주세요." buttonText="+ 그룹 만들기" :outLine="false" :list="listSelectBoxList" @listClick="listSelectBoxListClick" @btnClick="listSelectBoxBtnClick" />
                     </ModalBox>
                 </div>
             </div>
@@ -432,7 +432,7 @@
     const optionsSex = [{value:"남"},{value:"여"}];
     const selectYear = ref(undefined);
     let optionsYear = []
-    for(let i=1999; i<new Date().getFullYear(); i++){
+    for(let i=new Date().getFullYear(); i>=1900; i--){
         optionsYear.push({
             value : (i + 1) + "년"
         })

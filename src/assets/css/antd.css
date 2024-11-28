@@ -261,3 +261,30 @@
     box-shadow:0 0 0 2px red;
     /* box-shadow:0 0 0 2px #91caff; */
 }
+
+
+/* wellau-carousel */
+
+.wellau-carousel-box{
+    flex:1;
+}
+
+.wellau-carousel.ant-carousel > .slick-slider{
+    text-align: center;
+    flex:1;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+  }
+  .wellau-carousel.ant-carousel > .slick-slider h3 {
+    color: #fff;
+  }
+
+
+.wellau-carousel.ant-carousel,
+.wellau-carousel.ant-carousel > .slick-slider,
+.wellau-carousel.ant-carousel > .slick-slider > .slick-list,
+.wellau-carousel.ant-carousel > .slick-slider > .slick-list > .slick-track
+{
+    height:100%;
+}

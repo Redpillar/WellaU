@@ -49,7 +49,7 @@ export default {
     },
     haderShow(){
       let temp = true;
-      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel"){
+      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === "pcView"){
         temp = false
       }
       return temp;
@@ -176,6 +176,14 @@ export default {
     },
     checkePath(path){
       switch (path){
+        case "batteryOff" :
+          this.headerData.type = "type6";
+          this.headerText = "";
+          break;
+        case "paymentView" :
+          this.headerData.type = "type4";
+          this.headerText = "";
+          break;
         case "conditionsUse" :
           this.headerData.type = "type1";
           this.headerText = "이용약관";

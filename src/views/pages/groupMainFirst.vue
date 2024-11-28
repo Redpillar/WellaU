@@ -13,11 +13,7 @@
         <BothBar>
             <template #content>
                 <div class="both-bar-area">
-                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1">
-                        <template #rightArea>
-                            <a-switch v-model:checked="switchChecked" />
-                        </template>
-                    </ProfileBox>
+                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1"></ProfileBox>
                 </div>
                 <div class="both-bar-area paddingNone">
                     <a-button type="link" class="addGroupPersonBtn">+ 그룹원 추가 하기</a-button>
@@ -29,7 +25,6 @@
 <script setup>
     import {ref} from 'vue'
     import {FundOutlined,CommentOutlined} from '@ant-design/icons-vue'
-    const switchChecked = ref(false);
 
     const img1 = ref({
         src : require('../../assets/img/dummy-profile01.jpeg'),
@@ -39,7 +34,7 @@
 </script>
 <style type="scss" scoped>
     .dummy-back{
-        background:url(../../assets/img/dummy-map.png) no-repeat center;
+        background:url(@img/dummy-map.png) no-repeat center;
     }
     .addGroupPersonBtn{
         margin-bottom:20rem;

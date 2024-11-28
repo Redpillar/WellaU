@@ -46,14 +46,14 @@
     const optionsSex = [{value:"남"},{value:"여"}];
     const selectYear = ref(undefined);
     let optionsYear = []
-    for(let i=1999; i<new Date().getFullYear(); i++){
+    for(let i=new Date().getFullYear(); i>=1900; i--){
         optionsYear.push({
             value : (i + 1) + "년"
         })
     }
     const selectMonth = ref(undefined);
     let optionsMonth = [];
-    for(let i=0; i<11; i++){
+    for(let i=0; i<12; i++){
         optionsMonth.push({
             value : (i + 1) + "월"
         })
