@@ -1,36 +1,38 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <div class="title-wrappper">
-                <h2 class="title" v-html="title"></h2>
-            </div>
+            <div class="content-scroll-padding-box">
+                <div class="title-wrappper">
+                    <h2 class="title" v-html="title"></h2>
+                </div>
 
-            <p  class="content-text-info">{{infoText}}</p>
-            <a-input v-model:value="textFieldPhone" class="wellau-input" placeholder="이름" />
-            <p  class="content-text-info">성별을 선택해주세요</p>
-            <div class="sleect-set">
-                <div class="wrapper-select-set">
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectSex" :showArrow="false" class="wellau-select" placeholder="성별" :options="optionsSex"/>
+                <p  class="content-text-info">{{infoText}}</p>
+                <a-input v-model:value="textFieldPhone" class="wellau-input" placeholder="이름" />
+                <p  class="content-text-info">성별을 선택해주세요</p>
+                <div class="sleect-set">
+                    <div class="wrapper-select-set">
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectSex" :showArrow="false" class="wellau-select" placeholder="성별" :options="optionsSex"/>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <p  class="content-text-info">생일을 입력해주세요</p>
-            <div class="sleect-set">
-                <div class="wrapper-select-set">
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectYear" :showArrow="false" class="wellau-select" placeholder="년" :options="optionsYear" @change="setDate"/>
-                    </div>
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectMonth" :showArrow="false" class="wellau-select" placeholder="월" :options="optionsMonth" @change="setDate"/>
-                    </div>
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectDate" :showArrow="false" class="wellau-select" placeholder="일" :options="optionsDate"/>
+                <p  class="content-text-info">생일을 입력해주세요</p>
+                <div class="sleect-set">
+                    <div class="wrapper-select-set">
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectYear" :showArrow="false" class="wellau-select" placeholder="년" :options="optionsYear" @change="setDate"/>
+                        </div>
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectMonth" :showArrow="false" class="wellau-select" placeholder="월" :options="optionsMonth" @change="setDate"/>
+                        </div>
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectDate" :showArrow="false" class="wellau-select" placeholder="일" :options="optionsDate"/>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="btn-set">
-                <a-button type="primary" class="wellau-btn" :disabled="disabled">가입하기</a-button>
+                <div class="btn-set">
+                    <a-button type="primary" class="wellau-btn" :disabled="disabled">가입하기</a-button>
+                </div>
             </div>
         </div>
     </div>
@@ -38,7 +40,7 @@
 <script setup>
     import { ref } from 'vue'
 
-    const title = ref("WellaU 로그인 시 사용할​<br />프로필을 등록해주세요.");
+    const title = ref("Well;aU 로그인 시 사용할<br />프로필을 등록해주세요");
     const infoText = ref("이름을 입력해주세요.");
     const textFieldPhone = ref("");
     const disabled = ref(false);

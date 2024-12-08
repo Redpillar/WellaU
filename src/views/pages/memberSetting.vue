@@ -1,18 +1,20 @@
 <template>
-    <div class="content-wrapper full jCenter">
+    <div class="content-wrapper full">
         <div class="content-scroll">
-            <div class="setting-box-top">
-                <p  class="content-text-info">그룹명 설정</p>
-                <a-input v-model:value="textFieldName" class="wellau-input" placeholder="그룹명" />
-                <p  class="content-text-info">그룹원 설정</p>
-            </div>
-            <div class="setting-box-scroll">
-                <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
-                    <template #rightArea>
-                        <IconButton icon="group" @click="groupModalOpen(list)" />
-                        <IconButton icon="minus" @click="removeModalOpen(list)" />
-                    </template>
-                </ProfileBox>
+            <div class="content-scroll-padding-box">
+                <div class="setting-box-top">
+                    <p  class="content-text-info">그룹명 설정</p>
+                    <a-input v-model:value="textFieldName" class="wellau-input" placeholder="그룹명" />
+                    <p  class="content-text-info">그룹원 설정</p>
+                </div>
+                <div class="setting-box-scroll">
+                    <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
+                        <template #rightArea>
+                            <IconButton icon="group" @click="groupModalOpen(list)" />
+                            <IconButton icon="minus" @click="removeModalOpen(list)" />
+                        </template>
+                    </ProfileBox>
+                </div>
             </div>
         </div>
         <div class="btn-set">

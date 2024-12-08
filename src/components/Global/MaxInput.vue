@@ -49,7 +49,7 @@
         align-items:center;
         justify-content:flex-end;
         height:16rem;
-        padding:0 5rem 0 0;
+        padding:0;
         margin:6rem 0 6rem 0;
         font-family: "Noto Sans";
         font-size: 13px;

@@ -1,14 +1,16 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="menu-list-value-input">
-                <div class="menu" @click="gotoMenu('/locationSharingStatus')">위치 공유 상태 보기</div>
-                <div class="menu" @click="gotoMenu('/')">그룹 초대 하기</div>
-                <div class="menu" @click="gotoMenu('/createSafezone')">안심존 설정</div>
-                <div class="menu" @click="gotoMenu('/inactiveSensing')">비활동 감지 기능 설정</div>
-                <div class="menu" @click="gotoMenu('/batteryAlert')">배터리 부족 알림 설정</div>
-                <div class="menu" @click="gotoMenu('/sosSetting')">SOS 설정</div>
-                <div class="menu" @click="leaveGroup">그룹 나가기</div>
+            <div class="content-scroll-padding-box">
+                <div class="menu-list-value-input">
+                    <div class="menu" @click="gotoMenu('/locationSharingStatus')">위치 공유 상태 보기</div>
+                    <div class="menu" @click="gotoMenu('/')">그룹 초대 하기</div>
+                    <div class="menu" @click="gotoMenu('/createSafezone')">안심존 설정</div>
+                    <div class="menu" @click="gotoMenu('/inactiveSensing')">비활동 감지 기능 설정</div>
+                    <div class="menu" @click="gotoMenu('/batteryAlert')">배터리 부족 알림 설정</div>
+                    <div class="menu" @click="gotoMenu('/sosSetting')">SOS 설정</div>
+                    <div class="menu" @click="leaveGroup">그룹 나가기</div>
+                </div>
             </div>
         </div>
         

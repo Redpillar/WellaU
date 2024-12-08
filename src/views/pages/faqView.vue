@@ -4,7 +4,9 @@
             <SearchInput v-model:value="textField" :placeholder="placeholder" @enter="enterEvent" @searchIcon="enterEvent" />
         </div>
         <div class="content-scroll">
-            <AccordionBox v-model:open="accordionOpen" :list="accordionList" />
+            <div class="content-scroll-padding-box">
+                <AccordionBox v-model:open="accordionOpen" :list="accordionList" />
+            </div>
         </div>
     </div>
 </template>

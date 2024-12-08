@@ -1,12 +1,14 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="menu-list-value-input">
-                <div class="menu" @click="modalOpen">위치 수집 간격<div class="fixed_both">{{locationTime}}</div></div>
-                <div class="menu" @click="modalOpenMap">지도 보기 설정<div class="fixed_both">{{mapSettingText}}</div></div>
-                <div class="menu">오픈소스 라이선스</div>
-                <div class="menu" @click="gotoMenu('/')">이용약관</div>
-                <div class="menu">앱 버전<div class="fixed_both">v1.09.1</div></div>
+            <div class="content-scroll-padding-box">
+                <div class="menu-list-value-input">
+                    <div class="menu" @click="modalOpen">위치 수집 간격<div class="fixed_both">{{locationTime}}</div></div>
+                    <div class="menu" @click="modalOpenMap">지도 보기 설정<div class="fixed_both">{{mapSettingText}}</div></div>
+                    <div class="menu">오픈소스 라이선스</div>
+                    <div class="menu" @click="gotoMenu('/')">이용약관</div>
+                    <div class="menu">앱 버전<div class="fixed_both">v1.09.1</div></div>
+                </div>
             </div>
         </div>
     </div>

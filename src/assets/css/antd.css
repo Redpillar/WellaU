@@ -7,10 +7,17 @@
     border-radius:0;
     border-color:#BDBDBD;
     font-family:"Noto Sans KR", sans-serif;
-    font-size: 17rem;
+    font-size: 18rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+}
+.wellau-input.ant-input[type = text]:disabled,
+.wellau-input.ant-input-affix-wrapper.ant-input-password:disabled{
+    font-weight:700;
+}
+.wellau-input.ant-input[type = text]::placeholder{
+    font-weight:bold;
 }
 .wellau-input.ant-input[type = text]:hover,.wellau-input.ant-input[type = text]:focus,
 .wellau-input.ant-input-affix-wrapper.ant-input-password.ant-input-affix-wrapper-focused
@@ -28,7 +35,16 @@
     background:transparent;
 }
 
+
+.wellau-input.ant-input-affix-wrapper >input.ant-input{
+    height:25rem;
+}
+
 /* clear */
+.wellau-input.ant-input-affix-wrapper .ant-input-suffix{
+    margin-right:12rem;
+}
+
 .wellau-input.ant-input-affix-wrapper{
     padding:12rem 0;
     border-width:0 0 1rem 0;
@@ -60,7 +76,17 @@
     font-weight: 400;
     line-height: 140%;
 }
-
+.wellau-input.ant-input-affix-wrapper .anticon.ant-input-password-icon{
+    width:15rem;
+    height:15rem;
+    background:url(../img/icon-password-none.svg) no-repeat center;
+}
+.wellau-input.ant-input-affix-wrapper .anticon.ant-input-password-icon.anticon-eye{
+    background:url(../img/icon-password-eye.svg) no-repeat center;
+}
+.wellau-input.ant-input-affix-wrapper .anticon.ant-input-password-icon svg{
+    display:none;
+}
 
 /* checkbox */
 
@@ -157,8 +183,6 @@
     box-shadow: none;
     
 }
-
-
 
 
 /*

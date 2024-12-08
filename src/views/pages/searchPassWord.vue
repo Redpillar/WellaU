@@ -1,15 +1,16 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <div class="title-wrappper">
-                <h2 class="title">{{title}}</h2>
-            </div>
-
-            <p  class="content-text-info">{{infoText}}</p>
-            <a-input v-model:value="textFieldName" class="wellau-input" placeholder="이름" />
-            <a-input v-model:value="textFieldId" class="wellau-input" placeholder="휴대폰 번호" />
-            <div class="btn-set">
-                <a-button type="primary" class="wellau-btn" :disabled="disabled" @click="modalOpen">전송</a-button>
+            <div class="content-scroll-padding-box">
+                <div class="title-wrappper">
+                    <h2 class="title">{{title}}</h2>
+                </div>
+                <p  class="content-text-info">{{infoText}}</p>
+                <a-input v-model:value="textFieldName" class="wellau-input" placeholder="이름" :allowClear="true" />
+                <a-input v-model:value="textFieldId" class="wellau-input" placeholder="휴대폰 번호" :allowClear="true" />
+                <div class="btn-set">
+                    <a-button type="primary" class="wellau-btn" :disabled="disabled" @click="modalOpen">전송</a-button>
+                </div>
             </div>
         </div>
 
@@ -19,9 +20,7 @@
             <template #footer>
                 <a-button class="width100per wellau-btn" @click="modalClose">확인</a-button>
             </template>
-        </a-modal>
-
-        
+        </a-modal>        
     </div>
 </template>
 <script setup>

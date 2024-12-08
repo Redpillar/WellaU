@@ -1,7 +1,9 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="joinGroup-img">
+            <div class="content-scroll-padding-box">
+                <div class="joinGroup-img">
+                </div>
             </div>
         </div>
         <div class="btn-set">

@@ -12,6 +12,7 @@
       @groupClicEv2="groupClicEv2"
       @maxInputEvent="maxInputEvent"
       @titleClick="titleClick"
+      @selectClick="selectClick"
     >
       <template #title>
         {{ headerText }}
@@ -68,6 +69,7 @@ export default {
         maxlength : 20,
         backShow : false,
         rightBtnText : "계속하기",
+        groupMain : "",
       },
       headerText : "",
       modalShow : false,
@@ -170,6 +172,15 @@ export default {
         this.modalShow = true;
       }
     },
+    // type5 일때 그룹명 클릭 시 이벤트
+    selectClick(){
+      const path = this.$route.path 
+      console.log("path : ",path)
+      if(path === '/groupMain'){
+        console.log("this.modalShow : ",this.modalShow)
+        this.modalShow = true;
+      }
+    },
     handleChange(sel){
       console.log("sel : ",sel)
       this.headerData.type = sel;
@@ -186,7 +197,7 @@ export default {
           break;
         case "conditionsUse" :
           this.headerData.type = "type1";
-          this.headerText = "이용약관";
+          this.headerText = "";
           break;
         case "openSauceLicenses" :
           this.headerData.type = "type1";
@@ -324,6 +335,7 @@ export default {
           this.headerText = "";
           break;
         case "groupMain" :
+          this.headerData.groupText = "그룹1";
           this.headerData.type = "type5";
           this.headerText = "그룹1";
           break;
@@ -337,7 +349,7 @@ export default {
     listSelectBoxListClick(){
       console.log("this.listSelectBoxValue : ",this.listSelectBoxValue)
       const checkedList = this.listSelectBoxList.find((l)=>l.value === this.listSelectBoxValue);
-      this.headerText = checkedList.value
+      this.headerData.groupText = checkedList.value
       console.log("checkedList : ",checkedList)
       this.modalShow = false;
     },

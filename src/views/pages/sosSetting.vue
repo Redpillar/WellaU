@@ -1,27 +1,29 @@
 <template>
-    <div class="content-wrapper full jCenter">
+    <div class="content-wrapper full">
         <div class="content-scroll">
-            <div class="setting-box-top">
-                <div class="title-info-style">
-                    <div class="l">
-                        <div class="tit">SOS 전송 여부</div>
-                        <div class="info">그룹원 모두에게 SOS 푸시가 전달돼요.</div>
+            <div class="content-scroll-padding-box">
+                <div class="setting-box-top">
+                    <div class="title-info-style">
+                        <div class="l">
+                            <div class="tit">SOS 전송 여부</div>
+                            <div class="info">그룹원 모두에게 SOS 푸시가 전달돼요.</div>
+                        </div>
+                        <div class="r"><a-switch v-model:checked="sensingSwitch" /></div>
                     </div>
-                    <div class="r"><a-switch v-model:checked="sensingSwitch" /></div>
-                </div>
-                <div class="title-info-style" style="margin-top:40rem">
-                    <div class="l">
-                        <div class="tit">전체 선택</div>
+                    <div class="title-info-style" style="margin-top:40rem">
+                        <div class="l">
+                            <div class="tit">전체 선택</div>
+                        </div>
+                        <div class="r"><a-switch v-model:checked="allChecked" @click="allChange" /></div>
                     </div>
-                    <div class="r"><a-switch v-model:checked="allChecked" @click="allChange" /></div>
                 </div>
-            </div>
-            <div class="setting-box-scroll">
-                <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
-                    <template #rightArea>
-                        <a-switch v-model:checked="list.checked" @change="listRadioChange" />
-                    </template>
-                </ProfileBox>
+                <div class="setting-box-scroll">
+                    <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
+                        <template #rightArea>
+                            <a-switch v-model:checked="list.checked" @change="listRadioChange" />
+                        </template>
+                    </ProfileBox>
+                </div>
             </div>
         </div>
     </div>

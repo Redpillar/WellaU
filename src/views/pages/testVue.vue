@@ -5,20 +5,20 @@
         <div>childValue : {{childValue}}</div>
         <testComponent v-model:value="childValue" @input="childInputEv" />
     </div>
-    <MapPin icon="yellow" :photo="photo" />
-    <MapPin icon="people" />
-    <MapPin icon="house" />
-    <div style="display:inline-flex; flex-direction:column">
+    <div class="dummy-box-area-rec"><MapPin icon="yellow" :photo="photo" /></div>
+    <div class="dummy-box-area-rec"><MapPin icon="people" pinColor="blue" /></div>
+    <div class="dummy-box-area-rec"><MapPin icon="house" /></div>
+    <div class="dummy-box-area-rec">
         <MapPin type="pie" v-model:popShow="popShow" :per="5" icon="people">
             <a href="tel:01099999999">010-0000-0000</a>번호로 연락 주세요
         </MapPin>
         <a-button @click="popEv">팝업</a-button>
     </div>
-    <MapPin type="pie" :per="30" icon="people" />
-    <MapPin type="pie" :per="40" icon="house" />
-    <MapPin type="pie" :per="70" icon="house" />
-    <MapPin type="pie" :per="90" icon="none" />
-    <MapPin type="pie" :per="100" icon="house" />
+    <div class="dummy-box-area-rec"><MapPin type="pie" :per="30" icon="people" /><div>per="30"</div></div>
+    <div class="dummy-box-area-rec"><MapPin type="pie" :per="35" icon="house" /><div>per="35"</div></div>
+    <div class="dummy-box-area-rec"><MapPin type="pie" :per="70" icon="house" /><div>per="70"</div></div>
+    <div class="dummy-box-area-rec"><MapPin type="pie" :per="90" icon="none" /><div>per="90"</div></div>
+    <div class="dummy-box-area-rec"><MapPin type="pie" :per="100" icon="house" /><div>per="100"</div></div>
 </template>
 <script setup>
     import { ref, computed } from 'vue'
@@ -104,4 +104,9 @@
 </script>
 -->
 <style type="scss" scoped>
+    .dummy-box-area-rec{
+        display:inline-flex;
+        flex-direction:column;
+        align-content:center;
+    }
 </style>

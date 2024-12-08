@@ -1,13 +1,14 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <p class="content-text-info">변경할 이름을 입력해주세요.</p>
-            <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
-            <div class="btn-set">
-                <a-button type="primary" class="wellau-btn" :disabled="disabled" @click="modalOpen">이름 변경</a-button>
+            <div class="content-scroll-padding-box">
+                <p class="content-text-info">변경할 이름을 입력해주세요.</p>
+                <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
+                <div class="btn-set">
+                    <a-button type="primary" class="wellau-btn" :disabled="disabled" @click="modalOpen">이름 변경</a-button>
+                </div>
             </div>
         </div>
-        
     </div>
 </template>
 <script setup>

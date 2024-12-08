@@ -1,7 +1,9 @@
 <template>
     <div class="content-wrapper fixedBorderTop">
         <div class="content-scroll paddingWrapper">
-            <AlertBox :list="lists" />
+            <div class="content-scroll-padding-box">
+                <AlertBox :list="lists" />
+            </div>
         </div>
     </div>
 </template>

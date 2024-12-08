@@ -1,7 +1,9 @@
 <template>
     <div class="content-wrapper full">
         <div class="content-scroll">
-            <AccordionBox v-model:open="accordionOpen" :list="accordionList" />
+            <div class="content-scroll-padding-box">
+                <AccordionBox v-model:open="accordionOpen" :list="accordionList" />
+            </div>
         </div>
     </div>
 </template>

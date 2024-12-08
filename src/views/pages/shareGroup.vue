@@ -1,22 +1,23 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="title-wrappper">
-                <h2 class="title">
-                    새그룹을 공유해보세요.
-                </h2>
-            </div>
-            <div class="shareCodeInfoBox">
-                <div class="code">DKE3FE</div>
-                <div class="timeTit">초대코드 유효시간</div>
-                <div class="time">
-                    {{time.d}}일 {{time.h}}:{{time.m}}:{{time.s}}
+            <div class="content-scroll-padding-box">
+                <div class="title-wrappper">
+                    <h2 class="title">
+                        그룹1 을 공유해보세요.
+                    </h2>
+                </div>
+                <div class="shareCodeInfoBox">
+                    <div class="code">DKE3FE</div>
+                    <div class="timeTit">초대코드 유효시간</div>
+                    <div class="time">
+                        {{time.d}}일 {{time.h}}:{{time.m}}:{{time.s}}
+                    </div>
                 </div>
             </div>
-            <div class="btn-set horizontal">
-                <a-button class="wellau-btn">계속하기</a-button>
-                <a-button class="wellau-btn">공유하기</a-button>
-            </div>
+        </div>
+        <div class="btn-set">
+            <a-button class="wellau-btn">코드 공유하기</a-button>
         </div>
     </div>
 </template>

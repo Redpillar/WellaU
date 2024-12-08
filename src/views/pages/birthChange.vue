@@ -1,23 +1,25 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <p  class="content-text-info">생일을 입력해주세요</p>
-            <div class="sleect-set">
-                <div class="wrapper-select-set">
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectYear" :showArrow="false" class="wellau-select" placeholder="년" :options="optionsYear" @change="setDate"/>
-                    </div>
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectMonth" :showArrow="false" class="wellau-select" placeholder="월" :options="optionsMonth" @change="setDate"/>
-                    </div>
-                    <div class="wrapper-select-set-list">
-                        <a-select v-model:value="selectDate" :showArrow="false" class="wellau-select" placeholder="일" :options="optionsDate"/>
+            <div class="content-scroll-padding-box">
+                <p  class="content-text-info">생일을 입력해주세요</p>
+                <div class="sleect-set">
+                    <div class="wrapper-select-set">
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectYear" :showArrow="false" class="wellau-select" placeholder="년" :options="optionsYear" @change="setDate"/>
+                        </div>
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectMonth" :showArrow="false" class="wellau-select" placeholder="월" :options="optionsMonth" @change="setDate"/>
+                        </div>
+                        <div class="wrapper-select-set-list">
+                            <a-select v-model:value="selectDate" :showArrow="false" class="wellau-select" placeholder="일" :options="optionsDate"/>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="btn-set">
-                <a-button type="primary" class="wellau-btn" :disabled="disabled">변경하기</a-button>
-            </div>
+        </div>
+        <div class="btn-set">
+            <a-button type="primary" class="wellau-btn" :disabled="disabled">변경하기</a-button>
         </div>
     </div>
 </template>

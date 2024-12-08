@@ -1,15 +1,17 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <a-input v-model:value="textFieldPhoneEnter" class="wellau-input" disabled placeholder="휴대폰 번호" />
-            <div class="check-code-input-box">
-                <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
-                <span>{{time.m}}분 {{time.s}}초</span>
+            <div class="content-scroll-padding-box">
+                <a-input v-model:value="textFieldPhoneEnter" class="wellau-input" disabled placeholder="휴대폰 번호" />
+                <div class="check-code-input-box">
+                    <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
+                    <span>{{time.m}}분 {{time.s}}초</span>
+                </div>
             </div>
-            <div class="btn-set">
-                <a-button class="wellau-btn" :disabled="disabled" @click="modalOpen">인증번호 재 발송</a-button>
-                <a-button type="primary" class="wellau-btn" :disabled="disabled">계속하기</a-button>
-            </div>
+        </div>
+        <div class="btn-set">
+            <a-button class="wellau-btn" :disabled="disabled" @click="modalOpen">인증번호 재 발송</a-button>
+            <a-button type="primary" class="wellau-btn" :disabled="disabled">계속하기</a-button>
         </div>
         
         <!-- moadl -->

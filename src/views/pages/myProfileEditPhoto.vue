@@ -1,43 +1,45 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="profile-phto-box">
-                <div class="photo">
-                    <div class="circle">
-                        <img :src="img.src" :alt="img.alt" />
+            <div class="content-scroll-padding-box">
+                <div class="profile-phto-box">
+                    <div class="photo">
+                        <div class="circle">
+                            <img :src="img.src" :alt="img.alt" />
+                        </div>
+                        <i class="eidt-icon" @click="editPhoto">
+                            <CameraFilled />
+                        </i>
                     </div>
-                    <i class="eidt-icon" @click="editPhoto">
-                        <CameraFilled />
-                    </i>
-                </div>
-                <div class="name">
-                    홍길동<i class="eidt-icon" @click="editName"><EditFilled /></i>
-                </div>
-            </div>
-            <div class="myProfile-info-box">
-                <div class="title-info-style" @click="gotoMenu('/searchPassWord')">
-                    <div class="l">
-                        <div class="tit">휴대폰</div>
-                        <div class="info">010-0000-1111</div>
+                    <div class="name">
+                        홍길동<i class="eidt-icon" @click="editName"><EditFilled /></i>
                     </div>
                 </div>
-                <div class="title-info-style" @click="gotoMenu('/enterProfile')">
-                    <div class="l">
-                        <div class="tit">생년월일</div>
-                        <div class="info">2000-01-01</div>
+                <div class="myProfile-info-box">
+                    <div class="title-info-style" @click="gotoMenu('/searchPassWord')">
+                        <div class="l">
+                            <div class="tit">휴대폰</div>
+                            <div class="info">010-0000-1111</div>
+                        </div>
                     </div>
-                </div>
-                <div class="title-info-style" @click="gotoMenu('/searchPassWord')">
-                    <div class="l">
-                        <div class="tit">비밀번호 변경</div>
+                    <div class="title-info-style" @click="gotoMenu('/enterProfile')">
+                        <div class="l">
+                            <div class="tit">생년월일</div>
+                            <div class="info">2000-01-01</div>
+                        </div>
                     </div>
-                </div>
-                <div class="title-info-style">
-                    <div class="l">
-                        <div class="tit">알림 설정</div>
-                        <div class="info f">
-                            서비스 알림 받기
-                            <div class="r"><a-switch v-model:checked="serviceAlert" /></div>
+                    <div class="title-info-style" @click="gotoMenu('/searchPassWord')">
+                        <div class="l">
+                            <div class="tit">비밀번호 변경</div>
+                        </div>
+                    </div>
+                    <div class="title-info-style">
+                        <div class="l">
+                            <div class="tit">알림 설정</div>
+                            <div class="info f">
+                                서비스 알림 받기
+                                <div class="r"><a-switch v-model:checked="serviceAlert" /></div>
+                            </div>
                         </div>
                     </div>
                 </div>

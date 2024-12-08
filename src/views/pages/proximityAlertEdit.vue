@@ -1,23 +1,25 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="title-info-style" style="margin-top:30rem;">
-                <div class="l">
-                    <div class="tit">대상</div>
-                    <div class="info">김응삼</div>
+            <div class="content-scroll-padding-box">
+                <div class="title-info-style" style="margin-top:30rem;">
+                    <div class="l">
+                        <div class="tit">대상</div>
+                        <div class="info">김응삼</div>
+                    </div>
                 </div>
-            </div>
-            <div class="title-info-style" style="margin-top:30rem;">
-                <div class="l">
-                    <div class="tit">근접 알림 범위 설정</div>
-                    <div class="info">근접 알림 범위는 최대 5km 까지 가능해요.</div>
+                <div class="title-info-style" style="margin-top:30rem;">
+                    <div class="l">
+                        <div class="tit">근접 알림 범위 설정</div>
+                        <div class="info">근접 알림 범위는 최대 5km 까지 가능해요.</div>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-box positionNone">
-                <a-slider v-model:value="inputValue1" :min="1" :max="20" :tip-formatter="null" class="wellau-slider" />
-                <div class="unit">
-                    <span class="l">1km</span>
-                    <span class="r">5km</span>
+                <div class="slider-box positionNone">
+                    <a-slider v-model:value="inputValue1" :min="1" :max="20" :tip-formatter="null" class="wellau-slider" />
+                    <div class="unit">
+                        <span class="l">1km</span>
+                        <span class="r">5km</span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,14 +1,16 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <a-input v-model:value="textFieldPhoneEnter" class="wellau-input" disabled placeholder="휴대폰 번호" />
-            <div class="check-code-input-box">
-                <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
-                <span>{{time.m}}분 {{time.s}}초</span>
-            </div>
-            <div class="btn-set">
-                <a-button class="wellau-btn" :disabled="disabled" @click="modalOpen(0)">인증번호 재 발송</a-button>
-                <a-button type="primary" class="wellau-btn" @click="modalOpen(1)" :disabled="disabled">그룹 지우기</a-button>
+            <div class="content-scroll-padding-box">
+                <a-input v-model:value="textFieldPhoneEnter" class="wellau-input" disabled placeholder="휴대폰 번호" />
+                <div class="check-code-input-box">
+                    <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
+                    <span>{{time.m}}분 {{time.s}}초</span>
+                </div>
+                <div class="btn-set">
+                    <a-button class="wellau-btn" :disabled="disabled" @click="modalOpen(0)">인증번호 재 발송</a-button>
+                    <a-button type="primary" class="wellau-btn" @click="modalOpen(1)" :disabled="disabled">그룹 지우기</a-button>
+                </div>
             </div>
         </div>
         

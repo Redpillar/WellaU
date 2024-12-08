@@ -1,14 +1,16 @@
 <template>
     <div class="content-wrapper">
         <div class="content-scroll">
-            <div class="title-wrappper">
-                <h2 class="title">{{title}}</h2>
-            </div>
-            <p class="content-text-info">{{infoText}}</p>
-            <a-input-password v-model:value="textFieldPw" class="wellau-input" placeholder="신규 비밀번호" />
-            <a-input-password v-model:value="textFieldCheckedPw" class="wellau-input" placeholder="신규 비밀번호 혹인" />
-            <div class="btn-set">
-                <a-button type="primary" class="wellau-btn" :disabled="disabled">전송</a-button>
+            <div class="content-scroll-padding-box">
+                <div class="title-wrappper">
+                    <h2 class="title">{{title}}</h2>
+                </div>
+                <p class="content-text-info">{{infoText}}</p>
+                <a-input-password v-model:value="textFieldPw" class="wellau-input" placeholder="신규 비밀번호" />
+                <a-input-password v-model:value="textFieldCheckedPw" class="wellau-input" placeholder="신규 비밀번호 혹인" />
+                <div class="btn-set">
+                    <a-button type="primary" class="wellau-btn" :disabled="disabled">변경하기</a-button>
+                </div>
             </div>
         </div>
     </div>
