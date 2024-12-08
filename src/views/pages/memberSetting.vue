@@ -3,9 +3,13 @@
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
                 <div class="setting-box-top">
-                    <p  class="content-text-info">그룹명 설정</p>
-                    <a-input v-model:value="textFieldName" class="wellau-input" placeholder="그룹명" />
-                    <p  class="content-text-info">그룹원 설정</p>
+                    <div class="top">
+                        <p  class="content-text-info">그룹명 설정</p>
+                        <a-input v-model:value="textFieldName" class="wellau-input" placeholder="그룹명" />
+                    </div>
+                    <div class="both">
+                        <p  class="content-text-info">그룹원 설정</p>
+                    </div>
                 </div>
                 <div class="setting-box-scroll">
                     <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">

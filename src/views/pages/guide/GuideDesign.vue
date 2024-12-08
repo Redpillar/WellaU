@@ -157,6 +157,15 @@
                     </div>
                 </div>
             </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>타이틀 타입2</h3>
+                <div class="view">
+                    <div class="title-both-line">
+                        계정 세부 정보
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- category -->
         <div class="guide-category-wrapper">
@@ -187,6 +196,28 @@
                     <div class="both-text-info">
                         <b>전송할 메시지가 있을 시 선택하세요</b><br />
                         (현재 해당 그룹 연락처 미공개 상태입니다)
+                    </div>
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>링크 스타일</h3>
+                <div class="view">
+                    <div class="link-box-area-arrow">
+                        <div class="tit">휴대폰</div>
+                        <div class="info">010-0000-1111</div>
+                    </div>
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>INPUT 스타일</h3>
+                <div class="view">
+                    <div class="list-input-box">
+                        <div class="tit">서비스 알림 받기</div>
+                        <div class="input">
+                            <a-switch v-model:checked="serviceAlert" class="wellau-switch big-size" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -462,6 +493,7 @@
     }
     /* info text */
     const infoTextSwitch = ref(false);
+    const serviceAlert = ref(false);
     /* profile */
     const img1 = ref({
         src : require('@img/dummy-profile01.jpeg'),

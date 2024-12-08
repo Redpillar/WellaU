@@ -14,6 +14,7 @@ import SafeZoneList from './SafeZoneList'
 import SearchInput from './SearchInput'
 import AccordionBox from './AccordionBox'
 import PcLnb from './PcLnb'
+import MapMarkPin from './MapMarkPin'
 
 
 export default {
@@ -34,5 +35,6 @@ export default {
         app.component("SearchInput",SearchInput)
         app.component("AccordionBox",AccordionBox)
         app.component("PcLnb",PcLnb)
+        app.component("MapMarkPin",MapMarkPin)
     }
 }

@@ -3,15 +3,19 @@
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
                 <div class="setting-box-top">
-                    <p  class="content-text-info">나의 위치 공유 상태</p>
-                    <ProfileBox name="홍길동" :img="img1">
-                        <template #rightArea>
-                            <a-switch v-model:checked="switchChecked" />
-                        </template>
-                    </ProfileBox>
+                    <div class="top">
+                        <p  class="content-text-info">나의 위치 공유 상태</p>
+                        <ProfileBox name="홍길동" :img="img1">
+                            <template #rightArea>
+                                <a-switch v-model:checked="switchChecked" class="wellau-switch big-size" />
+                            </template>
+                        </ProfileBox>
+                    </div>
+                    <div class="both">
+                        <p  class="content-text-info">그룹원의 위치 공유 상태</p>
+                    </div>
                 </div>
                 <div class="setting-box-scroll">
-                    <p  class="content-text-info">그룹원의 위치 공유 상태</p>
                     <ProfileBox name="김응삼" conText="위치 공유 중" king :img="img2"></ProfileBox>
                     <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
                         <template #rightArea>

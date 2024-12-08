@@ -1,11 +1,11 @@
 <template>
     <div class="maxInput-wrapper">
-        <a-input v-model:value="textField" class="wellau-input" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" />
+        <a-input v-model:value="textField" class="wellau-input" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" ref="input" />
         <div class="textFieldMixmunNumBox">{{textField.length}}/{{maxlength}}</div>    
     </div>
 </template>
 <script setup>
-    import { ref,defineProps,defineEmits,defineModel } from 'vue'
+    import { ref,defineProps,defineEmits,defineModel,defineExpose } from 'vue'
     const props = defineProps({
         value : {
             type : String,
@@ -31,6 +31,7 @@
     const placeholder = ref(props.placeholder)
     const maxlength = ref(props.maxlength)
     const textField = ref(props.value);
+    const input = ref();
 
     const inputEv = ()=>{
         emit("emit",textField.value)
@@ -41,6 +42,12 @@
         emit("enterEv",textField.value)
         model.value = textField.value
     }
+    const focus = ()=>{
+        input.value.focus();
+    }
+    defineExpose({
+        focus
+    })
 </script>
 <style type="scss" scoped>
 

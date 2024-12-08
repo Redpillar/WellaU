@@ -120,6 +120,9 @@ body{
     flex:1;
     padding:0 20rem 0;
     overflow:auto;
+    &.p0{
+        padding:0;
+    }
 }
 /* content-top-area-bopx */
 
@@ -163,22 +166,33 @@ body{
     width:100%;
     padding:0;
     margin:0;
-    font-size: 24px;
+    font-size: 24rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 140%; /* 33.6px */
-    letter-spacing: -1.2px;
+    line-height: 140%; /* 33.6rem */
+    letter-spacing: -1.2rem;
     text-align:left;
     color:#333;
+}
+.title-both-line{
+    font-size: 16rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24rem; /* 150% */   
+    padding:0 0 9rem 0;
+    border-bottom:1rem solid #DCDDDF;
+    &+ .list-input-box{
+        margin-top:10rem;
+    }
 }
 
 .content-text-info{
     width:100%;
     margin-bottom:10rem;
-    font-size: 16px;
+    font-size: 16rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 140%; /* 21px */
+    line-height: 140%; /* 21rem */
     color:#333;
 }
 
@@ -193,10 +207,10 @@ body{
         height:16rem;
         padding:0 0 0 5rem;
         margin:6rem 0 0 0;
-        font-size: 13px;
+        font-size: 13rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 140%; /* 18.2px */
+        line-height: 140%; /* 18.2rem */
         color:#FF3141;
     }
     .maxInput-wrapper + span{
@@ -267,7 +281,7 @@ body{
     .list{
         &> li{
             padding:16rem 0;
-            border-bottom:1px solid #E0E0E0;
+            border-bottom:1rem solid #E0E0E0;
         }
     }
     &+ .btn-set{
@@ -393,7 +407,7 @@ table.guide-table{
     font-size:12rem;
     border-collapse:collapse;
     td, th{
-        border:1px solid rgba(255,255,255,0.15);
+        border:1rem solid rgba(255,255,255,0.15);
     }
     thead{
         th, td{
@@ -421,24 +435,25 @@ table.guide-table{
     }
     &.header-guide-props{
         tbody > tr:nth-child(3n + 3){
-            border-bottom:3px solid #ddd;
+            border-bottom:3rem solid #ddd;
         }
     }
 }
 
 /* button */
 .btn-set{
+    position:relative;
     width:100%;
     display:flex;
     flex-direction:column;
     .ant-btn + .ant-btn{
-        margin-top:30rem;
+        margin-top:10rem;
     }
     &.horizontal{
         flex-direction:row;
         .ant-btn + .ant-btn{
             margin-top:0rem;
-            margin-left:20rem;
+            margin-left:10rem;
         }
         .ant-btn{
             flex:1;
@@ -456,9 +471,36 @@ table.guide-table{
         }
     }
 }
+.wellau-radio-group{
+    &+ .message-alert-box{
+        margin-top:40rem;
+    }    
+}
+.message-alert-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    height:48rem;
+    font-size: 15rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    color:#FF802C;
+    background:#FFF9ED;
+    &:before{
+        content:"";
+        display:inline-block;
+        width:18rem;
+        height:18rem;
+        margin:0 8rem 0 0;
+        background:url(../img/message-alert-box-icon.png) no-repeat center;
+    }
+}
 .link-text-btn-set{
     display:flex;
     align-items:center;
+    justify-content:center;
     padding:11rem 0 0 0;
 }
 .profileBox-warpper{
@@ -473,7 +515,7 @@ table.guide-table{
     width:100%;
     height:auto;
     padding:12rem 0;
-    border:1px solid #ededed;
+    border:1rem solid #ededed;
     background:none;
     &> span{
         display:flex;
@@ -492,10 +534,10 @@ table.guide-table{
 .btn-info-text-both{
     padding:12rem 0 0;
     color:#333;
-    font-size: 13px;
+    font-size: 13rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%; /* 18.2px */
+    line-height: 140%; /* 18.2rem */
     text-align:center;
     &.color-black{
         color:#000;
@@ -554,7 +596,7 @@ table.guide-table{
     &+ .both-bar-area{
         padding:20rem 0 0 0;
         margin:16rem 0 0 0;
-        border-top:1px solid #ededed;
+        border-top:1rem solid #ededed;
     }
 }
 
@@ -617,10 +659,10 @@ table.guide-table{
         flex:1;
         padding:10rem;
         overflow:auto;
-        font-size: 16px;
+        font-size: 16rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 140%; /* 22.4px */
+        line-height: 140%; /* 22.4rem */
         color:#333;
     }
 }
@@ -633,19 +675,41 @@ table.guide-table{
         width:40rem;
         height:40rem;
         border-radius:50%;
-        background:orangered;
+        overflow:hidden;
+        background:#BFDBF1 url(../img/lnb_profile_bg.png) no-repeat center;
+        background-size:19.2rem 19.2rem;
         &+ .date{
             padding:0 0 0 10rem;
+        }
+        &> img{
+            width:100%;
+            height:100%;
         }
     }
     &> .date, &> .time{
         display:flex;
         align-items:center;
-        font-size:14rem;
+        font-size: 20rem;
+        font-style: normal;
+        font-weight: 700;
         line-height:1;
         &> i{
-            padding:0 5rem 0 0 ;
-            font-size:20rem;
+            content:"";
+            width:20rem;
+            height:20rem;
+            margin:0 0 0 12rem;
+        }
+    }
+    &> .date{
+        padding:0 0 0 16rem;
+        &> i{
+            background-image: url(../img/icon-calendar.png);
+        }
+    }
+    &> .time{
+        padding:0 0 0 24rem;
+        &> i{
+            background-image: url(../img/icon-clock.png);
         }
     }
     &> .time{
@@ -656,22 +720,49 @@ table.guide-table{
 /* setting box */
 
 .setting-box-top{
-    width:calc(100% - 40rem);
-    padding:20rem 0 30rem;
-    margin:0 auto;
-    border-bottom:1rem solid #ededed;
     &.no-line{
         border-width:0;
         padding-bottom:0;
+    }
+    &> .top{
+        padding:32rem 30rem 28rem;
+        background:#F6F7FB;
+        &> .profileBox-warpper{
+            padding:0;
+        }
+    }
+    &> .both{
+        padding:20rem 0;
+        margin:0 30rem;
+        border-bottom:1rem solid #ededed;
+        &> .title-info-style{
+            align-items:center;
+            height:48rem;
+        }
+    }
+}
+.middle-title-area{
+    padding:20rem 0;
+    margin:0 30rem;
+    border-bottom:1rem solid #ededed;
+    &> .content-text-info{
+        margin-bottom:0;
     }
 }
 .setting-box-scroll{
     width:100%;
     flex:1;
-    padding:30rem 20rem 20rem;
+    padding:20rem 30rem 12rem;
     overflow:auto;
     &.pt0{
         padding-top:0;
+    }
+    &> .profileBox-warpper{
+        padding-left:0;
+        padding-right:0;
+        &+ .profileBox-warpper{
+            margin-top:0;
+        }
     }
 }
 
@@ -795,20 +886,29 @@ table.guide-table{
 
 /* sos */
 .title-center-type{
-    padding:20rem 0;
-    text-align:center;
-    font-size:16rem;
-    line-height:1;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    height:45rem;
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
 }
 .title-center-type-info{
     text-align:center;
-    font-size:14rem;
+    font-size: 15rem;
+    font-weight: 400;
     line-height:1;
-    color:#333;
+    color:#666;
     & + .circle-number-box{
-        margin-top:30rem;
+        margin-top:20rem;
     }
+}
+.number-info-box{
+    padding:30rem 20rem;
+    background:#F5F6F7;
 }
 .circle-number-box{
     display:flex;
@@ -817,19 +917,23 @@ table.guide-table{
     width:200rem;
     height:200rem;
     margin:0 auto;
-    font-size:80rem;
-    line-height:1;
-    font-weight:bold;
-    color:red;
-    background:orange;
-    border-radius:50%
+    font-family: "Roboto";
+    font-size: 79.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+    color:#fff;
+    border-radius:50%;
+    background:#2382FF;
 }
 .circle-number-box-info{
-    padding:10rem 0 0;
+    padding:24rem 0 0;
+    font-size: 22rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
     text-align:center;
-    font-size:14rem;
-    line-height:1;
-    color:red;
+    color:#076AEB;
 }
 .both-text-info{
     padding:10rem 0 0;
@@ -853,7 +957,7 @@ table.guide-table{
 
 /* radio-list-style-box */
 .radio-list-style-box{
-    padding:30rem 0 0 30rem;
+    padding:30rem 30rem 0;
     .ant-radio-wrapper{
         &+ .ant-radio-wrapper{
             margin-top:10rem;
@@ -878,39 +982,63 @@ table.guide-table{
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    padding:25rem 0;
+    border-radius:8rem;
+    background:#F7F7F5;
     &> .photo{
         position:relative;
         &> .circle{
-            width:150rem;
-            height:150rem;
+            width:74.5rem;
+            height:74.5rem;
             border-radius:50%;
             overflow:hidden;
+            background:#5D9CEE url(../img/lnb_profile_bg.png) no-repeat center;
+            background-size:37rem auto;
             &> img{
                 width:100%;
                 height:100%;
             }
         }
-        &> .eidt-icon{
+        &> .edit-icon{
             position:absolute;
-            bottom:0;
-            right:0;
-            font-size:30rem;
+            bottom:-8rem;
+            right:-4rem;
+            width:38rem;
+            height:38rem;
+            background:url(../img/profile-edit-btn-bg.png) no-repeat center;
+            &:after{
+                content:"";
+                position:absolute;
+                top:calc(50% - 5rem);
+                left:calc(50% + 1rem);
+                width:18.43rem;
+                height:18.43rem;
+                transform:translate(-50%,-50%);
+                background:url(../img/profile-edit-btn-icon.png) no-repeat center;
+            }
         }
     }
     &> .name {
-        padding:10rem 0 0 0;
-        font-size:20rem;
-        line-height:1;
-        &> .eidt-icon{
+        padding:20rem 0 0 0;
+        font-size: 22rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        &> .edit-icon{
+            position:relative;
+            top:2rem;
             display:inline-block;
-            font-size:20rem;
+            width:20rem;
+            height:20rem;
+            margin:0 0 0 7rem;
+            background:url(../img/profile-name-edit-btn-icon.png) no-repeat center;
         }
     }
 }
 
 /* myProfile-info-box */
 .myProfile-info-box{
-    padding:30rem 30rem 0;
+    padding:30rem 0 0;
 }
 
 /* menu-list-value-input */
@@ -955,4 +1083,57 @@ table.guide-table{
         padding-top:20rem;
         background:#f6f7fb;
     }
+}
+
+/* link-box-area-arrow */
+.link-box-area-arrow{
+    padding:12rem 0 0;
+    background:url(../img/lnb_menu_arrow.png) no-repeat right center;
+    background-size:20rem 20rem;
+    &+ .link-box-area-arrow{
+        margin-top:10rem;
+    }
+    &+ .title-both-line{
+        margin-top:45rem;
+    }
+}
+.link-box-area-arrow > .tit{
+    display:flex;
+    align-items:center;
+    height:22rem;
+    font-size: 16rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    color:#333;
+}
+.link-box-area-arrow > .info{
+    display:flex;
+    align-items:center;
+    height:28rem;
+    font-size: 20rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color:#333;
+}
+
+.list-input-box{
+    display:flex;
+    align-items:center;
+}
+.list-input-box .tit{
+    flex:1;
+    height:26rem;
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    font-size: 16rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4;
+    color:#444;
+    transform:translate(0,calc(50% - 13rem));
 }

@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="right-area">
+        <div class="right-area" v-if="$slots.rightArea">
             <slot name="rightArea" />
         </div>
     </div>
@@ -228,9 +228,10 @@
                 padding:0 0 0 15rem;
                 &> .name{
                     display:flex;
+                    align-items:center;
                     flex:1;
                     width:100%;
-                    padding:5rem 0 0 0;
+                    padding:0;
                     &> .name-text-area{
                         display: -webkit-box;
                         flex:1;
@@ -249,7 +250,7 @@
                     &> .icon-area{
                         position:relative;
                         right:0;
-                        top:-3rem;
+                        top:0;
                         display:flex;
                         &> div + div{
                             margin-left:10rem;
@@ -298,6 +299,7 @@
         &> .right-area{
             display:flex;
             align-items:center;
+            padding:0 0 0 10rem;
         }
         &+ .profileBox-warpper{
             margin-top:20rem;

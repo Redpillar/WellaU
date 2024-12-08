@@ -18,7 +18,7 @@
         {{ headerText }}
       </template>  
     </Header-vue>
-    <lnbVue v-model:open="lnbOpen" />
+    <lnbVue v-model:open="lnbOpen" :profile="profile" />
     <div id="content" :page="pageStatus">
       <router-view />
     </div>
@@ -122,6 +122,15 @@ export default {
         },
       ],
       lnbOpen : false,
+      profile : {
+          name : "홍길동",
+          img : {
+              // src : require('@img/dummy-profile01.jpeg'),
+              // alt : '홍길동님의 프로필 사진입니다'
+              src : null,
+              alt : null
+          }
+      }
     }
   },
   created(){},
@@ -187,6 +196,10 @@ export default {
     },
     checkePath(path){
       switch (path){
+        case "accessRight" :
+          this.headerData.type = "type6";
+          this.headerText = null;
+          break;
         case "batteryOff" :
           this.headerData.type = "type6";
           this.headerText = "";

@@ -11,6 +11,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+    background-color:transparent;
 }
 .wellau-input.ant-input[type = text]:disabled,
 .wellau-input.ant-input-affix-wrapper.ant-input-password:disabled{
@@ -133,21 +134,79 @@
 .wellau-radio-group{
     width:100%;
 }
+.wellau-radio.ant-radio-wrapper{
+    display:flex;
+    align-items:center;
+    height:40rem;
+    margin-right:0;
+}
+.wellau-radio.ant-radio-wrapper .ant-radio .ant-radio-inner{
+    position:relative;
+    width:24rem;
+    height:24rem; 
+}
+.wellau-radio.ant-radio-wrapper .maxInput-wrapper{
+
+}
+.wellau-radio.ant-radio-wrapper .maxInput-wrapper .textFieldMixmunNumBox{
+    position:absolute;
+    bottom:-10rem;
+    right:0;
+    height:20rem;
+    transform:translate(0,100%);
+}
+.wellau-radio.ant-radio-wrapper .maxInput-wrapper .wellau-input.ant-input[type = text]{
+    height:40rem;
+    padding-top:0;
+    padding-bottom:0;
+}
+.wellau-radio.ant-radio-wrapper span.ant-radio+*{
+    flex:1;
+    padding-inline-end:0;
+}
+.wellau-radio.ant-radio-wrapper .ant-radio-checked .ant-radio-inner::after{
+    position:absolute;
+    top:50%;
+    left:50%;
+    right:auto;
+    bottom:auto;
+    width:15rem;
+    height:11rem;
+    margin-block-start:0;
+    margin-inline-start:0;
+    transform:scale(1) translate(-50%,-50%);
+    background:url(../img/input-bg-icon-check.png) no-repeat center;
+}
+.wellau-radio.ant-radio-wrapper{
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height:1;
+}
 
 
 /* btn */
-
-
-.wellau-btn.ant-btn{
+.wellau-btn.ant-btn,
+.wellau-btn.ant-btn.ant-btn.ant-btn-primary
+{
+    height:55rem !important;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 18rem;
+    line-height: 1;
+    border-radius: 4rem;
+}
+.wellau-btn.ant-btn.small-size,
+.wellau-btn.ant-btn.ant-btn.ant-btn-primary.small-size
+{
     height:40rem !important;
+    font-size: 17rem;
+}
+.wellau-btn.ant-btn{
     border-radius: 4rem;
     border: 1rem solid #BDBDBD;
     background: #fff;
-    font-family:"Noto Sans KR", sans-serif;
-    font-size: 17rem;
-    font-style: normal;
+    line-height:1;
     font-weight: 400;
-    line-height: 140%; /* 23.8rem */
     color:#333;
 }
 .wellau-btn.ant-btn-default:not(:disabled):hover{
@@ -165,14 +224,8 @@
 
 /* button primary */
 .wellau-btn.ant-btn.ant-btn.ant-btn-primary{
-    height:49rem !important;
-    font-family:"Noto Sans KR", sans-serif;
-    font-size: 18rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: 140%; /* 25.2rem */
     color:#fff;
-    border-radius: 4rem;
     background: #1677FF;
 }
 .wellau-btn.ant-btn.ant-btn-primary[disabled]{
@@ -312,3 +365,23 @@
 {
     height:100%;
 }
+
+
+
+/* switch */
+.wellau-switch.big-size.ant-switch{
+    width: 52rem;
+    height: 32rem;
+}
+.wellau-switch.big-size.ant-switch .ant-switch-handle{
+    top:4rem;
+    width: 24rem;
+    height: 24rem;   
+}
+.wellau-switch.big-size.ant-switch.ant-switch-checked .ant-switch-handle{
+    inset-inline-start:calc(100% - 27rem);
+}
+.wellau-switch.big-size.ant-switch .ant-switch-handle::before{
+    border-radius:50%;
+}
+

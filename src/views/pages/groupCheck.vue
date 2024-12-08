@@ -5,8 +5,7 @@
                 <div class="title-wrappper">
                     <h2 class="title">
                         아래 그룹이 맞나요?<br />
-                        입장 전 그룹원들에게 공개할 내 정보를<br />
-                        선택하세요
+                        입장 전 그룹원들에게 공개할 내 정보를 선택하세요
                     </h2>
                 </div>
                 <div class="label-text-area">

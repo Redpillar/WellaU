@@ -3,24 +3,28 @@
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
                 <div class="setting-box-top">
-                    <div class="title-info-style">
-                        <div class="l">
-                            <div class="tit">배터리 부족 알림 설정</div>
-                            <div class="info">그룹원의 배터리가 15% 이하일때 푸시가 전달돼요.</div>
+                    <div class="top">
+                        <div class="title-info-style">
+                            <div class="l">
+                                <div class="tit">배터리 부족 알림 설정</div>
+                                <div class="info">그룹원의 배터리가 15% 이하일때 푸시가 전달돼요.</div>
+                            </div>
+                            <div class="r"><a-switch v-model:checked="sensingSwitch" class="wellau-switch big-size" /></div>
                         </div>
-                        <div class="r"><a-switch v-model:checked="sensingSwitch" /></div>
                     </div>
-                    <div class="title-info-style" style="margin-top:40rem">
-                        <div class="l">
-                            <div class="tit">전체 선택</div>
+                    <div class="both">
+                        <div class="title-info-style">
+                            <div class="l">
+                                <div class="tit">전체 선택</div>
+                            </div>
+                            <div class="r"><a-switch v-model:checked="allChecked" class="wellau-switch big-size" @click="allChange" /></div>
                         </div>
-                        <div class="r"><a-switch v-model:checked="allChecked" @click="allChange" /></div>
                     </div>
                 </div>
                 <div class="setting-box-scroll">
                     <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
                         <template #rightArea>
-                            <a-switch v-model:checked="list.checked" @change="listRadioChange" />
+                            <a-switch v-model:checked="list.checked" class="wellau-switch big-size" @change="listRadioChange" />
                         </template>
                     </ProfileBox>
                 </div>

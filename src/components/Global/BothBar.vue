@@ -10,13 +10,25 @@
     </div>
 </template>
 <script setup>
-    import { ref,computed } from 'vue'
+    import { ref,computed,defineProps } from 'vue'
+
+    const props = defineProps({
+        maxHeightDiffer : {
+            type : Number,
+            default : ()=>{
+                return 70
+            }
+        }
+    })
+
     const points = ref({s:-1,e:-1,h:163,min:0,cuh:0});
     const toutchTargetChecked = ref(false);
     const swiperChecked = ref({time:null,arr:[],type:null,first:null});
     const minHeight = 163;
-    const maxHeight = window.innerHeight - 70;
+    const maxHeight = window.innerHeight - props.maxHeightDiffer;
     const deemShow = ref(false);
+
+
     let animationTimer = null;
     const targetChecked = (target)=>{
         const etcParentClass = ['.step-box'];
@@ -158,8 +170,8 @@
 <style type="scss" scoped>
     #bothBar{
         position:relative;
-        height:163rem;
-        background:gray;
+        height:150rem;
+        background:transparent;
     }
     .bothBar-wrapper{
         position:absolute;
@@ -167,10 +179,11 @@
         left:0;
         right:0;
         max-height:calc(100vh - 70rem);
-        min-height:100rem;
+        /* min-height:100rem; */
         display:flex;
         flex-direction:column;
         overflow:hidden;
+        border-radius:18rem 18rem 0 0;
         background:#fff;
         &.deem{
             &:after{
