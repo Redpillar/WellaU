@@ -16,63 +16,67 @@
                     </div>
                 </div>
                 <div class="setting-box-scroll">
-                    <ProfileBox name="김응삼" conText="위치 공유 중" king :img="img2"></ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김응삼" conText="위치 공유 중" :img="img2">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
                     </ProfileBox>
-                    <ProfileBox name="김은지" conText="위치 공유 해제함" birthday :img="img3">
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
+                        <template #rightArea>
+                            <IconButton icon="sharing" @click="iconButtonClick" />
+                        </template>
+                    </ProfileBox>
+                    <ProfileBox name="김은지" conText="위치 공유 해제함" :img="img3">
                         <template #rightArea>
                             <IconButton icon="sharing" @click="iconButtonClick" />
                         </template>
@@ -123,15 +127,18 @@
 
     const switchChecked = ref(false);
     const img1 = ref({
-        src : require('@img/dummy-profile01.jpeg'),
+        // src : require('@img/dummy-profile01.jpeg'),
+        src : null,
         alt : '홍길동님의 프로필 사진입니다'
     })
     const img2 = ref({
-        src : require('@img/dummy-profile02.jpeg'),
+        // src : require('@img/dummy-profile02.jpeg'),
+        src : null,
         alt : '김응삼 프로필 사진입니다'
     })
     const img3 = ref({
-        src : require('@img/dummy-profile03.jpeg'),
+        // src : require('@img/dummy-profile03.jpeg'),
+        src : null,
         alt : '김은지 프로필 사진입니다'
     })
 

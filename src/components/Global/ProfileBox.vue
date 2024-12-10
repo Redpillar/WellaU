@@ -7,8 +7,8 @@
                         <img :src="img.src" :alt="img.alt" v-if="img.src" />
                         <span v-else>{{firstName}}</span>
                     </div>
-
-                    <div class="battery-icon" v-if="props.battery > -1 && !props.by2">
+                    
+                    <div class="battery-icon" v-if="props.battery > -1 && props.battery !== null && props.battery !== false && !props.by2">
                         <div class="battery-box">
                             <span class="bar" :style="barStyle"></span>
                             <svg width="28" height="15" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
                     <div class="name-text-area">
                         {{props.name}}
 
-                        <div class="battery-box type2" v-if="props.battery > -1 && props.by2">
+                        <div class="battery-box type2" v-if="props.battery > -1 && props.battery !== null && props.battery !== false && props.by2">
                             <span class="text" :style="{color:batteryColor[0]}">
                                 {{props.battery}}%
                             </span>
@@ -180,6 +180,7 @@
         console.log("temp : ",temp)
         return temp;
     })
+    console.log("props.battery : ",props.battery)
 </script>
 <style type="scss" scoped>
     .profileBox-warpper{
@@ -267,12 +268,12 @@
                             transform:translate(-50%,-50%);
                         }
                     }
-                    &.birthday{
+                    /* &.birthday{
                         &> .pictueInnerWrapper{
                             width:calc(100% - 5rem);
                             height:calc(100% - 5rem);
                         }
-                    }
+                    } */
                 }
             }
             &> .infomation{

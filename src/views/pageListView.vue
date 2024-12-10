@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(page,index) in pageList2" :key="'list' + index" :class="categoryLine(index)" @click="trClick(page.path)">
+                <tr v-for="(page,index) in pageList2" :key="'list' + index" :class="[categoryLine(index),{visited:store.state.visitedPath === page.path}]" @click="trClick(page.path)">
                     <td>
                         {{page.category}}
                     </td>
@@ -87,7 +87,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(page,index) in pageList" :key="'list' + index" :class="categoryLine(index)" @click="trClick(page.path)">
+                <tr v-for="(page,index) in pageList" :key="'list' + index" :class="[categoryLine(index),{visited:store.state.visitedPath === page.path}]" @click="trClick(page.path)">
                     <td>
                         {{page.category}}
                     </td>
@@ -114,6 +114,7 @@
 <script setup>
     import { ref } from 'vue'
     import { useRouter } from 'vue-router'
+    import { useStore } from 'vuex'
     import pageListData from './pageList'
     import pageListData2 from './pageList2'
 
@@ -130,8 +131,12 @@
     const router = useRouter();
     const trClick = (path)=>{
         router.push(path);
+        store.state.visitedPath = path;
     }
     const success = ref(pageListData.filter(a => a.status === '완료').length);
+
+    const store = useStore();
+
 </script>
 <style type="scss" scoped>
     .listWrap{
@@ -181,5 +186,8 @@
         font-size:14rem;
         text-align:right;
         color:rgba(255,255,255,0.8);
+    }
+    .visited{
+        background:rgba(255,255,255,0.45);
     }
 </style>

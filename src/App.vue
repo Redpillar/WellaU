@@ -43,7 +43,7 @@ export default {
     },
     backBtnShow(){
       let temp = false;
-      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === 'accessRight' || this.pageStatus ===  'popupStoreInfo'){
+      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === 'accessRight' || this.pageStatus ===  'popupStoreInfo' || this.pageStatus === 'locationDetail'){
         temp = true;
       }
       return temp;
@@ -341,7 +341,8 @@ export default {
           this.headerText = "live.udiya.com";
           break;
         case "locationDetail" :
-          this.headerData.type = "type4";
+          this.headerData.type = "type5";
+          this.headerData.groupText = "그룹명";
           this.headerText = "";
           break;
         case "groupMainFirst" :
@@ -349,9 +350,9 @@ export default {
           this.headerText = "";
           break;
         case "groupMain" :
-          this.headerData.groupText = "그룹1";
           this.headerData.type = "type5";
-          this.headerText = "그룹1";
+          this.headerData.groupText = "그룹명";
+          this.headerText = "";
           break;
         default : 
           this.headerData.type = "type1";

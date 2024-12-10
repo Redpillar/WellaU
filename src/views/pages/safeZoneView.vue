@@ -20,7 +20,8 @@
 
     /* profile */
     const img1 = ref({
-        src : require('@img/dummy-profile01.jpeg'),
+        // src : require('@img/dummy-profile01.jpeg'),
+        src : null,
         alt : '홍길동님의 프로필 사진입니다'
     })
     const radio = ref(0);
