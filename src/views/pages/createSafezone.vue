@@ -14,21 +14,23 @@
             </div>
         </div>
         <div class="content-scroll">
-            <div class="mapArea dummy-back">
-                <button class="mapBtn">
-                    <FundOutlined />
-                </button>
-                <button class="sosBtn">
-                    <CommentOutlined />
-                </button>
-                <a-button class="wellau-btn">주소검색</a-button>
-                <div class="slider-box">
-                    <a-slider v-model:value="inputValue1" :min="1" :max="20" :tip-formatter="null" class="wellau-slider" />
-                    <div class="unit">
-                        <span class="l">200m</span>
-                        <span class="r">5k</span>
+            <div class="content-scroll-padding-box">
+                <div class="mapArea dummy-back">
+                    <button class="mapBtn">
+                        <FundOutlined />
+                    </button>
+                    <button class="sosBtn">
+                        <CommentOutlined />
+                    </button>
+                    <a-button class="wellau-btn">주소검색</a-button>
+                    <div class="slider-box">
+                        <a-slider v-model:value="inputValue1" :min="1" :max="20" :tip-formatter="null" class="wellau-slider" />
+                        <div class="unit">
+                            <span class="l">200m</span>
+                            <span class="r">5k</span>
+                        </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>

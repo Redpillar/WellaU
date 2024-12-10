@@ -162,11 +162,14 @@
         align-items:center;
         justify-content:center;
         height:45rem;
+        margin:0 0 18rem 0;
         font-size: 17rem;
         font-style: normal;
         font-weight: 400;
         line-height: 140%; /* 23.8rem */
         color:#000;
+        border-bottom:1rem solid #EAEAEA;
+
     }
     .lnb-profile{
         display:flex;
@@ -186,7 +189,7 @@
                 height:62rem;
                 border-radius:50%;
                 overflow:hidden;
-                background:#5D9CEE url(../../assets/img/lnb_profile_bg.png) no-repeat center;
+                background:#5D9CEE url(../../assets/img/lnb_profile_bg.svg) no-repeat center;
                 &> img{
                     width:100%;
                     height:100%;
@@ -209,7 +212,7 @@
             }
         }
         &> .r{
-            width:95rem;
+            width:100rem;
         }
     }
     .profile-edit-btn{
@@ -230,6 +233,9 @@
         &> .arrow{
             position:relative;
             top:3rem;
+            &> svg{
+                margin-left:5rem;
+            }
         }
     }
     .lnb-clse-btn{
@@ -245,11 +251,11 @@
         overflow:auto;
         padding:20rem;
         &> .lnb-menu-top{
-            padding:0 20rem 30rem;
+            padding:0 0 30rem;
             border-bottom:1rem solid #ededed;
         }
         &> .lnb-menu-both{
-            padding:10rem 20rem 10rem;
+            padding:10rem 0 10rem;
             border-bottom:1rem solid #ededed;
         }
         .menu{
@@ -259,7 +265,7 @@
             padding:0;
             font-size:16rem;
             line-height:1;
-            background:url(../../assets/img/lnb_menu_arrow.png) no-repeat center right;
+            background:url(../../assets/img/lnb_menu_arrow.svg) no-repeat center right;
             &:before{
                 content:"";
                 display:inline-block;
@@ -270,29 +276,29 @@
             }
             &.icon-group{
                 &:before{
-                    background-image:url(../../assets/img/lnb_icon_group.png);
+                    background-image:url(../../assets/img/lnb_icon_group.svg);
                 }
             }
             &.icon-proximity{
                 &:before{
-                    background-image:url(../../assets/img/lnb_icon_proximity.png);
+                    background-image:url(../../assets/img/lnb_icon_proximity.svg);
                 }
             }
             &.icon-notice{
                 &:before{
-                    background-image:url(../../assets/img/lnb_icon_notice.png);
+                    background-image:url(../../assets/img/lnb_icon_notice.svg);
                 }
             }
             &.icon-faq{
                 &:before{
-                    background-image:url(../../assets/img/lnb_icon_faq.png);
+                    background-image:url(../../assets/img/lnb_icon_faq.svg);
                 }
             }
             &.icon-setting{
                 &:before{
                     position:relative;
                     top:2rem;
-                    background-image:url(../../assets/img/lnb_icon_setting.png);
+                    background-image:url(../../assets/img/lnb_icon_setting.svg);
                 }
             }
         }

@@ -1,25 +1,27 @@
 <template>
     <div class="content-wrapper onePage">
         <div class="content-scroll">
-            <div class="label-text-box">
-                <dl>
-                    <dt>대상</dt>
-                    <dd>대상</dd>
-                </dl>
-                <dl>
-                    <dt>이름</dt>
-                    <dd>집근처</dd>
-                </dl>
-                <dl>
-                    <dt>실행 시간</dt>
-                    <dd>오전 9:00  -  오후 18:00</dd>
-                </dl>
-                <dl>
-                    <dt>실행 시간</dt>
-                    <dd>
-                        <img :src="src" alt="map" class="dummy-img" />
-                    </dd>
-                </dl>
+            <div class="content-scroll-padding-box">
+                <div class="label-text-box">
+                    <dl>
+                        <dt>대상</dt>
+                        <dd>대상</dd>
+                    </dl>
+                    <dl>
+                        <dt>이름</dt>
+                        <dd>집근처</dd>
+                    </dl>
+                    <dl>
+                        <dt>실행 시간</dt>
+                        <dd>오전 9:00  -  오후 18:00</dd>
+                    </dl>
+                    <dl>
+                        <dt>실행 시간</dt>
+                        <dd>
+                            <img :src="src" alt="map" class="dummy-img" />
+                        </dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <div class="btn-set horizontal">

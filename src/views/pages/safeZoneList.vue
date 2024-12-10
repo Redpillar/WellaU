@@ -1,23 +1,25 @@
 <template>
     <div class="content-wrapper full jCenter">
         <div class="content-scroll">
-            <div class="setting-box-top no-line">
-                <div class="icon-texte-round-box">
-                    <i>
-                        <Html5Filled />
-                    </i>
-                    <p>
-                        안심존을 설정하여<br />
-                        그룹원들의 안심존 진입/이탈을<br />
-                        감지하여 그룹원의 안전을 지켜보세요
-                    </p>
+            <div class="content-scroll-padding-box">
+                <div class="setting-box-top no-line">
+                    <div class="icon-texte-round-box">
+                        <i>
+                            <Html5Filled />
+                        </i>
+                        <p>
+                            안심존을 설정하여<br />
+                            그룹원들의 안심존 진입/이탈을<br />
+                            감지하여 그룹원의 안전을 지켜보세요
+                        </p>
+                    </div>
+                    <div class="title-wrappper sub">
+                        <h2 class="title">안심존 목록</h2>
+                    </div>
                 </div>
-                <div class="title-wrappper sub">
-                    <h2 class="title">안심존 목록</h2>
+                <div class="setting-box-scroll pt0">
+                    <SafeZoneList v-for="(l,index) in list" :key="'list_'+index" :name="l.name" :nickname="l.nickname" :address="l.address" />
                 </div>
-            </div>
-            <div class="setting-box-scroll pt0">
-                <SafeZoneList v-for="(l,index) in list" :key="'list_'+index" :name="l.name" :nickname="l.nickname" :address="l.address" />
             </div>
         </div>
         <div class="btn-set">

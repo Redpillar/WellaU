@@ -1,7 +1,61 @@
 <template>
     <div class="listWrap">
-        <div class="top">버전 : v1.15, 총 페이지 : {{pageList.length}} 완료 : {{success}} 진행율 : {{(success / (pageList.length * 0.01)).toFixed(1)}}%</div>
         <table cellspacing="0" cellapdding="0">
+            <colgroup>
+                <col style="width:20%" />
+                <col style="width:20%" />
+                <col style="width:20%" />
+                <col style="width:10%" />
+                <col style="width:20%" />
+                <col style="width:10%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        카테고리
+                    </th>
+                    <th>
+                        OS
+                    </th>
+                    <th>
+                        이름
+                    </th>
+                    <th>
+                        피피티 번호
+                    </th>
+                    <th>
+                        Path
+                    </th>
+                    <th>
+                        완료
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(page,index) in pageList2" :key="'list' + index" :class="categoryLine(index)" @click="trClick(page.path)">
+                    <td>
+                        {{page.category}}
+                    </td>
+                    <td>
+                        {{page.os}}
+                    </td>
+                    <td>
+                        {{page.name}}
+                    </td>
+                    <td>
+                        {{page.page}}
+                    </td>
+                    <td>
+                        {{page.path}}
+                    </td>
+                    <td>
+                        {{page.status ? page.status : "-"}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="top" v-if="true">버전 : v1.15, 총 페이지 : {{pageList.length}} 완료 : {{success}} 진행율 : {{(success / (pageList.length * 0.01)).toFixed(1)}}%</div>
+        <table cellspacing="0" cellapdding="0" v-if="true">
             <colgroup>
                 <col style="width:20%" />
                 <col style="width:20%" />
@@ -61,8 +115,10 @@
     import { ref } from 'vue'
     import { useRouter } from 'vue-router'
     import pageListData from './pageList'
+    import pageListData2 from './pageList2'
 
     const pageList = ref(pageListData)
+    const pageList2 = ref(pageListData2)
     const categoryLine = (index)=>{
         let temp = "";
         const index2 = index - 1;

@@ -17,7 +17,9 @@
 .wellau-input.ant-input-affix-wrapper.ant-input-password:disabled{
     font-weight:700;
 }
-.wellau-input.ant-input[type = text]::placeholder{
+.wellau-input.ant-input[type = text]::placeholder,
+.wellau-input.ant-input-affix-wrapper >input.ant-input::placeholder{
+    color:#ACB3BD;
     font-weight:bold;
 }
 .wellau-input.ant-input[type = text]:hover,.wellau-input.ant-input[type = text]:focus,
@@ -130,6 +132,15 @@
     display:none;
 }
 
+.wellau-checkbox.ant-checkbox-wrapper .ant-checkbox-checked .ant-checkbox-inner{
+    border-color:#076AEB;
+    background:#076AEB;
+}
+
+.wellau-checkbox.ant-checkbox-wrapper .ant-checkbox-input:hover + .ant-checkbox-inner{
+    border-color:#d9d9d9;
+}
+
 /* radio */
 .wellau-radio-group{
     width:100%;
@@ -194,6 +205,8 @@
     font-size: 18rem;
     line-height: 1;
     border-radius: 4rem;
+    border-width:0;
+    background-color:#076AEB;
 }
 .wellau-btn.ant-btn.small-size,
 .wellau-btn.ant-btn.ant-btn.ant-btn-primary.small-size
@@ -226,7 +239,6 @@
 .wellau-btn.ant-btn.ant-btn.ant-btn-primary{
     font-weight: 700;
     color:#fff;
-    background: #1677FF;
 }
 .wellau-btn.ant-btn.ant-btn-primary[disabled]{
     cursor: not-allowed;
@@ -384,4 +396,20 @@
 .wellau-switch.big-size.ant-switch .ant-switch-handle::before{
     border-radius:50%;
 }
+.wellau-switch.big-size.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled){
+    background-color:#076AEB;
+}
 
+
+
+/* modal */
+.wellau-modal.ant-modal .ant-modal-content{
+    padding:20rem;
+}
+.wellau-modal.ant-modal .ant-modal-footer{
+    margin-top:8rem;
+}
+.wellau-modal.ant-modal  .ant-modal-close{
+    top:10rem;
+    inset-inline-end: 10rem;
+}

@@ -1,14 +1,16 @@
 <template>
     <div class="content-wrapper fixedBorderTop">
         <div class="content-scroll paddingWrapper">
-            <div style="padding-top:20rem;">
-                <a-radio-group v-model:value="radio" class="wellau-radio-group">
-                    <ProfileBox name="홍길동" :img="img1" v-for="(profile,index) in 100" :key="'profile_'+index">
-                        <template #rightArea>
-                            <a-radio :value="index"></a-radio>
-                        </template>
-                    </ProfileBox>
-                </a-radio-group>
+            <div class="content-scroll-padding-box">
+                <div style="padding-top:20rem;">
+                    <a-radio-group v-model:value="radio" class="wellau-radio-group">
+                        <ProfileBox name="홍길동" :img="img1" v-for="(profile,index) in 100" :key="'profile_'+index">
+                            <template #rightArea>
+                                <a-radio :value="index"></a-radio>
+                            </template>
+                        </ProfileBox>
+                    </a-radio-group>
+                </div>
             </div>
         </div>
     </div>

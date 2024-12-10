@@ -1,12 +1,14 @@
 <template>
     <div class="content-wrapper full">
         <div class="content-scroll">
-            <div class="setting-box-scroll">
-                <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
-                    <template #rightArea>
-                            <a-switch v-model:checked="list.checked" />
-                    </template>
-                </ProfileBox>
+            <div class="content-scroll-padding-box">
+                <div class="setting-box-scroll">
+                    <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
+                        <template #rightArea>
+                                <a-switch v-model:checked="list.checked" />
+                        </template>
+                    </ProfileBox>
+                </div>
             </div>
         </div>
         <div class="btn-set">

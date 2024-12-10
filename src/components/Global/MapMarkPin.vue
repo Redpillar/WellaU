@@ -67,7 +67,7 @@
         transform:translate(-50%,0);
         &> .index{
             position:absolute;
-            top:0;
+            top:3rem;
             left:50%;
             display:flex;
             align-items:center;

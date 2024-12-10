@@ -106,7 +106,8 @@
     const switchChecked = ref(false);
 
     const img1 = ref({
-        src : require('@img/dummy-profile01.jpeg'),
+        src : null,
+        // src : require('@img/dummy-profile01.jpeg'),
         alt : '홍길동님의 프로필 사진입니다'
     })
     const img2 = ref({
@@ -162,7 +163,8 @@
         king : true,
         birthday : false,
         img : {
-            src : require('../../assets/img/dummy-profile01.jpeg'),
+            // src : require('../../assets/img/dummy-profile01.jpeg'),
+            src : null,
             alt : '홍길동님의 프로필 사진입니다'
         }
     })
@@ -178,7 +180,8 @@
                 king : false,
                 birthday : Math.floor(Math.random() * 3) % 2 === 0 ? true : false,
                 img : {
-                    src : require('../../assets/img/dummy-profile0'+n+'.jpeg'),
+                    // src : require('../../assets/img/dummy-profile0'+n+'.jpeg'),
+                    src : null,
                     alt : '홍길동님의 프로필 사진입니다'
                 }
             })

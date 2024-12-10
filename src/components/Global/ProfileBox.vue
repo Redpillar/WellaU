@@ -5,6 +5,7 @@
                 <div class="pictueWrapper" :class="[{king : props.king},{birthday : props.birthday}]">
                     <div class="pictueInnerWrapper">
                         <img :src="img.src" :alt="img.alt" v-if="img.src" />
+                        <span v-else>{{firstName}}</span>
                     </div>
 
                     <div class="battery-icon" v-if="props.battery">
@@ -131,6 +132,10 @@
         }
         return style;
     })
+    const firstName = computed(()=>{
+        let temp = props.name.replace(/(^.).*/g,'$1');
+        return temp;
+    })
 </script>
 <style type="scss" scoped>
     .profileBox-warpper{
@@ -197,11 +202,18 @@
                     }
                     &> .pictueInnerWrapper{
                         position:relative;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
                         width:100%;
                         height:100%;
                         border-radius:50%;
                         overflow:hidden;
-                        background:orange;
+                        font-size:28rem;
+                        font-weight:normal;
+                        line-height:1;
+                        color:#fff;
+                        background:#c4daef;
                         &> img{
                             position:absolute;
                             top:50%;

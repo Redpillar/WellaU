@@ -17,7 +17,7 @@
                     <div class="title-both-line">
                         계정 세부 정보
                     </div>
-                    <div class="link-box-area-arrow" @click="gotoMenu('/searchPassWord')">
+                    <div class="link-box-area-arrow" @click="gotoMenu('/phoneChangeCheck')">
                         <div class="tit">휴대폰</div>
                         <div class="info">010-0000-1111</div>
                     </div>
