@@ -2,7 +2,7 @@
     <div class="content-wrapper onePage">
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
-                <div class="label-text-box">
+                <div class="label-text-box" style="padding-top:20rem;">
                     <dl>
                         <dt>대상</dt>
                         <dd>대상</dd>

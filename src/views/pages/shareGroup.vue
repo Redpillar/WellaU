@@ -8,7 +8,7 @@
                     </h2>
                 </div>
                 <div class="shareCodeInfoBox">
-                    <CounterBox :angle="180" code="DKE3FE" date="1일 23:36:58" />
+                    <CounterBox :angle="60" code="DKE3FE" date="1일 23:36:58" />
                 </div>
             </div>
         </div>

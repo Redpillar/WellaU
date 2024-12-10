@@ -5,9 +5,9 @@
                 <col style="width:20%" />
                 <col style="width:20%" />
                 <col style="width:20%" />
-                <col style="width:10%" />
+                <!-- <col style="width:10%" /> -->
                 <col style="width:20%" />
-                <col style="width:10%" />
+                <!-- <col style="width:10%" /> -->
             </colgroup>
             <thead>
                 <tr>
@@ -20,15 +20,15 @@
                     <th>
                         이름
                     </th>
-                    <th>
+                    <!-- <th>
                         피피티 번호
-                    </th>
+                    </th> -->
                     <th>
                         Path
                     </th>
-                    <th>
+                    <!-- <th>
                         완료
-                    </th>
+                    </th> -->
                 </tr>
             </thead>
             <tbody>
@@ -42,20 +42,20 @@
                     <td>
                         {{page.name}}
                     </td>
-                    <td>
+                    <!-- <td>
                         {{page.page}}
-                    </td>
+                    </td> -->
                     <td>
                         {{page.path}}
                     </td>
-                    <td>
+                    <!-- <td>
                         {{page.status ? page.status : "-"}}
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
         </table>
-        <div class="top" v-if="true">버전 : v1.15, 총 페이지 : {{pageList.length}} 완료 : {{success}} 진행율 : {{(success / (pageList.length * 0.01)).toFixed(1)}}%</div>
-        <table cellspacing="0" cellapdding="0" v-if="true">
+        <div class="top" v-if="false">버전 : v1.15, 총 페이지 : {{pageList.length}} 완료 : {{success}} 진행율 : {{(success / (pageList.length * 0.01)).toFixed(1)}}%</div>
+        <table cellspacing="0" cellapdding="0" v-if="false">
             <colgroup>
                 <col style="width:20%" />
                 <col style="width:20%" />
@@ -135,7 +135,7 @@
 </script>
 <style type="scss" scoped>
     .listWrap{
-        padding:0 0 10rem 0;
+        padding:10rem 0 10rem 0;
         background:rgba(0,0,0,0.7);
     }
     table{

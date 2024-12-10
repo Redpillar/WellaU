@@ -52,7 +52,6 @@ import faqView from '@pages/faqView'
 import settingView from '@pages/settingView'
 import openSauceLicenses from '@pages/openSauceLicenses'
 import conditionsUse from '@pages/conditionsUse'
-import paymentView from '@pages/paymentView'
 
 /* 가입하기 */
 import joinPhoneInput from '@pages/joinPhoneInput'
@@ -62,6 +61,10 @@ import enterProfile from '@pages/enterProfile'
 import provisionAgree from '@pages/provisionAgree'
 import provisionView from '@pages/provisionView'
 import authorityCheck from '@pages/authorityCheck'
+
+/* 팝업스토어 */
+import paymentView from '@pages/paymentView'
+import popupStoreInfo from '@pages/popupStoreInfo'
 
 /* PC */
 import pcView from '@pages/pcView'
@@ -315,6 +318,10 @@ const routes = [
     {
         path : '/paymentView',
         component : paymentView,
+    },
+    {
+        path : '/popupStoreInfo',
+        component : popupStoreInfo,
     },
     // PC
     {

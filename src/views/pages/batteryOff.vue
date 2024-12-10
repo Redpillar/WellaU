@@ -24,7 +24,7 @@
         </BothBar>
     </div>
 
-    <a-modal v-model:open="ModalShow" title="">
+    <a-modal v-model:open="ModalShow" title="" class="wellau-modal">
         <p class="modal-title">배터리 최적화 끄기</p>
         <p class="modal-content">백그라운드에서 위치 공유를 하기 위해서 배터리 최적화를 꺼야해요</p>
         <template #footer>

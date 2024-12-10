@@ -56,7 +56,7 @@
     </div>
 
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalShow" title="">
+    <a-modal modal v-model:open="ModalShow" title="" class="wellau-modal">
         <p class="modal-content">
             WellaU 서비스를 로그아웃 하시겠습니까?
         </p>

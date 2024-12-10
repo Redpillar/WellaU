@@ -8,7 +8,9 @@
                         <div class="date">{{accordion.date}}</div>
                     </div>
                     <i class="icon">
-                        <DownOutlined />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.25 7.5L10 13.75L3.75 7.5" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </i>
                 </div>
                 <div class="accordion-content" :style="conStyle(index)">
@@ -20,7 +22,6 @@
 </template>
 <script setup>
     import { ref,watch,defineProps,defineModel,onMounted } from 'vue'
-    import { DownOutlined } from '@ant-design/icons-vue'
     const accordionLine = ref();
     const props = defineProps({
         open : {

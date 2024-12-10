@@ -369,7 +369,7 @@
         </div>
     </div>
     <!--
-    <a-modal v-model:open="ModalShow" title="">
+    <a-modal v-model:open="ModalShow" title="" class="wellau-modal">
         <p class="modal-title">등록한 이름 또는 휴대폰 번호가 일치하지 않습니다.</p>
         <p class="modal-content">등록정보 확인 및 비밀번호 재설정 실패 관련 안내는 02-2057-2678로 문의 바랍니다. </p>
         <template #footer>

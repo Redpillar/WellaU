@@ -43,14 +43,14 @@ export default {
     },
     backBtnShow(){
       let temp = false;
-      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel"){
+      if(this.pageStatus === "login" || this.pageStatus === "groupMain" || this.pageStatus === "locationSharing" || this.pageStatus === "locationSharingDoneTime" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === 'accessRight' || this.pageStatus ===  'popupStoreInfo'){
         temp = true;
       }
       return temp;
     },
     haderShow(){
       let temp = true;
-      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === "pcView"){
+      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === "pcView" || this.pageStatus ===  'popupStoreInfo'){
         temp = false
       }
       return temp;
@@ -197,7 +197,8 @@ export default {
     checkePath(path){
       switch (path){
         case "accessRight" :
-          this.headerData.type = "type6";
+          this.headerData.type = "type5";
+          this.headerData.groupText = "그룹명";
           this.headerText = null;
           break;
         case "batteryOff" :
@@ -283,9 +284,9 @@ export default {
           this.headerText = "주소 검색";
           break;
         case "createSafezone" :
-          this.headerData.type = "type2";
+          this.headerData.type = "type1";
           this.headerText = "안심존 설정";
-          this.headerData.rightBtnText = "계속하기"
+          // this.headerData.rightBtnText = "계속하기"
           break;
         case "safeZoneList" :
           this.headerData.type = "type1";

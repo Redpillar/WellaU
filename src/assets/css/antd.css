@@ -340,14 +340,14 @@
 
 /* slider */
 .wellau-slider.ant-slider .ant-slider-track{
-  background-color:red;   
+  background-color:#076AEB;   
 }
 .wellau-slider.ant-slider .ant-slider-rail{
-    background:#000;
+    background:#ccc;
 }
 
 .wellau-slider.ant-slider .ant-slider-handle::after{
-    box-shadow:0 0 0 2px red;
+    box-shadow:0 0 0 2px #076AEB;
     /* box-shadow:0 0 0 2px #91caff; */
 }
 

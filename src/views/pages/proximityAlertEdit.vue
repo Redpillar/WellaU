@@ -2,6 +2,10 @@
     <div class="content-wrapper onePage">
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
+                <div class="search-info-text-box" style="padding-top:20rem;">
+                    <span>근접 알림을 사용할 인원을 선택해주세요.</span>
+                    <SearchInput v-model:value="textField" :placeholder="placeholder" @input="input" @enter="enter" @searchIcon="searchIcon" />
+                </div>
                 <div class="title-info-style" style="margin-top:30rem;">
                     <div class="l">
                         <div class="tit">대상</div>
@@ -33,6 +37,8 @@
     import { ref } from 'vue'
 
     const inputValue1 = ref(1);
+    const textField = ref("");
+    const placeholder = ref("이름");
 </script>
 <style type="scss" scoped>
 </style>

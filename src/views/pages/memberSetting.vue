@@ -27,7 +27,7 @@
     </div>
 
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalGroupShow" title="" @ok="handleOk">
+    <a-modal modal v-model:open="ModalGroupShow" title="" class="wellau-modal" @ok="handleOk">
         <p class="modal-content">
             그룹장을 [{{name}}] 님에게 넘기겠습니까?
         </p>
@@ -39,7 +39,7 @@
         </template>
     </a-modal>
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalremoveShow" title="" @ok="handleOk">
+    <a-modal modal v-model:open="ModalremoveShow" title="" class="wellau-modal" @ok="handleOk">
         <p class="modal-content">
             [{{name}}] 님을 내보내시겠습니까?
         </p>

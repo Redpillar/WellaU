@@ -9,8 +9,8 @@
         <div class="both-area">
             <slot name="both"></slot>
         </div>
-        <div class="list-select-box-btn" @click.stop="btnClick" v-if="props.buttonShow">
-            {{props.buttonText}}
+        <div class="list-select-box-footer-btn" v-if="props.buttonShow">
+            <a-button class="wellau-btn small-size" @click.stop="btnClick">{{props.buttonText}}</a-button>
         </div>
     </div>
 </template>
@@ -110,6 +110,7 @@
     .list-select-box-list{
         max-height:110rem;
         overflow:auto;
+        border-bottom:1rem solid #ededed;
         &> ul{
             padding:10rem 0;
             margin:0;
@@ -121,7 +122,7 @@
                 font-size:12rem;
                 line-height:1;
                 &.checked{
-                    background:skyblue;
+                    background:#f5f5f5;
                 }
             }
         }
@@ -132,5 +133,12 @@
         justify-content:center;
         height:40rem;
         border-top:1px solid #ededed;
+    }
+    .list-select-box-footer-btn{
+        padding:10rem;
+        display:flex;
+        &> *{
+            flex:1;
+        }
     }
 </style>

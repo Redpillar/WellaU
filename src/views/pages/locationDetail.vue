@@ -2,24 +2,22 @@
     <div class="content-wrapper full">
         <div class="content-scroll">
             <div class="mapArea dummy-back">
-                <MapPin type="pie" :photo="photo" :per="40" style="position:absolute; top:50%; left:50%;" />
-                <button class="mapBtn">
-                    <FundOutlined />
-                </button>
-                <!-- <button class="sosBtn">
-                    <CommentOutlined />
-                </button> -->
+                <MapPin type="pie" :photo="photo" style="position:absolute; top:10%; right:10%;" />
+                <MapPin type="pie" :photo="photo" :width="80" style="position:absolute; top:50%; left:50%;" />
+                <MapPin pinText="이" pinColor="blue" :width="100" style="position:absolute; top:30%; left:20%;" />
+                <MapPin pinText="홍" pinColor="blue" :width="100" style="position:absolute; bottom:15%; left:10%;" />
+                <div class="map-fixed-btn">
+                    <button class="mapBtn"></button>
+                    <!-- <button class="sosBtn"></button> -->
+                </div>
             </div>
         </div>
         <div class="both-area-box">
             <div class="both-area-box-scroll">
-                <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1" :battery="45" king>
-                    <template #rightArea>
-                        <IconButton icon="phone" @click="iconButtonClick" />
-                        <IconButton icon="text" @click="iconButtonClick" />
-                    </template>
-                </ProfileBox>
-                <div class="btn-set horizontal sb">
+                <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1" :battery="Math.floor(Math.random() * 100)" by2 king></ProfileBox>
+                <div class="btn-set horizontal sb" style="padding-bottom:20rem;">
+                    <IconButtonBox icon="tell" @click="modalOpen" />
+                    <IconButtonBox icon="text" @click="modalOpen" />
                     <IconButtonBox icon="sharing" @click="modalOpen" />
                     <IconButtonBox icon="record" @click="iconButtonBoxClick" />
                 </div>
@@ -27,7 +25,7 @@
         </div>
     </div>
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalShow" title="">
+    <a-modal modal v-model:open="ModalShow" title="" class="wellau-modal">
         <p class="modal-content">
             친구들에게 위치를 공유할 수 있어요.<br />
             <span style="color:red">내 위치는 1시간 동안 공유됩니다!</span>
@@ -42,7 +40,6 @@
 </template>
 <script setup>
     import {ref} from 'vue'
-    import {FundOutlined} from '@ant-design/icons-vue'
 
     const photo = ref({
         src : require('../../assets/img/dummy-profile01.jpeg'),
@@ -55,10 +52,6 @@
     })
 
     const iconButtonBoxClick = (icon)=>{
-        console.log("icon : ",icon)
-    }
-
-    const iconButtonClick = (icon)=>{
         console.log("icon : ",icon)
     }
 

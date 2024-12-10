@@ -18,7 +18,7 @@
         </div>
         
         <!-- moadl -->
-        <a-modal modal v-model:open="ModalShow" title="">
+        <a-modal modal v-model:open="ModalShow" title="" class="wellau-modal">
             <p class="modal-content">
                 입력한 휴대폰으로 인증번호를 재 발송하였습니다.<br />
                 휴대폰을 확인해주세요.

@@ -8,7 +8,7 @@
                         <span v-else>{{firstName}}</span>
                     </div>
 
-                    <div class="battery-icon" v-if="props.battery">
+                    <div class="battery-icon" v-if="props.battery > -1 && !props.by2">
                         <div class="battery-box">
                             <span class="bar" :style="barStyle"></span>
                             <svg width="28" height="15" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,22 @@
             </div>
             <div class="infomation">
                 <div class="name">
-                    <div class="name-text-area">{{props.name}}</div>
+                    <div class="name-text-area">
+                        {{props.name}}
+
+                        <div class="battery-box type2" v-if="props.battery > -1 && props.by2">
+                            <span class="text" :style="{color:batteryColor[0]}">
+                                {{props.battery}}%
+                            </span>
+                            <svg width="35" height="17" viewBox="0 0 35 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="32.3362" height="16.8148" rx="5.17379" :fill="batteryColor[0]" fill-opacity="0.4"/>
+                                <path d="M32.9831 5.82035C33.4977 5.82035 33.9912 6.0929 34.355 6.57803C34.7189 7.06317 34.9233 7.72116 34.9233 8.40724C34.9233 9.09333 34.7189 9.75132 34.355 10.2365C33.9912 10.7216 33.4977 10.9941 32.9831 10.9941L32.9831 8.40724V5.82035Z" :fill="batteryColor[1]"/>
+                            </svg>
+                            <div class="bar-wrappper">
+                                <span class="bar" :style="barStyle2"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="icon-area">
                         <div class="birthdayIcon" v-if="props.birthday">
                             <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,6 +129,10 @@
                 return null;
             }
         },
+        by2 : {
+            type : Boolean,
+            default : ()=> false,
+        },
         bg : {
             type : Boolean,
             default : ()=>{
@@ -132,8 +151,33 @@
         }
         return style;
     })
+    const barStyle2 = computed(()=>{
+        const style = {};
+        style.width = props.battery + "%";
+
+        let temp = ["#FF3D33","#FA3532"];
+        const color = [["#FF3D33","#FA3532"],["#FFCC0A","#FFA143"],["#37C058","#396232"]];
+        if(props.battery >= 75){
+            temp = color[2];
+        }else if(props.battery >= 50){
+            temp = color[1];
+        }
+        style.background = temp[0];
+        return style;
+    })
     const firstName = computed(()=>{
         let temp = props.name.replace(/(^.).*/g,'$1');
+        return temp;
+    })
+    const batteryColor = computed(()=>{
+        let temp = ["#FF3D33","#FA3532"];
+        const color = [["#FF3D33","#FA3532"],["#FFCC0A","#FFA143"],["#37C058","#396232"]];
+        if(props.battery >= 75){
+            temp = color[2];
+        }else if(props.battery >= 50){
+            temp = color[1];
+        }
+        console.log("temp : ",temp)
         return temp;
     })
 </script>
@@ -267,6 +311,7 @@
                         &> div + div{
                             margin-left:10rem;
                         }
+                        
                     }
                 }
                 &> .content{
@@ -315,6 +360,45 @@
         }
         &+ .profileBox-warpper{
             margin-top:20rem;
+        }
+    }
+    .battery-box.type2{
+        position:relative;
+        top:-2rem;
+        display:inline-flex;
+        align-items:center;
+        vertical-align:middle;
+        margin:0 0 0 5rem;
+        &> .bar{
+            position:absolute;
+            height:10rem;
+        }
+        &> span{
+            padding:0 5rem 0 0;
+            text-align: center;
+            font-family: "Roboto";
+            font-size: 14rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.408rem;
+        }
+    }
+    .bar-wrappper{
+        position:absolute;
+        top:0rem;
+        right:3rem;
+        bottom:0rem;
+        width:33rem;
+        border-radius:5.714rem;
+        overflow:hidden;
+        &> .bar{
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            width:30%;
+            background:red;
         }
     }
 </style>

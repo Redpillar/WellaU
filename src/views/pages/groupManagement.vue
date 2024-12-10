@@ -15,7 +15,7 @@
         </div>
         
         <!-- moadl -->
-        <a-modal modal v-model:open="ModalShow" title="">
+        <a-modal modal v-model:open="ModalShow" title="" class="wellau-modal">
             <p class="modal-content">
                 {{msg[type]}}
             </p>

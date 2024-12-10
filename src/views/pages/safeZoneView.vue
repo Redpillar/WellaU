@@ -6,7 +6,7 @@
                     <a-radio-group v-model:value="radio" class="wellau-radio-group">
                         <ProfileBox name="홍길동" :img="img1" v-for="(profile,index) in 100" :key="'profile_'+index">
                             <template #rightArea>
-                                <a-radio :value="index"></a-radio>
+                                <a-radio :value="index" class="wellau-radio"></a-radio>
                             </template>
                         </ProfileBox>
                     </a-radio-group>

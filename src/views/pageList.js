@@ -588,12 +588,21 @@ export default [
         status : "완료",
     },
     {
-        category : "메뉴​",
-        os : "WEB",
+        category : "팝업스토어",
+        os : "IOS",
         name : "결제",
         type : "화면",
         page : 60,
         path : "/paymentView",
+        status : "완료",
+    },
+    {
+        category : "팝업스토어",
+        os : "WEB",
+        name : "팝업스토어 정보",
+        type : "팝업",
+        page : 60,
+        path : "/popupStoreInfo",
         status : "완료",
     },
     {

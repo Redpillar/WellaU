@@ -21,7 +21,7 @@
         </div>
     </div>
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalShow" title="">
+    <a-modal modal v-model:open="ModalShow" title="" class="wellau-modal">
         <p class="modal-content">
             친구들에게 위치를 공유할 수 있어요.<br />
             <span style="color:red">내 위치는 1시간 동안 공유됩니다!</span>

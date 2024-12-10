@@ -46,7 +46,7 @@
         </div>
     </div>
     <!-- 사진 선택 팝업 -->
-    <a-modal v-model:open="ModalShow" title="">
+    <a-modal v-model:open="ModalShow" title="" class="wellau-modal">
         <p class="modal-title">프로필 등록</p>
         <div class="btn-set selectMode">
             <a-button :type="btnType ? 'primary' : ''" @click="popBtnClick">카메라</a-button>
@@ -59,7 +59,7 @@
         </template>
     </a-modal>
     <!-- 회원탈퇴 팝업 -->
-    <a-modal v-model:open="ModalMemberShow" title="">
+    <a-modal v-model:open="ModalMemberShow" title="" class="wellau-modal">
         <p class="modal-title center">회원탈퇴</p>
         <p class="modal-content">정말 WellaU를 탈퇴하시겠습니까?</p>
         <template #footer>
@@ -70,7 +70,7 @@
         </template>
     </a-modal>
     <!-- 회원탈퇴 팝업 -->
-    <a-modal v-model:open="ModalMemberShow2" title="">
+    <a-modal v-model:open="ModalMemberShow2" title="" class="wellau-modal">
         <p class="modal-title center">회원탈퇴</p>
         <p class="modal-content">그룹장을 다른사람에게 넘긴 후 탈퇴 하실 수 있습니다.</p>
         <template #footer>

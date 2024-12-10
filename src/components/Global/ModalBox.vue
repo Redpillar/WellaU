@@ -95,9 +95,11 @@
         flex-direction:column;
         justify-content:center;
         padding:20rem;
+        border-radius:8rem;
         background:#fff;
         &> .modal-content{
             flex:1;
+            padding:0;
         }
     }
 </style>

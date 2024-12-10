@@ -1,15 +1,14 @@
 <template>
-    <div class="content-wrapper full jCenter">
+    <div class="content-wrapper full">
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
                 <div class="setting-box-top no-line">
                     <div class="icon-texte-round-box">
-                        <i>
-                            <Html5Filled />
-                        </i>
+                        <h2>
+                            안심존 설정
+                        </h2>
                         <p>
-                            안심존을 설정하여<br />
-                            그룹원들의 안심존 진입/이탈을<br />
+                            안심존을 설정하여 그룹원들의 안심존 진입/이탈을<br />
                             감지하여 그룹원의 안전을 지켜보세요
                         </p>
                     </div>
@@ -23,12 +22,12 @@
             </div>
         </div>
         <div class="btn-set">
-            <a-button class="wellau-btn">그룹 지우기</a-button>
+            <a-button type="primary" class="wellau-btn">생성하기</a-button>
         </div>
     </div>
 
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalGroupShow" title="" @ok="handleOk">
+    <a-modal modal v-model:open="ModalGroupShow" title="" class="wellau-modal" @ok="handleOk">
         <p class="modal-content">
             그룹장을 [{{name}}] 님에게 넘기겠습니까?
         </p>
@@ -40,7 +39,7 @@
         </template>
     </a-modal>
     <!-- moadl -->
-    <a-modal modal v-model:open="ModalremoveShow" title="" @ok="handleOk">
+    <a-modal modal v-model:open="ModalremoveShow" title="" class="wellau-modal" @ok="handleOk">
         <p class="modal-content">
             [{{name}}] 님을 내보내시겠습니까?
         </p>
@@ -54,7 +53,6 @@
 </template>
 <script setup>
     import { ref } from 'vue'
-    import { Html5Filled } from '@ant-design/icons-vue'
 
     const ModalGroupShow = ref(false);
     const ModalremoveShow = ref(false);

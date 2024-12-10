@@ -37,15 +37,18 @@
 
 
     const img1 = ref({
-        src : require('@img/dummy-profile01.jpeg'),
+        // src : require('@img/dummy-profile01.jpeg'),
+        src : null,
         alt : '홍길동님의 프로필 사진입니다'
     })
     const img2 = ref({
-        src : require('@img/dummy-profile02.jpeg'),
+        // src : require('@img/dummy-profile02.jpeg'),
+        src : null,
         alt : '김응삼 프로필 사진입니다'
     })
     const img3 = ref({
-        src : require('@img/dummy-profile03.jpeg'),
+        // src : require('@img/dummy-profile03.jpeg'),
+        src : null,
         alt : '김은지 프로필 사진입니다'
     })
 
