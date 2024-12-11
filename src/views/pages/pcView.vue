@@ -2,7 +2,8 @@
     <div class="content-wrapper full">
         <div class="content-scroll">
             <div class="mapArea dummy-back">
-                <MapPin type="pie" :photo="photo" :per="per" style="position:absolute; top:50%; left:50%;" />
+                <MapPin pinColor="blue" :photo="photo" style="position:absolute; top:50%; left:50%;" />
+                <MapPin  pinText="홍" pinColor="blue" style="position:absolute; top:20%; left:40%;" />
                 <!-- pop 알림 & 위치기록  -->
                 <div class="floating-right-top-box" v-if="floatPopBoxOpen">
                     <div class="floating-right-top-con-wrapper">
@@ -11,23 +12,27 @@
                             <div class="top">
                                 <div class="tit">{{floatBoxType === 'alert' ? '알림목록' : '위치기록' }}</div>
                                 <!-- 닫기 버튼 -->
-                                <i @click="floatPopClse"><CloseOutlined /></i>
+                                <i @click="floatPopClse">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M3.97862 3.04446L9.06674 8.18269L14.1545 3.04446C14.1827 3.01601 14.2211 3 14.2611 3H15.4144C15.4973 3 15.5644 3.06716 15.5644 3.15C15.5644 3.18953 15.5488 3.22746 15.521 3.25554L9.85442 8.97818L15.5637 14.7445C15.622 14.8033 15.6216 14.8983 15.5627 14.9566C15.5346 14.9844 15.4967 15 15.4572 15H14.3042C14.2642 15 14.2258 14.984 14.1976 14.9555L9.06674 9.77368L3.93554 14.9555C3.90737 14.984 3.869 15 3.82896 15H2.67637C2.59352 15 2.52637 14.9328 2.52637 14.85C2.52637 14.8105 2.54197 14.7725 2.56978 14.7445L8.27906 8.97818L2.6125 3.25554C2.55421 3.19668 2.55468 3.1017 2.61355 3.04341C2.64163 3.0156 2.67956 3 2.71909 3H3.87203C3.91207 3 3.95045 3.01601 3.97862 3.04446Z" fill="#999999"/>
+                                    </svg>
+                                </i>
                             </div>
                             <!-- 위치 기록 시 입력폼  -->
                             <div class="middle" v-if="floatBoxType === 'record'">
                                 <div class="mark-time-box">
                                     <div class="date">
-                                        <i><CalendarOutlined /></i>2024년 09월 13일
+                                        <i></i>2024년 09월 13일
                                     </div>
                                     <div class="time">
-                                        <i><ClockCircleOutlined /></i>13시
+                                        <i></i>13시
                                     </div>
                                 </div>
                             </div>
                             <!-- 알림 콘텐츠 -->
                             <div class="con-wrapper" v-if="floatBoxType === 'alert'">
                                 <div class="con">
-                                    <AlertBox :list="alertLists" />
+                                    <AlertBox :list="alertLists" @click="alertClick" />
                                 </div>
                             </div>
                             <!-- STEP 콘텐츠 -->
@@ -47,9 +52,9 @@
                         <div class="con-wrapper">
                             <div class="con">
                                 <div class="btn-set horizontal">
-                                    <IconButtonBox icon="battery" :disabled="bDis" :battery="iconBattery"  @click="iconButtonBoxClick" />
-                                    <IconButtonBox icon="alert" :disabled="aDis"  @click="iconButtonBoxClickAlert" />
-                                    <IconButtonBox icon="record" :disabled="rDis"  @click="iconButtonBoxClickRecord" />
+                                    <IconButtonBox icon="battery" class="size100" :disabled="bDis" :battery="iconBattery"  @click="iconButtonBoxClick" />
+                                    <IconButtonBox icon="alert" class="size100" :disabled="aDis"  @click="iconButtonBoxClickAlert" />
+                                    <IconButtonBox icon="record" class="size100" :disabled="rDis"  @click="iconButtonBoxClickRecord" />
                                 </div>
                             </div>
                         </div>
@@ -57,38 +62,6 @@
                 </div>
             </div>
         </div>
-        <BothBar style="display:none;">
-            <template #content>
-                <div class="both-bar-area">
-                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1">
-                        <template #rightArea>
-                            <a-switch v-model:checked="switchChecked" />
-                        </template>
-                    </ProfileBox>
-                </div>
-                <div class="both-bar-area">
-                    <ProfileBox name="김응삼" conText="서울시 용산동 갈월동" time="13분전" king :img="img2"></ProfileBox>
-                    <ProfileBox name="김은지" conText="서울시 용산동 갈월동" time="13분전" birthday :img="img3"></ProfileBox>
-                </div>
-                <div class="both-bar-area paddingNone">
-                    <a-button type="link" class="addGroupPersonBtn">+ 그룹원 추가 하기</a-button>
-                </div>
-                <div class="title-info-style">
-                    <div class="l">
-                        <div class="tit">내 프로필 공개</div>
-                        <div class="info">그룹원에게 내 프로필 사진을 공개합니다.  비활성 시 기본 프로필 아이콘이 노출됩니다.</div>
-                    </div>
-                    <div class="r"><a-switch v-model:checked="checked1" /></div>
-                </div>
-                <div class="title-info-style">
-                    <div class="l">
-                        <div class="tit">내 연락처 공개</div>
-                        <div class="info">그룹원에게 내 연락처를 공개합니다. 비활성 시 그룹장을 제외한 그룹원에게 연락처가 노출되지 않으며 통화연결이 되지 않습니다.</div>
-                    </div>
-                    <div class="r"><a-switch v-model:checked="checked2" /></div>
-                </div>
-            </template>
-        </BothBar>
         <PcLnb v-model:open="lnbOpen" :group="group" :person="person" :friends="lnbList" @gropClick="gropClick" @logout="logout" />
     </div>
 
@@ -99,24 +72,12 @@
 </template>
 <script setup>
     import { ref } from 'vue'
-    import { CloseOutlined,CalendarOutlined,ClockCircleOutlined } from '@ant-design/icons-vue'
 
-    const checked1 = ref(false);
-    const checked2 = ref(false);
-    const switchChecked = ref(false);
 
     const img1 = ref({
         src : null,
         // src : require('@img/dummy-profile01.jpeg'),
         alt : '홍길동님의 프로필 사진입니다'
-    })
-    const img2 = ref({
-        src : require('@img/dummy-profile02.jpeg'),
-        alt : '김응삼 프로필 사진입니다'
-    })
-    const img3 = ref({
-        src : require('@img/dummy-profile03.jpeg'),
-        alt : '김은지 프로필 사진입니다'
     })
 
     /* MAP PIN */
@@ -124,7 +85,6 @@
         src : require('@img/dummy-profile01.jpeg'),
         alt : '홍길동님의 프로필 사진입니다'
     })
-    const per = ref(Math.floor(Math.random()*100));
 
     /* BUTTON */
     const iconButtonBoxClickAlert = ()=>{
@@ -159,7 +119,8 @@
 
     const person = ref({
         name : "홍길동",
-        text : "서울시 용산동 갈월동 | 13분전",
+        text : "서울시 용산동 갈월동",
+        time : "13분전",
         king : true,
         birthday : false,
         img : {
@@ -176,7 +137,8 @@
             const name = ["홍길동","김응삼","김은지"]
             lnbList.value.push({
                 name : name[n - 1],
-                text : "서울시 용산동 갈월동 | 13분전",
+                text : "서울시 용산동 갈월동",
+                time : "13분전",
                 king : false,
                 birthday : Math.floor(Math.random() * 3) % 2 === 0 ? true : false,
                 img : {
@@ -267,123 +229,124 @@
     /* ALERT */
     const alertLists = ref([
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
+            date : "2024/9/11 14:31",
+            icon : "alert",
+        },
+        {
+            text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "red",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "blue",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "pink",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "red",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "blue",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "pink",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "red",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "blue",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "pink",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "red",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "blue",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "pink",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
         {
-            color : "orange",
             text : "[김응삼] 님이 SOS를 요청하셨습니다.",
-            date : "2024/9/11 14:31",
-        },
-        {
-            color : "orange",
-            text : "[김응삼] 님이 SOS를 요청하셨습니다.",
+            firstName : "김",
             date : "2024/9/11 14:31",
         },
     ])
@@ -492,6 +455,10 @@
         },
     ])
     const stepStep = ref(2);
+
+    const alertClick = (data)=>{
+        console.log("data : ",data)
+    }
 </script>
 <style type="scss" scoped>
     .dummy-back{

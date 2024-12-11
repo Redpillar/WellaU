@@ -12,7 +12,7 @@
                         <div class="profile-box-pc">
                             <div class="top-wrappper">
                                 <div class="top">
-                                    <ProfileBox :name="person.name" :conText="person.text" :time="person.time" :king="person.king" :birthday="person.birthday" :img="person.img"></ProfileBox>
+                                    <ProfileBox :name="person.name" :conText="person.text" :time="person.time" :king="person.king" :birthday="person.birthday" :img="person.img" bg></ProfileBox>
                                 </div>
                             </div>
                             <div class="con-wrappper">
@@ -25,20 +25,24 @@
                 </div>
                 <div class="both">
                     <div class="btn-set">
-                        <a-button class="wellau-btn" @click="logout">로그아웃</a-button>
+                        <a-button class="wellau-btn" @click="logout">+ 로그아웃</a-button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="lnb-thumb-pc" @click="lnbThumbClick"></div>
-        <button class="mapBtn">
-            <FundOutlined />
-        </button>
+        <div class="lnb-thumb-pc" @click="lnbThumbClick">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="61" viewBox="0 0 14 61" fill="none">
+                <path d="M0.5 60.5L0.5 0.5H11C12.3807 0.5 13.5 1.61929 13.5 3L13.5 58C13.5 59.3807 12.3807 60.5 11 60.5H0.5Z" fill="white" stroke="#CCCCCC"/>
+                <rect x="5" y="23" width="3" height="3" fill="#ADADAD"/>
+                <rect x="5" y="29" width="3" height="3" fill="#ADADAD"/>
+                <rect x="5" y="35" width="3" height="3" fill="#ADADAD"/>
+            </svg>
+        </div>
+        <button class="mapBtn"></button>
     </div>
 </template>
 <script setup>
     import { defineProps,defineEmits,defineModel } from 'vue'
-    import { FundOutlined } from '@ant-design/icons-vue'
 
     const props = defineProps({
         open : {
@@ -94,16 +98,23 @@
         top:0;
         bottom:0;
         left:0;
+        z-index:10000;
         width:0;
         transition:width ease .5s;
+        box-shadow:0px 4px 20px 0px rgba(0, 0, 0, 0.15);
         background:rgba(255,255,255,0.45);
         &.open{
             width:400rem;
         }
         &> .mapBtn{
+            position:absolute;
             left:auto;
             right: -20rem;
+            bottom:15rem;
             transform:translate(100%, 0);
+        }
+        .profileBox-warpper + .profileBox-warpper{
+            margin-top:10rem;
         }
     }
     .lnb-content-wrapper{
@@ -148,10 +159,10 @@
                         width:100%;
                     }
                     &> .top-wrappper{
-                        padding:10rem 20rem;
+                        padding:10rem 20rem 20rem 20rem;
                         &> .top{
-                            padding:0 0 20rem 0;
-                            border-bottom:1px solid #ededed;
+                            padding:0 0 16rem 0;
+                            border-bottom:1rem solid #ededed;
                         }
                     }
                     &> .con-wrappper{
@@ -163,33 +174,14 @@
             }
         }
         &> .both{
-            padding:20rem;
+            padding:20rem 20rem 25rem 20rem;
         }
     }
     .lnb-thumb-pc{
         position:absolute;
         top:50%;
-        right:-5rem;
-        width:15rem;
-        height:30rem;
+        right:0;
         transform:translate(100%,-50%);
         cursor:pointer;
-        /* background:red; */
-        /* background:rgba(255,255,255,0.8); */
-        &:before,&:after{
-            content:"";
-            position:absolute;
-            top:0;
-            bottom:0;
-            width:2rem;
-            border-radius:2rem;
-            background:#333;
-        }
-        &:before{
-            left:calc(50% - 2rem);
-        }
-        &:after{
-            left:calc(50% + 2rem);
-        }
     }
 </style>

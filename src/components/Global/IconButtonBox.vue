@@ -1,5 +1,5 @@
 <template>
-    <button class="icon-button-box i-location" :disabled="props.disabled" @click.stop="click">
+    <button class="icon-button-box i-location" :class="[{battery:props.icon === 'battery'}]" :disabled="props.disabled" @click.stop="click">
         <i>
             <div v-if="props.icon === 'tell'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
@@ -28,10 +28,26 @@
                 </svg>
             </div>
             <MonitorOutlined v-if="props.icon === 'search'" /><!-- 찾기 -->
-            <AlertOutlined v-if="props.icon === 'alert'" /><!-- 알림 -->
-            <div class="battery-icon" v-if="props.icon === 'battery'">
+            <div v-if="props.icon === 'alert'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                    <path d="M7.05273 14.9047C7.05273 13.7261 7.28487 12.559 7.73591 11.4701C8.18695 10.3812 8.84804 9.39181 9.68145 8.5584C10.5149 7.725 11.5042 7.0639 12.5931 6.61287C13.682 6.16183 14.8491 5.92969 16.0277 5.92969C17.2063 5.92969 18.3734 6.16183 19.4623 6.61287C20.5512 7.0639 21.5406 7.725 22.374 8.5584C23.2074 9.39181 23.8685 10.3812 24.3195 11.4701C24.7706 12.559 25.0027 13.7261 25.0027 14.9047V14.9047C25.0027 19.3797 25.9402 21.9797 26.7652 23.4047C26.8528 23.5564 26.899 23.7286 26.8992 23.9038C26.8994 24.079 26.8535 24.2513 26.7661 24.4032C26.6788 24.5551 26.553 24.6814 26.4015 24.7694C26.25 24.8574 26.078 24.9041 25.9027 24.9047H6.15273C5.97749 24.9041 5.80549 24.8574 5.65396 24.7694C5.50243 24.6814 5.3767 24.5551 5.28934 24.4032C5.20199 24.2513 5.1561 24.079 5.15625 23.9038C5.15641 23.7286 5.20261 23.5564 5.29023 23.4047C6.11523 21.9797 7.05273 19.3797 7.05273 14.9047Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.0273 24.9043V25.9043C12.0273 26.9652 12.4488 27.9826 13.1989 28.7327C13.9491 29.4829 14.9665 29.9043 16.0273 29.9043C17.0882 29.9043 18.1056 29.4829 18.8558 28.7327C19.6059 27.9826 20.0273 26.9652 20.0273 25.9043V24.9043" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22.9521 3.9043C24.9882 5.18956 26.6315 7.01014 27.7021 9.1668" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.35254 9.1668C5.42319 7.01014 7.06647 5.18956 9.10254 3.9043" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <!-- <div class="battery-icon" v-if="props.icon === 'battery'">
                 <span class="bar" :style="barStyle"></span>
                 <svg  viewBox="0 0 416 168"><path class="cls-1" stroke-width="20rem" stroke="currentColor" fill="none" d="M464.44,256.25h26.78C506,256.25,518,269,518,284.6v18.3c0,15.59-11.09,28.35-24.65,28.35H468.69" transform="translate(-112 -209.75)"/><rect stroke-width="20rem" stroke="#1d1d1b" fill="none" class="cls-1" x="10" y="10" width="345" height="148" rx="56.69"/></svg>
+            </div> -->
+            <div class="battery-box type2" v-if="props.icon === 'battery'">
+                <svg width="35" height="17" viewBox="0 0 35 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32.3362" height="16.8148" rx="5.17379" :fill="batteryColor[0]" fill-opacity="0.4"/>
+                    <path d="M32.9831 5.82035C33.4977 5.82035 33.9912 6.0929 34.355 6.57803C34.7189 7.06317 34.9233 7.72116 34.9233 8.40724C34.9233 9.09333 34.7189 9.75132 34.355 10.2365C33.9912 10.7216 33.4977 10.9941 32.9831 10.9941L32.9831 8.40724V5.82035Z" :fill="batteryColor[1]"/>
+                </svg>
+                <div class="bar-wrappper">
+                    <span class="bar" :style="barStyle2"></span>
+                </div>
             </div>
         </i>
         <!-- 
@@ -43,7 +59,7 @@
 </template>
 <script setup>
     import { ref,watch,computed,defineEmits,defineProps } from 'vue'
-    import { MonitorOutlined,AlertOutlined } from '@ant-design/icons-vue'
+    import { MonitorOutlined } from '@ant-design/icons-vue'
     const props = defineProps({
         icon : {
             type : String,
@@ -76,25 +92,55 @@
     const click = ()=>{
         emit("click",props.icon);
     }
-    const barStyle = computed(()=>{
-        const style = {};
-        console.log("props.battery : ",props.battery)
-        if(props.battery > -1){
-            const per = props.battery * 0.01;
-            const width = `calc((100% - 11rem) * ${per})`
-            style.width = width;
-            if(props.battery < 21){
-                style.borderRadius = "5rem 0 0 5rem"
-            }
-        }
-        return style;
-    })
+    // const barStyle = computed(()=>{
+    //     const style = {};
+    //     console.log("props.battery : ",props.battery)
+    //     if(props.battery > -1){
+    //         const per = props.battery * 0.01;
+    //         const width = `calc((100% - 11rem) * ${per})`
+    //         style.width = width;
+    //         if(props.battery < 21){
+    //             style.borderRadius = "5rem 0 0 5rem"
+    //         }
+    //     }
+    //     return style;
+    // })
     watch(()=>props.icon,()=>{
         if(!props.text){
             const t = textGroup.find(a=>a.icon === props.icon);
             buttonText.value = (t && t.text) ? t.text : null;
         }
     },{immediate:true})
+
+
+
+    const batteryColor = computed(()=>{
+        let temp = ["#FF3D33","#FA3532"];
+        const color = [["#FF3D33","#FA3532"],["#FFCC0A","#FFA143"],["#37C058","#396232"]];
+        if(props.battery >= 75){
+            temp = color[2];
+        }else if(props.battery >= 50){
+            temp = color[1];
+        }
+        console.log("temp : ",temp)
+        return temp;
+    })
+
+    const barStyle2 = computed(()=>{
+        const style = {};
+        style.width = props.battery + "%";
+
+        let temp = ["#FF3D33","#FA3532"];
+        const color = [["#FF3D33","#FA3532"],["#FFCC0A","#FFA143"],["#37C058","#396232"]];
+        if(props.battery >= 75){
+            temp = color[2];
+        }else if(props.battery >= 50){
+            temp = color[1];
+        }
+        style.background = temp[0];
+        return style;
+    })
+
 </script>
 <style type="scss" scoped>
     .icon-button-box{
@@ -108,6 +154,25 @@
         border:none;
         cursor:pointer;
         background:#F3F6FB;
+        &.battery{
+            cursor:default;
+        }
+        &.size100{
+            justify-content:space-between;
+            height:100rem;
+            padding:0;
+            &> i{
+                margin:13rem 0 0;
+            }
+            &> span{
+                padding-bottom:20rem;
+                font-size: 16rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.16rem;
+            }
+        }
         &> i{
             font-size:40rem;
         }
@@ -123,6 +188,9 @@
             cursor:default;
             &> i, &> span{
                 color:#ddd;
+            }
+            &> i > div > svg{
+                opacity:0.4;
             }
         }
     }
@@ -149,6 +217,46 @@
             top:0;
             z-index:5;
             height:auto;
+        }
+    }
+
+    .battery-box.type2{
+        position:relative;
+        top:-2rem;
+        display:inline-flex;
+        align-items:center;
+        vertical-align:middle;
+        margin:0 0 0 5rem;
+        &> .bar{
+            position:absolute;
+            height:10rem;
+        }
+        &> span{
+            padding:0 5rem 0 0;
+            text-align: center;
+            font-family: "Roboto";
+            font-size: 14rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.408rem;
+        }
+    }
+    .bar-wrappper{
+        position:absolute;
+        top:0rem;
+        right:3rem;
+        bottom:0rem;
+        width:33rem;
+        border-radius:5.714rem;
+        overflow:hidden;
+        &> .bar{
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            width:30%;
+            background:red;
         }
     }
 </style>

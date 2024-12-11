@@ -107,7 +107,7 @@
             <!-- area -->
             <div class="area-box">
                 <h3>VIEW(TYPE4 - FIXED MODE)</h3>
-                <div class="view header-design-box">
+                <div class="view header-design-box fixed">
                     <Header-vue v-model:value="type4"></Header-vue>
                 </div>
                 <h3>Source</h3>
@@ -127,8 +127,8 @@
             <!-- area -->
             <div class="area-box">
                 <h3>VIEW(TYPE5 - FIXED MODE)</h3>
-                <div class="view header-design-box">
-                    <Header-vue v-model:value="type5" @menuIconClickEv="menuIconClickEv" @alertIconClick="alertIconClick" ></Header-vue>
+                <div class="view header-design-box fixed">
+                    <Header-vue v-model:value="type55" @menuIconClickEv="menuIconClickEv" @alertIconClick="alertIconClick" ></Header-vue>
                 </div>
                 <h3>Source</h3>
                 <div class="source-box">
@@ -156,7 +156,7 @@
             <!-- area -->
             <div class="area-box">
                 <h3>VIEW(TYPE5 - FIXED MODE - 제목이 있는 경우)</h3>
-                <div class="view header-design-box">
+                <div class="view header-design-box fixed">
                     <Header-vue v-model:value="type5" @menuIconClickEv="menuIconClickEv" @alertIconClick="alertIconClick" @titleClick="titleClick" >
                         <template #title>FIXED 모드</template>
                     </Header-vue>
@@ -172,6 +172,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;headerShow : true,<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;type : 'type5',<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;alert : 30,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;groupText : "Group1",<br />
                     })<br />
                     // Type5 : 햄버거 메뉴 클릭<br />
                     const menuIconClickEv = ()=>{<br />
@@ -189,9 +190,9 @@
                 </div>
             </div>
             <!-- area -->
-            <div class="area-box">
+            <div class="area-box" v-if="false">
                 <h3>VIEW(TYPE6 - FIXED MODE)</h3>
-                <div class="view header-design-box">
+                <div class="view header-design-box fixed">
                     <Header-vue v-model:value="type6" @groupClicEv1="groupClicEv1" @groupClicEv2="groupClicEv2" @alertIconClick="alertIconClick"></Header-vue>
                 </div>
                 <h3>Source</h3>
@@ -237,7 +238,7 @@
                     <th>type</th>
                     <td>Object</td>
                     <th>default</th>
-                    <td>true</td>
+                    <td>undefined</td>
                 </tr>
                 <tr>
                     <th>description</th>
@@ -252,7 +253,7 @@
                     <th>type</th>
                     <td>Number</td>
                     <th>default</th>
-                    <td>0</td>
+                    <td>undefined</td>
                 </tr>
                 <tr>
                     <th>description</th>
@@ -267,7 +268,7 @@
                     <th>type</th>
                     <td>Boolean</td>
                     <th>default</th>
-                    <td>false</td>
+                    <td>undefined</td>
                 </tr>
                 <tr>
                     <th>description</th>
@@ -276,32 +277,17 @@
                 <!-- area -->
                 <tr>
                     <th>name</th>
-                    <td colspan="3">value.inputVal</td>
+                    <td colspan="3">value.groupText</td>
                 </tr>
                 <tr>
                     <th>type</th>
                     <td>String</td>
                     <th>default</th>
-                    <td>""</td>
+                    <td>undefined</td>
                 </tr>
                 <tr>
                     <th>description</th>
-                    <td colspan="3">헤더 POP의 INPUT value값 셋팅</td>
-                </tr>
-                <!-- area -->
-                <tr>
-                    <th>name</th>
-                    <td colspan="3">value.maxlength</td>
-                </tr>
-                <tr>
-                    <th>type</th>
-                    <td>Number</td>
-                    <th>default</th>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <th>description</th>
-                    <td colspan="3">헤더 POP의 INPUT MAX LENGTH 셋팅</td>
+                    <td colspan="3">TYPE5 시 그룹명</td>
                 </tr>
             </tbody>
         </table>
@@ -343,7 +329,7 @@
                     <td>Type5, Type6 : 알림 아이콘 클릭</td>
                     <td>true / false</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>groupClicEv1</td>
                     <td>Type6 : 그룹아이콘 클릭1</td>
                     <td></td>
@@ -352,7 +338,7 @@
                     <td>groupClicEv2</td>
                     <td>Type6 : 그룹아이콘 클릭2</td>
                     <td></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
@@ -392,6 +378,13 @@
     const type5 = ref({
         headerShow : true,
         type : 'type5',
+        groupText : "Group1",
+        alert : 30,
+    })
+    const type55 = ref({
+        headerShow : true,
+        type : 'type5',
+        groupText : "",
         alert : 30,
     })
     // Type5 : 햄버거 메뉴 클릭
@@ -433,6 +426,9 @@
         min-height:30rem;
         margin-bottom:10rem;
         border:1rem solid #ededed;
+        &.fixed{
+            min-height:60rem;
+        }
     }
     .source-box{
         padding:5rem;

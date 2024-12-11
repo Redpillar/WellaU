@@ -2,13 +2,18 @@
     <div class="content-wrapper">
         <div class="content-scroll paddingWrapper">
             <div class="content-scroll-padding-box pt20">
-                <AlertBox :list="lists" />
+                <div>
+                    <AlertBox :list="lists" @click="click" />
+                </div>
             </div>
         </div>
     </div>
 </template>
 <script setup>
     import { ref } from 'vue'
+    const click =(data)=>{
+        console.log("data : ",data)
+    }
     const lists = ref([
         {
             color : "orange",

@@ -3,9 +3,9 @@
         <div class="content-scroll">
             <div class="mapArea dummy-back">
                 <MapPin type="pie" :photo="photo" style="position:absolute; top:10%; right:10%;" />
-                <MapPin type="pie" :photo="photo" :width="80" style="position:absolute; top:50%; left:50%;" />
-                <MapPin pinText="이" pinColor="blue" :width="100" style="position:absolute; top:30%; left:20%;" />
-                <MapPin pinText="홍" pinColor="blue" :width="100" style="position:absolute; bottom:15%; left:10%;" />
+                <MapPin type="pie" :photo="photo" :width="60" style="position:absolute; top:50%; left:50%;" />
+                <MapPin pinText="이" pinColor="blue" :width="70" style="position:absolute; top:30%; left:20%;" />
+                <MapPin pinText="홍" pinColor="blue" :width="70" style="position:absolute; bottom:15%; left:10%;" />
                 <div class="map-fixed-btn">
                     <button class="mapBtn"></button>
                     <!-- <button class="sosBtn"></button> -->

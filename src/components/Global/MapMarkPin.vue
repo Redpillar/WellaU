@@ -38,6 +38,7 @@
 <style type="scss" scoped>
     .map-mark-pin{
         position:relative;
+        display:inline-block;
         width:28rem;
         height:28rem;
     }

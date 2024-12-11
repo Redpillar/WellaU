@@ -1,4 +1,20 @@
 /* input text field */
+
+
+.wellau-input.ant-input-affix-wrapper{
+    padding:12rem 0;
+    border-width:0 0 1rem 0;
+    border-radius:0;
+    border-color:#BDBDBD;
+    font-family:"Noto Sans KR", sans-serif;
+    font-size: 17rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    box-shadow:none !important;
+}
+
+
 .wellau-input.ant-input-affix-wrapper .ant-input,
 .wellau-input.ant-input[type = text],
 .wellau-input.ant-input-affix-wrapper.ant-input-password
@@ -63,18 +79,6 @@
 /* clear */
 .wellau-input.ant-input-affix-wrapper .ant-input-suffix{
     margin-right:12rem;
-}
-
-.wellau-input.ant-input-affix-wrapper{
-    padding:12rem 0;
-    border-width:0 0 1rem 0;
-    border-radius:0;
-    border-color:#BDBDBD;
-    font-family:"Noto Sans KR", sans-serif;
-    font-size: 17rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
 }
 .wellau-input.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
     border-color:#BDBDBD;

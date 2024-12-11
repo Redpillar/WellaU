@@ -1,8 +1,8 @@
 <template>
+    <guidePage />
     <listPage />
-    <!-- <guidePage /> -->
 </template>
 <script setup>
     import listPage from './pageListView'
-    // import guidePage from './pageGuideView.vue'
+    import guidePage from './pageGuideView.vue'
 </script>

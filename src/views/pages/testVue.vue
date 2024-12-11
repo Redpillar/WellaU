@@ -7,7 +7,7 @@
         <div class="dummy-box-area-rec"><MapPin pinText="홍" pinColor="blue" />  pinText="홍"<br />pinColor="blue"</div>
         <div class="dummy-box-area-rec"><MapPin /></div>
         <div class="dummy-box-area-rec">
-            <MapPin type="pie" v-model:popShow="popShow" :per="5">
+            <MapPin type="pie" v-model:popShow="popShow" :per="5" :zIndex="101" sos>
                 <a href="tel:01099999999">010-0000-0000</a>번호로 연락 주세요
             </MapPin>
             <a-button @click="popEv">팝업</a-button>
