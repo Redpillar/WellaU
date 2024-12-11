@@ -7,8 +7,8 @@
             <div class="area-box">
                 <h3>INPUT 하단 시간</h3>
                 <div class="view">
-                    <div class="check-code-input-box">
-                        <a-input class="wellau-input" placeholder="인증코드 입력" />
+                    <div class="check-code-input-box"><!-- 241211 disabled 시 disabled 클래스 추가해 주세요 -->
+                        <a-input class="wellau-input" placeholder="인증코드 입력" :disabled="false" />
                         <span>1분 1초</span>
                     </div>
                 </div>
@@ -17,8 +17,8 @@
             <div class="area-box">
                 <h3>INPUT 하단 시간 & 입력제한</h3>
                 <div class="view">
-                    <div class="check-code-input-box">
-                        <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
+                    <div class="check-code-input-box"><!-- 241211 disabled 시 disabled 클래스 추가해 주세요 -->
+                        <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" :disabled="false" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
                         <span>{{time.m}}분 {{time.s}}초</span>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
             <div class="area-box">
                 <h3>Default</h3>
                 <div class="view">
-                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1" />
+                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1" />
                 </div>
             </div>
             <!-- area -->
@@ -326,7 +326,7 @@
             <div class="area-box">
                 <h3>오른쪽 체크박스</h3>
                 <div class="view">
-                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1">
+                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1">
                         <template #rightArea>
                             <a-switch v-model:checked="switchChecked" />
                         </template>
@@ -337,7 +337,7 @@
             <div class="area-box">
                 <h3>베터리</h3>
                 <div class="view">
-                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1" :battery="75" />
+                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1" :battery="75" />
                 </div>
             </div>
         </div>

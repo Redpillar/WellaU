@@ -20,7 +20,7 @@
     import { ref } from 'vue'
     import { useRouter } from 'vue-router'
     const router = useRouter();
-    const btnDisabled = ref(false);
+    const btnDisabled = ref(true);
     const textField = ref("");
     const  textFieldInput = ($ev)=>{
         if($ev.target.value.length > 0){

@@ -12,12 +12,12 @@
                         <div class="profile-box-pc">
                             <div class="top-wrappper">
                                 <div class="top">
-                                    <ProfileBox :name="person.name" :conText="person.text" :king="person.king" :birthday="person.birthday" :img="person.img"></ProfileBox>
+                                    <ProfileBox :name="person.name" :conText="person.text" :time="person.time" :king="person.king" :birthday="person.birthday" :img="person.img"></ProfileBox>
                                 </div>
                             </div>
                             <div class="con-wrappper">
                                 <div class="con">
-                                    <ProfileBox :name="friend.name" :conText="friend.text" :king="friend.king" :birthday="friend.birthday" :img="friend.img" v-for="(friend,index) in friends" :key='"profile_"+index'></ProfileBox>
+                                    <ProfileBox :name="friend.name" :conText="friend.text" :time="friend.time" :king="friend.king" :birthday="friend.birthday" :img="friend.img" v-for="(friend,index) in friends" :key='"profile_"+index'></ProfileBox>
                                 </div>
                             </div>
                         </div>
@@ -59,6 +59,7 @@
                 return {
                     name : "",
                     text : "",
+                    time : "",
                     king : false,
                     birthday : false,
                     img : {

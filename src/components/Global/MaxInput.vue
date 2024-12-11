@@ -1,6 +1,6 @@
 <template>
-    <div class="maxInput-wrapper">
-        <a-input v-model:value="textField" class="wellau-input" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" ref="input" />
+    <div class="maxInput-wrapper" :class="[{disabled:props.disabled}]">
+        <a-input v-model:value="textField" class="wellau-input" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" :disabled="props.disabled" ref="input" />
         <div class="textFieldMixmunNumBox">{{textField.length}}/{{maxlength}}</div>    
     </div>
 </template>
@@ -24,6 +24,10 @@
             default : ()=>{
                 return "";
             }
+        },
+        disabled : {
+            type : Boolean,
+            default : ()=> false
         }
     })
     const emit = defineEmits(["inputEv","enterEv"])
@@ -50,19 +54,25 @@
     })
 </script>
 <style type="scss" scoped>
-
-    .textFieldMixmunNumBox{
-        display:flex;
-        align-items:center;
-        justify-content:flex-end;
-        height:16rem;
-        padding:0;
-        margin:6rem 0 6rem 0;
-        font-family: "Noto Sans";
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%; /* 18.2px */
-        color:#333;
+    .maxInput-wrapper{
+        .textFieldMixmunNumBox{
+            display:flex;
+            align-items:center;
+            justify-content:flex-end;
+            height:16rem;
+            padding:0;
+            margin:6rem 0 6rem 0;
+            font-family: "Noto Sans";
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 18.2px */
+            color:#333;
+        }
+        &.disabled{
+            .textFieldMixmunNumBox{
+                opacity:0.4;
+            }
+        }
     }
 </style>

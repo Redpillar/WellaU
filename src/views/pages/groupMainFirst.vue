@@ -12,7 +12,7 @@
             <template #content>
                 <div class="bothbar-wrapper">
                     <div class="both-bar-area">
-                        <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1"></ProfileBox>
+                        <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1"></ProfileBox>
                     </div>
                     <div class="both-bar-area">
                         <!-- <ProfileBox name="김응삼" conText="서울시 용산동 갈월동" time="13분전" :img="img2"></ProfileBox>

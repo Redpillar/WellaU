@@ -42,7 +42,7 @@
                 <div class="floating-menu-box">
                     <div class="floating-menu-wrapper">
                         <div class="top">
-                            <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1"></ProfileBox>
+                            <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1"></ProfileBox>
                         </div>
                         <div class="con-wrapper">
                             <div class="con">
@@ -60,15 +60,15 @@
         <BothBar style="display:none;">
             <template #content>
                 <div class="both-bar-area">
-                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1">
+                    <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1">
                         <template #rightArea>
                             <a-switch v-model:checked="switchChecked" />
                         </template>
                     </ProfileBox>
                 </div>
                 <div class="both-bar-area">
-                    <ProfileBox name="김응삼" conText="서울시 용산동 갈월동 | 13분전" king :img="img2"></ProfileBox>
-                    <ProfileBox name="김은지" conText="서울시 용산동 갈월동 | 13분전" birthday :img="img3"></ProfileBox>
+                    <ProfileBox name="김응삼" conText="서울시 용산동 갈월동" time="13분전" king :img="img2"></ProfileBox>
+                    <ProfileBox name="김은지" conText="서울시 용산동 갈월동" time="13분전" birthday :img="img3"></ProfileBox>
                 </div>
                 <div class="both-bar-area paddingNone">
                     <a-button type="link" class="addGroupPersonBtn">+ 그룹원 추가 하기</a-button>

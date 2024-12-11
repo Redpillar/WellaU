@@ -5,8 +5,8 @@
                 <div class="title-wrappper">
                     <h2 class="title">{{title}}</h2>
                 </div>
-                <div class="check-code-input-box">
-                    <a-input v-model:value="textFieldCode" class="wellau-input" placeholder="인증코드 입력" />
+                <div class="check-code-input-box"><!-- 241211 disabled 시 disabled 클래스 추가해 주세요 -->
+                    <a-input v-model:value="textFieldCode" class="wellau-input" placeholder="인증코드 입력" allow-clear :disabled="false" />
                     <span>{{time.m}}분 {{time.s}}초</span>
                 </div>
                 <div class="btn-set">
@@ -28,7 +28,6 @@
                 m : 3,
                 s : 0,
     })
-
 </script>
 <style type="scss" scoped>
 </style>

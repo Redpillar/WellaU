@@ -3,8 +3,8 @@
         <div class="content-scroll">
             <div class="content-scroll-padding-box">
                 <a-input v-model:value="textFieldPhoneEnter" class="wellau-input" disabled placeholder="휴대폰 번호" />
-                <div class="check-code-input-box">
-                    <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
+                <div class="check-code-input-box"><!-- 241211 disabled 시 disabled 클래스 추가해 주세요 -->
+                    <MaxInput v-model:value="maxValue" :maxlength="maxlength" :placeholder="maxInputPlaceholder" :disabled="false" @input="maxInputEvent" @enterEv="maxInputEnterEvent" />
                     <span>{{time.m}}분 {{time.s}}초</span>
                 </div>
             </div>

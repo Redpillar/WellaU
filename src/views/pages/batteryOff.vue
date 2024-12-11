@@ -12,11 +12,9 @@
             <template #content>
                 <div class="bothbar-wrapper">
                     <div class="both-bar-area">
-                        <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1" :bg="true"></ProfileBox>
+                        <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1" :bg="true"></ProfileBox>
                     </div>
                     <div class="both-bar-area">
-                        <!-- <ProfileBox name="김응삼" conText="서울시 용산동 갈월동" time="13분전" :img="img2"></ProfileBox>
-                        <ProfileBox name="김은지" conText="서울시 용산동 갈월동" time="13분전" :img="img3"></ProfileBox> -->
                     </div>
                     <button type="link" class="addGroupPersonBtn"><span>+ 그룹원 추가 하기</span></button>
                 </div>

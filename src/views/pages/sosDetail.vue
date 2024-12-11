@@ -15,7 +15,7 @@
         </div>
         <div class="both-area-box">
             <div class="both-area-box-scroll">
-                <ProfileBox name="홍길동" conText="서울시 용산동 갈월동 | 13분전" :img="img1" :battery="45" king>
+                <ProfileBox name="홍길동" conText="서울시 용산동 갈월동" time="13분전" :img="img1" :battery="45" king>
                 </ProfileBox>
             </div>
         </div>

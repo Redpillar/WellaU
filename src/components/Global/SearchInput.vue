@@ -1,6 +1,6 @@
 <template>
-    <div class="search-input">
-        <a-input v-model:value="textField" @input="inputEv" @keydown.enter="enterEv" class="wellau-input" :allowClear="true" :placeholder="props.placeholder" />
+    <div class="search-input" :class="[{disabled:props.disabled}]">
+        <a-input v-model:value="textField" @input="inputEv" @keydown.enter="enterEv" class="wellau-input" :allowClear="true" :placeholder="props.placeholder" :disabled="props.disabled" />
         <i @click="searchClick"><SearchOutlined /></i>
     </div>
 </template>
@@ -20,6 +20,10 @@
             default : ()=>{
                 return "";
             }
+        },
+        disabled : {
+            type : Boolean,
+            default : ()=> false
         }
     })
     const emits = defineEmits(['enter','searchIcon','input'])
