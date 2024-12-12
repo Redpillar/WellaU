@@ -89,6 +89,7 @@ body{
     display:flex;
     flex:1;
     overflow:auto;
+    -webkit-overflow-scrolling: touch;
     &+ .btn-set{
         padding-top:30rem;
     }
@@ -120,6 +121,7 @@ body{
     flex:1;
     padding:0 20rem 0;
     overflow:auto;
+    -webkit-overflow-scrolling: touch;
     &.p0{
         padding:0;
     }
@@ -420,6 +422,11 @@ body{
         &.f{
             display:flex;
             justify-content:space-between;
+        }
+        &.big{
+            margin-top:4rem;
+            font-size:20rem;
+            color:#333;
         }
     }
     &> .r{
@@ -724,11 +731,13 @@ table.guide-table{
     display:flex;
     flex:1;
     overflow:auto;
+    -webkit-overflow-scrolling: touch;
     background:#F5F5F5;
     &> .bg-gray-info-box-scroll{
         flex:1;
         padding:10rem;
         overflow:auto;
+        -webkit-overflow-scrolling: touch;
         font-size: 16rem;
         font-style: normal;
         font-weight: 400;
@@ -826,6 +835,7 @@ table.guide-table{
     flex:1;
     padding:20rem 30rem 12rem;
     overflow:auto;
+    -webkit-overflow-scrolling: touch;
     &.pt0{
         padding-top:0;
     }
@@ -952,6 +962,7 @@ table.guide-table{
 
 /* address-search-list */
 .address-search-list{
+    width:100%;
     &> li{
         padding:20rem 0 20rem 10rem;
         font-size:16rem;
@@ -1423,8 +1434,13 @@ table.guide-table{
     color:#333;
 }
 .popup-img-area{
+    position:relative;
     flex:1;
     margin:15rem;
     border-radius:15rem;
     overflow:hidden;
+}
+
+.color-blue{
+    color:#076AEB
 }

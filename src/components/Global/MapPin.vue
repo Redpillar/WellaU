@@ -25,7 +25,21 @@
             <span class="s" :style="pieChartCircleSstyle"></span>
             <span class="e" :style="pieChartCircleEstyle"><i class="c" :style="pieChartCircleECstyle"></i></span>
         </div>
-        <div class="mapPin-icon-circle" :style="mapPinIconCircleStyle">
+        <!-- 241212 : 추가 -->
+        <div class="mapPin-icon-icon" :style="mapPinIconIconStyle" v-if="props.icon !== '' && props.icon !== null && props.icon !== false && props.icon !== undefined && props.icon === 'home'">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 27" fill="none">
+            <g clip-path="url(#clip0_14425_515)">
+            <path d="M28.1801 5.78961L25.3151 1.25461C25.0601 0.849609 24.6051 0.599609 24.1201 0.599609H6.28008C5.79508 0.599609 5.34008 0.849609 5.08508 1.25461L2.21508 5.78961C0.735085 8.12961 2.04508 11.3846 4.81008 11.7596C5.01008 11.7846 5.21508 11.7996 5.41508 11.7996C6.72008 11.7996 7.88008 11.2296 8.67508 10.3496C9.47008 11.2296 10.6301 11.7996 11.9351 11.7996C13.2401 11.7996 14.4001 11.2296 15.1951 10.3496C15.9901 11.2296 17.1501 11.7996 18.4551 11.7996C19.7651 11.7996 20.9201 11.2296 21.7151 10.3496C22.5151 11.2296 23.6701 11.7996 24.9751 11.7996C25.1801 11.7996 25.3801 11.7846 25.5801 11.7596C28.3551 11.3896 29.6701 8.13461 28.1851 5.78961H28.1801ZM25.7851 13.3446C25.7851 13.3446 25.7851 13.3446 25.7801 13.3446C25.5151 13.3796 25.2451 13.3996 24.9701 13.3996C24.3501 13.3996 23.7551 13.3046 23.2001 13.1346V19.7996H7.20008V13.1296C6.64008 13.3046 6.04008 13.3996 5.42008 13.3996C5.14508 13.3996 4.87008 13.3796 4.60508 13.3446H4.60008C4.39508 13.3146 4.19508 13.2796 4.00008 13.2296V19.7996V22.9996C4.00008 24.7646 5.43508 26.1996 7.20008 26.1996H23.2001C24.9651 26.1996 26.4001 24.7646 26.4001 22.9996V19.7996V13.2296C26.2001 13.2796 26.0001 13.3196 25.7851 13.3446Z" :fill="fillColor"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_14425_515">
+            <rect width="28.8" height="25.6" fill="white" transform="translate(0.799805 0.600098)"/>
+            </clipPath>
+            </defs>
+            </svg>
+        </div>
+        <!-- // 241212 : 추가 -->
+        <div class="mapPin-icon-circle" :style="mapPinIconCircleStyle" v-else>
             <img :src="props.photo.src" :alt="props.photo.alt" v-if="props.photo.src !== '' " />
             <p v-else-if="props.photo.src === '' && props.pinText !== null " :style="firstNameStyle">
                 {{props.pinText}}
@@ -100,7 +114,7 @@
         icon : {
             type : String,
             default : ()=>{
-                return "home"; // yellow or people orhome
+                return null; // home
             }
         },
         popShow :{
@@ -191,11 +205,7 @@
     })
     const mapPinIconCircleStyle = computed(()=>{
         const style = {};
-        // const price = props.width * 0.6;
         const price = w.value;
-        console.log("========================")
-        console.log("props.width => ",props.width)
-        console.log("props.width * 0.6 => ",(props.width * 0.6) / 2)
         style.width = price + "rem";
         style.height = price + "rem";
         style.top = ((props.width - price) / 2) + "rem";
@@ -203,6 +213,17 @@
         style.background = fillColor.value;
         return style;
     })
+    /* 241212 : 추가 */
+    const mapPinIconIconStyle = computed(()=>{
+        const style = {};
+        const price = w.value;
+        style.width = price + "rem";
+        style.height = price + "rem";
+        style.top = ((props.width - price) / 2) + "rem";
+        style.left = ((props.width - price) / 2) + "rem";
+        return style;
+    })
+    /* // 241212 : 추가 */
     const fillColor = computed(()=>{
         let color = "#000";
         if(props.pinColor === 'blue'){
@@ -324,6 +345,22 @@
             }
         }
     }
+    /* 241212 : 추가 */
+    .mapPin-icon-icon{
+        position:absolute;
+        top:10rem;
+        left:10rem;
+        z-index:50;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background:#fff;
+        &> svg{
+            width:55%;
+        }
+    }
+    /* // 241212 : 추가 */
     .mapPin-icon-circle{
         position:absolute;
         top:10rem;
@@ -372,28 +409,28 @@
             }
         }
     }
+    /* 241212 : 수정 */
     .mapPinPop{
         position:absolute;
         top:0;
         left:50%;
         z-index:100;
         transform:translate(-50%,calc(-100% - 10rem));
-        .mapPinPopInnerWrap{
-            display:flex;
-            border:1rem solid #ededed;
-            border-radius:5rem;
-            background:#fff;
-        }
-        .mapPinPopHeader{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            width:45rem;
-            height:40rem;
-            border-radius: 12px 0px 0px 0px;
-            background: #1677FF;
-        }
-
+    }
+    .mapPinPopInnerWrap{
+        display:flex;
+        border:1rem solid #ededed;
+        border-radius:5rem;
+        background:#fff;
+    }
+    .mapPinPopHeader{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:45rem;
+        height:40rem;
+        border-radius: 12px 0px 0px 0px;
+        background: #1677FF;
     }
     .mapPinPop-con{
         display:flex;
@@ -415,6 +452,7 @@
             margin:0 0 0 14rem;
         }
     }
+    /* // 241212 : 수정 */
     .mapPinPop-btn{
         display:flex;
         justify-content:flex-end;

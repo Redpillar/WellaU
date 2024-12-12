@@ -177,10 +177,8 @@
         }else if(props.battery >= 50){
             temp = color[1];
         }
-        console.log("temp : ",temp)
         return temp;
     })
-    console.log("props.battery : ",props.battery)
 </script>
 <style type="scss" scoped>
     .profileBox-warpper{

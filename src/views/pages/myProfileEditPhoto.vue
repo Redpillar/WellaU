@@ -7,7 +7,7 @@
                         <div class="circle">
                             <img :src="img.src" :alt="img.alt" v-if="img.src !== null && img.src !== ''" />
                         </div>
-                        <i class="edit-icon" @click="editPhoto"></i>
+                        <CameraIcon @click="editPhoto"></CameraIcon><!-- 241212 : 아이콘 수정 -->
                     </div>
                     <div class="name">
                         홍길동<i class="edit-icon" @click="editName"></i>
@@ -84,6 +84,7 @@
 <script setup>
     import { ref } from 'vue'
     import { useRouter } from 'vue-router'
+    import CameraIcon from '@components/CameraIcon' // 241212 : 추가
 
     const router = useRouter();
 

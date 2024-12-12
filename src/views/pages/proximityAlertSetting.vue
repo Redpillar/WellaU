@@ -5,7 +5,7 @@
                 <div class="setting-box-scroll">
                     <ProfileBox :name="list.name" :img="list.img" v-for="(list,index) in profileList" :key="'profile_' + index">
                         <template #rightArea>
-                                <a-switch v-model:checked="list.checked" />
+                                <a-switch class="wellau-switch big-size" v-model:checked="list.checked" /><!-- 241212 : wellau-switch big-size 클래스 추가 -->
                         </template>
                     </ProfileBox>
                 </div>

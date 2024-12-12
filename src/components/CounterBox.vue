@@ -35,7 +35,6 @@
     const canvas = ref("canvas");
     let size = 5;
     const draw = ()=>{
-        console.log("props.angle => ",props.angle)
         const _canvas = canvas.value;
         const ctx = _canvas.getContext("2d");
         const halfPoint = _canvas.width / 2;
@@ -83,7 +82,6 @@
 
     }
     onMounted(()=>{
-        console.log(canvas.value)
         draw();
     })
     watch(()=>props.angle,()=>{

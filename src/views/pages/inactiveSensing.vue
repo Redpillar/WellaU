@@ -7,7 +7,7 @@
                         <div class="title-info-style">
                             <div class="l">
                                 <div class="tit">비활동 감지 기능 설정</div>
-                                <div class="info">사용자가 하루동안 일정거리 이상 이동하지 않을 경우 그룹원에게 푸시가 발송돼요.</div>
+                                <div class="info">사용자가 <span class="color-blue">하루동안</span> 일정거리 이상 이동하지 않을 경우 그룹원에게 푸시가 발송돼요.</div><!-- 241212 : 수정 -->
                             </div>
                             <div class="r"><a-switch v-model:checked="sensingSwitch" class="wellau-switch big-size" /></div>
                         </div>

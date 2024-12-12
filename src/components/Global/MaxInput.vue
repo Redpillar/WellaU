@@ -66,7 +66,6 @@
             height:16rem;
             padding:0;
             margin:6rem 0 6rem 0;
-            font-family: "Noto Sans";
             font-size: 13px;
             font-style: normal;
             font-weight: 400;

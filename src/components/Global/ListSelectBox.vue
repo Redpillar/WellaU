@@ -62,7 +62,6 @@
     })
     const emits = defineEmits(["btnClick","listClick"])
     const model = defineModel("value")
-    console.log("props : ",props)
 
     const listSelectBoxStyle = computed(()=>{
         const style = {};

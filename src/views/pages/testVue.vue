@@ -50,6 +50,8 @@
         <div class="dummy-box-area-rec"><MapPin pinText="홍" pinColor="green" />  pinText="홍"<br />pinColor="green"</div>
         <div class="dummy-box-area-rec"><MapPin pinText="홍" pinColor="red" />  pinText="홍"<br />pinColor="red"</div>
         <div class="dummy-box-area-rec"><MapPin pinText="홍" pinColor="bluegreen" />  pinText="홍"<br />pinColor="bluegreen"</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="#076AEB" icon="home" />  pinColor="#076AEB"<br />icon="home"</div>
+        
     </div>
 </template>
 <script setup>

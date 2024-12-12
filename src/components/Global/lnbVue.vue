@@ -251,7 +251,7 @@
         overflow:auto;
         padding:20rem;
         &> .lnb-menu-top{
-            padding:0 0 30rem;
+            padding:0 0 10rem;
             border-bottom:1rem solid #ededed;
         }
         &> .lnb-menu-both{

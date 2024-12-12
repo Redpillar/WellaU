@@ -523,7 +523,9 @@ ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password wella
 .wellau-switch.big-size.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled){
     background-color:#076AEB;
 }
-
+.wellau-switch.ant-switch > div:not(.ant-switch-handle){
+    display:none;
+}
 
 
 /* modal */

@@ -30,6 +30,7 @@
                     </p>
                     <div class="popup-img-area">
                         <img :src="src" alt="이미지" style="width:100%; height:100%;" />
+                        <MapPin pinColor="#076AEB" icon="home" style="position:absolute; top:0; right:0;" /><!-- 241212 : 추가 -->
                     </div>
                 </div>
             </div>

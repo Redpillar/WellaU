@@ -93,7 +93,6 @@
             },
             headerAreaCenterStyle(){
                 const style = {};
-                console.log("this.type : ",this.type);
                 if(this.type === 'type3' || this.type === 'type5'){
                     style.textAlign = "center"
                     style.justifyContent = "center"

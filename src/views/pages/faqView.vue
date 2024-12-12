@@ -70,11 +70,8 @@
     const placeholder = ref("검색어");
 
     const enterEvent = (val)=>{
-        console.log("parent enter : ",val)
         const regExp = new RegExp(val,'gi');
         accordionList.value.forEach((l,i)=>{
-            console.log(i,":",l.tit)
-            console.log(l.tit.match(regExp))
             if(l.tit.match(regExp) || val === ""){
                 accordionList.value[i].show = true;
             }else{

@@ -16,7 +16,7 @@
                         <dd>오전 9:00  -  오후 18:00</dd>
                     </dl>
                     <dl>
-                        <dt>실행 시간</dt>
+                        <dt>실행 장소</dt><!-- 241212 : 텍스트 수정 -->
                         <dd>
                             <img :src="src" alt="map" class="dummy-img" />
                         </dd>

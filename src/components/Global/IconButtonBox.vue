@@ -129,7 +129,6 @@
         }else if(props.battery >= 50){
             temp = color[1];
         }
-        console.log("temp : ",temp)
         return temp;
     })
 
