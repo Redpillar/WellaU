@@ -18,8 +18,8 @@
                     <a-button type="primary" class="wellau-btn" :disabled="disabled">시작하기</a-button>
                 </div>
                 <div class="link-text-btn-set">
-                    <a-button type="link">가입하기</a-button><i class="gap-line-icon" />
-                    <a-button type="link">비밀번호 찾기</a-button>
+                    <a-button type="link" class="wellau-btn">가입하기</a-button><i class="gap-line-icon" />
+                    <a-button type="link" class="wellau-btn">비밀번호 찾기</a-button>
                 </div>
             </div>
         </div>

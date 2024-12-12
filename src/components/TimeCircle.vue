@@ -159,6 +159,7 @@
             font-weight: 600;
             line-height: 1;
             color:#fff;
+            white-space:nowrap;
         }
         &> .num{
             position:absolute;

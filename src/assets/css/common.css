@@ -569,7 +569,7 @@ table.guide-table{
 .addGroupPersonBtn{
     display:inline-block;
     width:100%;
-    height:auto;
+    /* height:auto;
     padding:12rem 0;
     border:1rem solid #ededed;
     background:none;
@@ -585,7 +585,7 @@ table.guide-table{
     }
     &.ant-btn-link:not(:disabled):hover{
         color:#333;
-    }
+    } */
 }
 .btn-info-text-both{
     padding:12rem 0 0;

@@ -1,6 +1,6 @@
 <template>
     <div class="maxInput-wrapper" :class="[{disabled:props.disabled}]">
-        <a-input v-model:value="textField" class="wellau-input" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" :disabled="props.disabled" ref="input" />
+        <a-input v-model:value="textField" class="wellau-input" :class="[{'small-size' : props.inputSmall}]" :maxlength="maxlength" :placeholder="placeholder" @input="inputEv" @keydown.enter="enterEv" :disabled="props.disabled" ref="input" />
         <div class="textFieldMixmunNumBox">{{textField.length}}/{{maxlength}}</div>    
     </div>
 </template>
@@ -26,6 +26,10 @@
             }
         },
         disabled : {
+            type : Boolean,
+            default : ()=> false
+        },
+        inputSmall : {
             type : Boolean,
             default : ()=> false
         }

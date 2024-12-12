@@ -24,7 +24,7 @@
                         <a-radio :value="3" class="wellau-radio">
                         <div class="click-dummy-box" v-if="radio !== 3"></div>
                             <!-- <a-input class="wellau-input" v-model:value="textField" placeholder="10자 이내" :maxlength="10" @input="maxInputEvent" ref="inputRef" /> -->
-                            <MaxInput v-model:value="textField" :maxlength="10" placeholder="10자 이내" :disabled="disabled" @input="maxInputEvent" @enterEv="maxInputEnterEvent" ref="inputRef" />
+                            <MaxInput v-model:value="textField" :maxlength="10" placeholder="10자 이내" :disabled="disabled" @input="maxInputEvent" @enterEv="maxInputEnterEvent" ref="inputRef" inputSmall /><!-- 241212 inputSmall 추가 -->
                         </a-radio>
                     </a-radio-group>
                     <div class="state-ingo-message-box">

@@ -16,7 +16,7 @@
                     </div>
                     <div class="both-bar-area">
                     </div>
-                    <button type="link" class="addGroupPersonBtn"><span>+ 그룹원 추가 하기</span></button>
+                    <a-button class="wellau-btn addGroupPersonBtn">+ 그룹원 추가 하기</a-button><!-- 241212 : 버튼 수정 -->
                 </div>
             </template>
         </BothBar>

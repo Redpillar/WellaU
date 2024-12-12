@@ -16,9 +16,11 @@
             </div>
             <div v-if="props.icon === 'sharing'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                    <path d="M12.7695 23.353L4.76953 25.353V7.35303L12.7695 5.35303" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20.7695 27.353L12.7695 23.353V5.35303L20.7695 9.35303V27.353Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20.7695 9.35303L28.7695 7.35303V25.353L20.7695 27.353" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.49512 20.353C10.7043 20.353 12.4951 18.5622 12.4951 16.353C12.4951 14.1439 10.7043 12.353 8.49512 12.353C6.28598 12.353 4.49512 14.1439 4.49512 16.353C4.49512 18.5622 6.28598 20.353 8.49512 20.353Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22.4951 29.353C24.7043 29.353 26.4951 27.5622 26.4951 25.353C26.4951 23.1439 24.7043 21.353 22.4951 21.353C20.286 21.353 18.4951 23.1439 18.4951 25.353C18.4951 27.5622 20.286 29.353 22.4951 29.353Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22.4951 11.353C24.7043 11.353 26.4951 9.56217 26.4951 7.35303C26.4951 5.14389 24.7043 3.35303 22.4951 3.35303C20.286 3.35303 18.4951 5.14389 18.4951 7.35303C18.4951 9.56217 20.286 11.353 22.4951 11.353Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.1324 9.51562L11.8574 14.1906" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.8574 18.5156L19.1324 23.1906" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div v-if="props.icon === 'record'">
@@ -27,7 +29,13 @@
                     <path d="M9.76953 7.35303H21.7695C22.8304 7.35303 23.8478 7.77445 24.598 8.5246C25.3481 9.27475 25.7695 10.2922 25.7695 11.353C25.7695 12.4139 25.3481 13.4313 24.598 14.1815C23.8478 14.9316 22.8304 15.353 21.7695 15.353H9.76953C8.44345 15.353 7.17168 15.8798 6.234 16.8175C5.29632 17.7552 4.76953 19.0269 4.76953 20.353C4.76953 21.6791 5.29632 22.9509 6.234 23.8886C7.17168 24.8262 8.44345 25.353 9.76953 25.353H22.7695" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
-            <MonitorOutlined v-if="props.icon === 'search'" /><!-- 찾기 -->
+            <div v-if="props.icon === 'search'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                    <path d="M12.7695 23.353L4.76953 25.353V7.35303L12.7695 5.35303" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.7695 27.353L12.7695 23.353V5.35303L20.7695 9.35303V27.353Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.7695 9.35303L28.7695 7.35303V25.353L20.7695 27.353" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
             <div v-if="props.icon === 'alert'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
                     <path d="M7.05273 14.9047C7.05273 13.7261 7.28487 12.559 7.73591 11.4701C8.18695 10.3812 8.84804 9.39181 9.68145 8.5584C10.5149 7.725 11.5042 7.0639 12.5931 6.61287C13.682 6.16183 14.8491 5.92969 16.0277 5.92969C17.2063 5.92969 18.3734 6.16183 19.4623 6.61287C20.5512 7.0639 21.5406 7.725 22.374 8.5584C23.2074 9.39181 23.8685 10.3812 24.3195 11.4701C24.7706 12.559 25.0027 13.7261 25.0027 14.9047V14.9047C25.0027 19.3797 25.9402 21.9797 26.7652 23.4047C26.8528 23.5564 26.899 23.7286 26.8992 23.9038C26.8994 24.079 26.8535 24.2513 26.7661 24.4032C26.6788 24.5551 26.553 24.6814 26.4015 24.7694C26.25 24.8574 26.078 24.9041 25.9027 24.9047H6.15273C5.97749 24.9041 5.80549 24.8574 5.65396 24.7694C5.50243 24.6814 5.3767 24.5551 5.28934 24.4032C5.20199 24.2513 5.1561 24.079 5.15625 23.9038C5.15641 23.7286 5.20261 23.5564 5.29023 23.4047C6.11523 21.9797 7.05273 19.3797 7.05273 14.9047Z" stroke="#333333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -59,7 +67,6 @@
 </template>
 <script setup>
     import { ref,watch,computed,defineEmits,defineProps } from 'vue'
-    import { MonitorOutlined } from '@ant-design/icons-vue'
     const props = defineProps({
         icon : {
             type : String,

@@ -19,16 +19,44 @@
             </div>
             <!-- area -->
             <div class="area-box">
+                <h3>SMALL INPUT</h3>
+                <div class="view">
+                    <a-input v-model:value="basicTextField" class="wellau-input small-size" placeholder="입력하세요" :allowClear="true" />
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>SMALL INPUT DISABLED</h3>
+                <div class="view">
+                    <a-input v-model:value="basicTextField" class="wellau-input small-size" placeholder="입력하세요" :allowClear="true" disabled />
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
                 <h3>비밀번호 INPUT</h3>
                 <div class="view">
-                <a-input-password v-model:value="passwordTextField" class="wellau-input" placeholder="비밀번호" />
+                    <a-input-password v-model:value="passwordTextField" class="wellau-input" placeholder="비밀번호" />
                 </div>
             </div>
             <!-- area -->
             <div class="area-box">
                 <h3>비밀번호 INPUT DISABLED</h3>
                 <div class="view">
-                <a-input-password v-model:value="passwordTextField" class="wellau-input" placeholder="비밀번호" disabled />
+                    <a-input-password v-model:value="passwordTextField" class="wellau-input" placeholder="비밀번호" disabled />
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>SMALL SIZE 비밀번호 INPUT</h3>
+                <div class="view">
+                    <a-input-password v-model:value="passwordTextField" class="wellau-input small-size" placeholder="비밀번호" />
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>SMALL SIZE 비밀번호 INPUT DISABLED</h3>
+                <div class="view">
+                    <a-input-password v-model:value="passwordTextField" class="wellau-input small-size" placeholder="비밀번호" disabled />
                 </div>
             </div>
             <!-- area -->
@@ -126,10 +154,11 @@
                 <div class="view">
                     <div class="radio-list-style-box">
                         <a-radio-group v-model:value="radio" @change="radioChange" class="wellau-radio-group">
-                            <a-radio :value="0">긴급 상황입니다.</a-radio>
-                            <a-radio :value="1">010-000-0000 번호로 연락 주세요.</a-radio>
-                            <a-radio :value="2">다쳤어요, 도움이 필요해요.</a-radio>
-                            <a-radio :value="3"><div class="click-dummy-box" v-if="radio !== 3"></div><a-input class="wellau-input" v-model:value="radioTextField" placeholder="10자 이내" :maxlength="10" :disabled="radioTextFieldDisabled" @input="radioTextFieldInput" ref="radioInputRef" /></a-radio>
+                            <a-radio class="wellau-radio" :value="0">긴급 상황입니다.</a-radio>
+                            <a-radio class="wellau-radio" :value="1">010-000-0000 번호로 연락 주세요.</a-radio>
+                            <a-radio class="wellau-radio" :value="2">다쳤어요, 도움이 필요해요.</a-radio>
+                            <a-radio class="wellau-radio" :value="3"><div class="click-dummy-box" v-if="radio !== 3"></div><MaxInput v-model:value="radioTextField" :maxlength="10" placeholder="10자 이내" :disabled="radioTextFieldDisabled" @input="radioTextFieldInput" @enterEv="radioTextFieldEnter" ref="radioInputRef" inputSmall /><!-- 241212 inputSmall 추가 --></a-radio>
+                            
                         </a-radio-group>
                     </div>
                 </div>
@@ -298,9 +327,16 @@
             </div>
             <!-- area -->
             <div class="area-box">
-                <h3>텍스트 버튼 타입1</h3>
+                <h3>그룹원 추가 버튼</h3>
                 <div class="view">
-                     <a-button type="link" class="wellau-btn addGroupPersonBtn">+ 그룹원 추가 하기</a-button>
+                     <a-button class="wellau-btn addGroupPersonBtn">+ 그룹원 추가 하기</a-button>
+                </div>
+            </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>그룹원 추가 버튼 - PRIMARY</h3>
+                <div class="view">
+                     <a-button type="primary" class="wellau-btn addGroupPersonBtn">+ 그룹원 추가 하기</a-button>
                 </div>
             </div>
             <!-- area -->
@@ -354,7 +390,7 @@
                 <h3>ICON BUTTON</h3>
                 <div class="view">
                     <IconButton icon="phone" :disabled="true" @click="iconButtonClick" />
-                    <IconButton icon="text" @click="iconButtonClick" />
+                    <!-- <IconButton icon="text" @click="iconButtonClick" /> -->
                     <IconButton icon="sharing" @click="iconButtonClick" />
                 </div>
             </div>
@@ -865,6 +901,7 @@
                 <div>
                     <a-button class="wellau-btn small-size" @click="aModalOpen(0)">권한 횽</a-button>
                     <a-button class="wellau-btn small-size" @click="aModalOpen(1)">위치 권한 허용</a-button>
+                    <a-button class="wellau-btn small-size" @click="aModalOpen(2)">등록된 이름 일치하지 않음</a-button>
                 </div>
                 <div class="view">
                     <a-modal v-model:open="aModalShow[0]" title="" class="wellau-modal" style="width:240rem;">
@@ -890,6 +927,15 @@
                         <template #footer>
                             <div class="btn-set horizontal">
                                 <a-button type="primary" class="wellau-btn" @click="aModalClose(1)">설정으로 이동</a-button>
+                            </div>
+                        </template>
+                    </a-modal>
+                    <a-modal v-model:open="aModalShow[2]" title="" class="wellau-modal" style="width:280rem;">
+                        <p class="modal-title align-center">등록된 이름 또는 휴대폰 번호가 일치하지 않습니다.</p>
+                        <p class="modal-content">등록정보 확인 및 비밀번호 재설정 실패 관련 안내는 02-2057-2678로 문의 바랍니다.</p>
+                        <template #footer>
+                            <div class="btn-set horizontal">
+                                <a-button class="wellau-btn" @click="aModalClose(2)">확인</a-button>
                             </div>
                         </template>
                     </a-modal>
@@ -981,6 +1027,7 @@
     }
     const radioInputRef = ref();
     const radioTextFieldInput = ()=>{}
+    const radioTextFieldEnter = ()=>{}
 
 
     /* select */
@@ -1092,7 +1139,7 @@
     }
 
     /* modal */
-    const aModalShow = ref([false,false]);
+    const aModalShow = ref([false,false,false]);
     const aModalOpen = (index)=>{aModalShow.value[index] = true}
     const aModalClose = (index)=>{aModalShow.value[index] = false}
     const src = require('@img/pop-img-location.png')
