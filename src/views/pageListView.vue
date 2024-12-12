@@ -2,6 +2,7 @@
     <div class="listWrap">
         <table cellspacing="0" cellapdding="0">
             <colgroup>
+                <col style="width:10rem" />
                 <col style="width:20%" />
                 <col style="width:20%" />
                 <col style="width:20%" />
@@ -11,6 +12,9 @@
             </colgroup>
             <thead>
                 <tr>
+                    <th>
+                        번호
+                    </th>
                     <th>
                         카테고리
                     </th>
@@ -33,6 +37,9 @@
             </thead>
             <tbody>
                 <tr v-for="(page,index) in pageList2" :key="'list' + index" :class="[categoryLine(index),{visited:store.state.visitedPath === page.path}]" @click="trClick(page.path)">
+                    <td>
+                        {{index}}
+                    </td>
                     <td>
                         {{page.category}}
                     </td>
@@ -124,7 +131,7 @@
         let temp = "";
         const index2 = index - 1;
         if(index > 0 && pageList.value[index2].category !== pageList.value[index].category){
-            temp = "categoryLine"
+            temp = "categoryLine";
         }
         return temp;
     }

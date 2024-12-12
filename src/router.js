@@ -69,6 +69,9 @@ import popupStoreInfo from '@pages/popupStoreInfo'
 /* PC */
 import pcView from '@pages/pcView'
 
+/* 관리자페이지 */
+import managerPage from '@pages/managerPage'
+
 import testVue from '@pages/testVue'
 import vuePage01 from '@pages/vuePage01'
 
@@ -327,6 +330,11 @@ const routes = [
     {
         path : '/pcView',
         component : pcView,
+    },
+    // 관리자페이지
+    {
+        path : '/managerPage',
+        component : managerPage,
     },
 
 

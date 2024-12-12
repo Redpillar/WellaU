@@ -380,7 +380,7 @@
         transform:translate(-50%,calc(-100% - 10rem));
         .mapPinPopInnerWrap{
             display:flex;
-            border:1px solid #ededed;
+            border:1rem solid #ededed;
             border-radius:5rem;
             background:#fff;
         }
@@ -406,7 +406,7 @@
         letter-spacing: 1rem;
         line-height:1;
         white-space:nowrap;
-        color:222;
+        color:#222;
         border-radius:0px 12px 12px 0px;
         box-shadow:0px 2px 48px 0px rgba(0, 0, 0, 0.08);
         background:#fff;

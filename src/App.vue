@@ -50,7 +50,7 @@ export default {
     },
     haderShow(){
       let temp = true;
-      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === "pcView" || this.pageStatus ===  'popupStoreInfo'){
+      if(this.pageStatus === "listPage" || this.pageStatus === "login" || this.pageStatus === "sosView" || this.pageStatus === "sosViewCancel" || this.pageStatus === "pcView" || this.pageStatus === "managerPage" || this.pageStatus ===  'popupStoreInfo'){
         temp = false
       }
       return temp;
