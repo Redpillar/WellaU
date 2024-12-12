@@ -222,6 +222,36 @@
                     &lt;/scrit&gt;<br />
                 </div>
             </div>
+            <!-- area -->
+            <div class="area-box">
+                <h3>VIEW(TYPE7 - FIXED MODE)</h3>
+                <div class="view header-design-box fixed">
+                    <Header-vue v-model:value="type7" @addGroupBtnClick="addGroupBtnClick" @alertIconClick="alertIconClick"></Header-vue>
+                </div>
+                <h3>Source</h3>
+                <div class="source-box">
+                    &lt;html&gt;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;Header-vue v-model:value="type7" @addGroupBtnClick="addGroupBtnClick" @alertIconClick="alertIconClick" &gt;&lt;/Header-vue&gt;<br />
+                    &lt;/ html&gt;<br />
+                    &lt;scrit setup&gt;<br />
+                    import { ref } from 'vue'<br />
+                    const type7 = ref({<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;headerShow : true,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;type : 'type7',<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;groupText : "그룹",<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert : 8,<br />
+                    })<br />
+                    // Type7 : 그룹추가 아이콘 클릭<br />
+                    const addGroupBtnClick = ()=>{<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("addGroupBtnClick")<br />
+                    }<br />
+                    // 알림 아이콘 클릭<br />
+                    const alertIconClick = ()=>{<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("alertIconClick")<br />
+                    }<br />
+                    &lt;/scrit&gt;<br />
+                </div>
+            </div>
         </div>
         <h2 class="guide-title">Props</h2>
         <table cellspacing="0" cellpadding="0" class="guide-table header-guide-props">
@@ -329,6 +359,11 @@
                     <td>Type5, Type6 : 알림 아이콘 클릭</td>
                     <td>true / false</td>
                 </tr>
+                <tr>
+                    <td>addGroupBtnClick</td>
+                    <td>Type7 : 그룹추가 아이콘 클릭</td>
+                    <td></td>
+                </tr>
                 <!-- <tr>
                     <td>groupClicEv1</td>
                     <td>Type6 : 그룹아이콘 클릭1</td>
@@ -407,6 +442,17 @@
     // Type6 : 그룹아이콘 클릭2
     const groupClicEv2 = ()=>{
         console.log("grodupIcon Click 2")
+    }
+    // type7
+    const type7 = ref({
+        headerShow : true,
+        type : 'type7',
+        groupText : "그룹",
+        alert : 8,
+    })
+    // Type7 : 그룹추가 아이콘 클릭
+    const addGroupBtnClick = ()=>{
+        console.log("addGroupBtnClick")
     }
     /*
     const headerData = ref({

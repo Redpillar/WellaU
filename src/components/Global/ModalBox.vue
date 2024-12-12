@@ -79,7 +79,7 @@
         right:0;
         left:0;
         bottom:0;
-        z-index:1000;
+        z-index:10000;
         display:flex;
         background:rgba(0,0,0,0.45);
         &> .modal-content-box{

@@ -1,6 +1,7 @@
 <template>
   <div class="app-wrapper" :class="[{map:map}]">
     <BackButton v-if="backBtnShow" />
+    <!-- 241212 : 수정 -->
     <Header-vue v-if="haderShow"
       :value="headerData"
       @menuIconClickEv="menuIconClickEv"
@@ -13,11 +14,13 @@
       @maxInputEvent="maxInputEvent"
       @titleClick="titleClick"
       @selectClick="selectClick"
+      @addGroupBtnClick="addGroupBtnClick"
     >
       <template #title>
         {{ headerText }}
       </template>  
     </Header-vue>
+    <!-- // 241212 : 수정 -->
     <lnbVue v-model:open="lnbOpen" :profile="profile" />
     <div id="content" :page="pageStatus">
       <router-view />
@@ -190,6 +193,12 @@ export default {
         this.modalShow = true;
       }
     },
+    // 241212 : 추가
+    // type7 일때 그룹추가버튼 클릭 시 이벤트
+    addGroupBtnClick(){
+      const path = this.$route.path 
+      console.log("path : ",path)
+    },
     handleChange(sel){
       console.log("sel : ",sel)
       this.headerData.type = sel;
@@ -197,8 +206,8 @@ export default {
     checkePath(path){
       switch (path){
         case "accessRight" :
-          this.headerData.type = "type5";
-          this.headerData.groupText = "그룹명";
+          this.headerData.type = "type7"; // 241212 : 수정
+          this.headerData.groupText = "그룹"; // 241212 : 수정
           this.headerText = null;
           break;
         case "batteryOff" :

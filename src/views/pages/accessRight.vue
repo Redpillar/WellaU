@@ -18,7 +18,7 @@
                         <!-- <ProfileBox name="김응삼" conText="서울시 용산동 갈월동" time="13분전" :img="img2"></ProfileBox>
                         <ProfileBox name="김은지" conText="서울시 용산동 갈월동" time="13분전" :img="img3"></ProfileBox> -->
                     </div>
-                    <a-button type="primary" class="wellau-btn addGroupPersonBtn">+ 그룹원 추가 하기</a-button><!-- 241212 : 버튼 수정 -->
+                    <a-button class="wellau-btn addGroupPersonBtn">+ 그룹원 추가 하기</a-button><!-- 241212 : 버튼 수정 -->
                 </div>
             </template>
         </BothBar>

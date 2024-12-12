@@ -51,6 +51,16 @@
         <div class="dummy-box-area-rec"><MapPin pinText="홍" pinColor="red" />  pinText="홍"<br />pinColor="red"</div>
         <div class="dummy-box-area-rec"><MapPin pinText="홍" pinColor="bluegreen" />  pinText="홍"<br />pinColor="bluegreen"</div>
         <div class="dummy-box-area-rec"><MapPin pinColor="#076AEB" icon="home" />  pinColor="#076AEB"<br />icon="home"</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="blue"  icon="home" />  pinColor="blue<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="gray"  icon="home" />  pinColor="gray<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="orange"  icon="home" />  pinColor="orange<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="purple"  icon="home" />  pinColor="purple<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="pink"  icon="home" />  pinColor="pink<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="yellow"  icon="home" />  pinColor="yellow<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="black"  icon="home" />  pinColor="black<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="green"  icon="home" />  pinColor="green<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="red"  icon="home" />  pinColor="red<br /> icon="home""</div>
+        <div class="dummy-box-area-rec"><MapPin pinColor="bluegreen"  icon="home" />  pinColor="bluegreen<br /> icon="home""</div>
         
     </div>
 </template>

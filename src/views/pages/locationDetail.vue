@@ -2,8 +2,8 @@
     <div class="content-wrapper full">
         <div class="content-scroll">
             <div class="mapArea dummy-back">
-                <MapPin type="pie" :photo="photo" style="position:absolute; top:10%; right:10%;" />
-                <MapPin type="pie" :photo="photo" :width="60" style="position:absolute; top:50%; left:50%;" />
+                <MapPin pinText="이" pinColor="blue" :photo="photo" style="position:absolute; top:10%; right:10%;" />
+                <MapPin pinText="홍" pinColor="blue" :photo="photo" :width="60" style="position:absolute; top:50%; left:50%;" />
                 <MapPin pinText="이" pinColor="blue" :width="70" style="position:absolute; top:30%; left:20%;" />
                 <MapPin pinText="홍" pinColor="blue" :width="70" style="position:absolute; bottom:15%; left:10%;" />
                 <div class="map-fixed-btn">
@@ -42,12 +42,14 @@
     import {ref} from 'vue'
 
     const photo = ref({
-        src : require('../../assets/img/dummy-profile01.jpeg'),
+        // src : require('../../assets/img/dummy-profile01.jpeg'),
+        src : "",
         alt : '홍길동님의 프로필 사진입니다'
     })
 
     const img1 = ref({
-        src : require('@img/dummy-profile01.jpeg'),
+        // src : require('@img/dummy-profile01.jpeg'),
+        src : "",
         alt : '홍길동님의 프로필 사진입니다'
     })
 

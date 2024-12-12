@@ -433,6 +433,7 @@ ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password wella
     display:flex;
     align-items:center;
     line-height:1;
+    font-weight:700;
     color:#333;
 }
 
