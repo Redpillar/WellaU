@@ -212,6 +212,7 @@
             border-radius:5rem;
             transform:translate(-50%,0);
             background:#ededed;
+            -webkit-overflow-scrolling: touch;
         }
     }
     .bothBar-content{
@@ -226,7 +227,7 @@
         background:red;
     }
     .bothBar-content::-webkit-scrollbar-thumb{
-        background:black;
+        background:gray;
     }
     .bothBar-deem{
         position:absolute;
