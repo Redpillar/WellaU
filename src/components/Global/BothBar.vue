@@ -217,7 +217,16 @@
     .bothBar-content{
         flex:1;
         padding:0;
-        overflow:auto;
+        overflow:scroll;
+    }
+    .bothBar-content::-webkit-scrollbar{
+        width:10rem;
+    }
+    .bothBar-content::-webkit-scrollbar-track{
+        background:red;
+    }
+    .bothBar-content::-webkit-scrollbar-thumb{
+        background:black;
     }
     .bothBar-deem{
         position:absolute;
