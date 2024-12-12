@@ -1,7 +1,7 @@
 <template>
     <div id="bothBar">
         <div class="bothBar-wrapper" :class=[{deem:deemShow}] :style="bothBarWrapperStyle">
-            <div class="bothBar-thumn" @touchstart="touchStart" @touchmove="touchMoved" @touchend="touchEnd" >1111111111111111111111111111</div>
+            <div class="bothBar-thumn" @touchstart="touchStart" @touchmove="touchMoved" @touchend="touchEnd" >222222222222222222222222222222222222</div>
             <div class="bothBar-content" @touchstart.stop @touchmove.stop @touchend.stop>
                 <slot name="content">
                 </slot>
