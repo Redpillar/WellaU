@@ -1,7 +1,7 @@
 <template>
     <div id="bothBar">
         <div class="bothBar-wrapper" :class=[{deem:deemShow}] :style="bothBarWrapperStyle">
-            <div class="bothBar-thumn" @touchstart="touchStart" @touchmove="touchMoved" @touchend="touchEnd" >222222222222222222222222222222222222</div>
+            <div class="bothBar-thumn" @touchstart="touchStart" @touchmove="touchMoved" @touchend="touchEnd" >xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
             <div class="bothBar-content" @touchstart.stop @touchmove.stop @touchend.stop>
                 <slot name="content">
                 </slot>
@@ -212,22 +212,13 @@
             border-radius:5rem;
             transform:translate(-50%,0);
             background:#ededed;
-            -webkit-overflow-scrolling: touch;
         }
     }
     .bothBar-content{
         flex:1;
         padding:0;
-        overflow:scroll;
-    }
-    .bothBar-content::-webkit-scrollbar{
-        width:10rem;
-    }
-    .bothBar-content::-webkit-scrollbar-track{
-        background:red;
-    }
-    .bothBar-content::-webkit-scrollbar-thumb{
-        background:gray;
+        overflow:auto;
+        -webkit-overflow-scrolling: touch;
     }
     .bothBar-deem{
         position:absolute;
