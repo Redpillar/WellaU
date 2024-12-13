@@ -77,6 +77,7 @@
     }
     .manager-lnb{
         position:relative;
+        z-index:10000; /* 241213 : 추가 */
         width:270rem;
         background:#EFEFEF;
         transition:width ease 0.5s;

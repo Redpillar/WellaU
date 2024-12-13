@@ -333,6 +333,7 @@
 
                     }
                     &> .time{
+                        font-family: "Noto Sans"; /* 241213 : 추가 */
                         color: #8C8D89;
                         font-size: 15rem;
                         font-style: normal;
