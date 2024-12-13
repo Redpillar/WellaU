@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div>
-                <VueDatePicker />
+                <VueDatePicker v-model="date" style="height:80rem;" />
             </div>
         </div>
         <div class="content-scroll">
@@ -34,6 +34,8 @@
 </template>
 <script setup>
     import { ref } from 'vue'
+
+    const date= ref("");
 
     const img = ref({
         // src : require('../../assets/img/dummy-profile01.jpeg'),

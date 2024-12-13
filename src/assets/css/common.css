@@ -1462,3 +1462,18 @@ table.guide-table{
 .dp__time_col button{
     font-size:12rem;
 }
+
+.dp__input_wrap > input{
+    height:50rem;
+    border-width:0;
+    border-bottom:1rem solid #dbdbdb;
+    font-size:16rem;
+    font-weight:bold;
+}
+
+.dp__input_wrap > input + div > svg{
+    width:30rem;
+    height:30rem;
+    padding:0;
+    margin:0;
+}
