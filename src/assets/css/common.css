@@ -1454,3 +1454,11 @@ table.guide-table{
 .color-blue{
     color:#076AEB
 }
+
+.dp__menu.dp__menu_index.dp__theme_light, .dp__action_buttons .dp__action_select, .dp__action_buttons .dp__action_button, .dp--time-overlay-btn{
+    font-size:12rem;
+}
+
+.dp__time_col button{
+    font-size:12rem;
+}

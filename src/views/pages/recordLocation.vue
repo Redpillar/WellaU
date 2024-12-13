@@ -12,6 +12,9 @@
                     13시<i></i>
                 </div>
             </div>
+            <div>
+                <VueDatePicker />
+            </div>
         </div>
         <div class="content-scroll">
             <div class="mapArea dummy-back">

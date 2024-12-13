@@ -16,6 +16,8 @@ import AccordionBox from './AccordionBox'
 import PcLnb from './PcLnb'
 import MapMarkPin from './MapMarkPin'
 
+import VueDatePicker from '@vuepic/vue-datepicker';
+
 
 export default {
     install(app) {
@@ -36,5 +38,6 @@ export default {
         app.component("AccordionBox",AccordionBox)
         app.component("PcLnb",PcLnb)
         app.component("MapMarkPin",MapMarkPin)
+        app.component("VueDatePicker",VueDatePicker)
     }
 }
