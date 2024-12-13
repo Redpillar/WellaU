@@ -317,7 +317,7 @@
                     display:flex;
                     padding:0 0 5rem;
                     margin:0;
-                    font-family: "Noto Sans";
+                    font-family: "Noto Sans KR", sans-serif; /* 241214 : 수정 */
                     font-size: 15rem;
                     font-style: normal;
                     font-weight: 600;
@@ -333,7 +333,7 @@
 
                     }
                     &> .time{
-                        font-family: "Noto Sans"; /* 241213 : 추가 */
+                        font-family: "Noto Sans KR", sans-serif; /* 241214 : 수정 */
                         color: #8C8D89;
                         font-size: 15rem;
                         font-style: normal;
@@ -343,7 +343,7 @@
                             content:"·";
                             padding:0 8rem 0 10rem;
                             color: #9D9D9D;
-                            font-family: "Noto Sans";
+                            font-family: "Noto Sans KR", sans-serif; /* 241214 : 수정 */
                             font-size: 15rem;
                             font-style: normal;
                             font-weight: 400;

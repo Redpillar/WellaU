@@ -66,7 +66,7 @@
             height:16rem;
             padding:0;
             margin:6rem 0 6rem 0;
-            font-family: "Noto Sans"; /* 241213 : 추가 */
+            font-family: "Noto Sans KR", sans-serif; /* 241214 : 수정 */
             font-size: 13px;
             font-style: normal;
             font-weight: 400;
