@@ -301,11 +301,21 @@ body{
     }
     .list{
         &> li{
+            position:relative;
             padding:16rem 0;
             border-bottom:1rem solid #E0E0E0;
-            background:url(../img/checkboxlist-arror.svg) no-repeat center right;
+            &> i{
+                position:absolute;
+                top:0;
+                right:0;
+                bottom:0;
+                width:30rem;
+                background:url(../img/checkboxlist-arror.svg) no-repeat center right;
+            }
             &.disabled{
-                background-image:url(../img/checkboxlist-arror-disabled.svg);
+                &> i{
+                    background-image:url(../img/checkboxlist-arror-disabled.svg);
+                }
             }
         }
     }

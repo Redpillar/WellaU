@@ -189,7 +189,7 @@ ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password wella
     border-radius:50%;
 }
 .wellau-checkbox .ant-checkbox-checked:after{
-    border-radius:50%;
+    display:none;
 }
 .wellau-checkbox .ant-checkbox-checked .ant-checkbox-inner:after{
     left:32%;
@@ -236,11 +236,11 @@ ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password wella
     border-color:#ccc;
 }
 .wellau-checkbox.ant-checkbox-wrapper .ant-checkbox-input:focus-visible + .ant-checkbox-inner{
-    outline:none;
+    /* outline:none; */
 }
 
 :where(.css-dev-only-do-not-override-1p3hq3p).ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled):after{
-    display:none;
+    /* display:none; */
 }
 /* radio */
 .wellau-radio-group{

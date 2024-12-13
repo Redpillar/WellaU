@@ -142,9 +142,6 @@
                                 <a-checkbox v-model:checked="check[1].checked" class="wellau-checkbox" :disabled="check[1].dis"  @change="checkChangeEv">[필수] 위치기반 서비스 이용약관 동의</a-checkbox>
                             </li>
                             <li>
-                                <a-checkbox v-model:checked="check[1].checked" :disabled="check[1].dis"  @change="checkChangeEv">[필수] 위치기반 서비스 이용약관 동의</a-checkbox>
-                            </li>
-                            <li>
                                 <a-checkbox v-model:checked="check[2].checked" class="wellau-checkbox" :disabled="check[2].dis"  @change="checkChangeEv">[필수] 개인정보 처리방침 동의</a-checkbox>
                             </li>
                         </ul>

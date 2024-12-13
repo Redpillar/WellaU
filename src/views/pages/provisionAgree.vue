@@ -12,12 +12,15 @@
                     <ul class="list">
                         <li><!-- 241211 disabled 시 disabled 클래스 추가 -->
                             <a-checkbox v-model:checked="check[0].checked" class="wellau-checkbox" :disabled="check[0].dis"  @change="checkChangeEv">[필수] 서비스 이용약관 동의</a-checkbox>
+                            <i class="arrow"></i><!-- 241213 -->
                         </li>
                         <li><!-- 241211 disabled 시 disabled 클래스 추가 -->
                             <a-checkbox v-model:checked="check[1].checked" class="wellau-checkbox" :disabled="check[1].dis"  @change="checkChangeEv">[필수] 위치기반 서비스 이용약관 동의</a-checkbox>
+                            <i class="arrow"></i><!-- 241213 -->
                         </li>
                         <li><!-- 241211 disabled 시 disabled 클래스 추가 -->
                             <a-checkbox v-model:checked="check[2].checked" class="wellau-checkbox" :disabled="check[2].dis"  @change="checkChangeEv">[필수] 개인정보 처리방침 동의</a-checkbox>
+                            <i class="arrow"></i><!-- 241213 -->
                         </li>
                     </ul>
                 </div>
