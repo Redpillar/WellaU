@@ -139,6 +139,24 @@ export default {
   created(){},
   mounted(){
     this.checkePath(this.pageStatus);
+     // 스크롤 잠금
+    const enableScrollLock = () => {
+      const { body } = document;
+
+      if (!body.getAttribute('scrollY')) {
+        const pageY = window.pageYOffset;
+
+        body.setAttribute('scrollY', pageY.toString());
+
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.left = '0px';
+        body.style.right = '0px';
+        body.style.bottom = '0px';
+        body.style.top = `-${pageY}px`;
+      }
+    };
+    enableScrollLock();
   },
   methods : {
     // Type2 : 계속하기 클릭 이벤트
