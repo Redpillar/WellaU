@@ -34,6 +34,7 @@
 
 <script>
 import BackButton from './components/BackButton'
+import { disableBodyScroll } from 'body-scroll-lock';
 export default {
   name: 'App',
   props : {},
@@ -139,6 +140,8 @@ export default {
   created(){},
   mounted(){
     this.checkePath(this.pageStatus);
+    const _body = document.querySElector("body");
+    disableBodyScroll(_body)
   },
   methods : {
     // Type2 : 계속하기 클릭 이벤트
