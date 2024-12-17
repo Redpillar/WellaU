@@ -10,12 +10,14 @@ ol,ul,dl,li,dt,dd{
 html{
     font-size:1px;
     font-family:"Noto Sans KR", sans-serif;
+    overflow:hidden;
 }
 body{
     font-family:"Noto Sans KR", sans-serif;
     font-size:12rem;
     line-height:1;
     color:#000;
+    overflow:hidden;
 }
 #app{
     font-family:"Noto Sans KR", sans-serif;
