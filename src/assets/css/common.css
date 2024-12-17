@@ -12,12 +12,6 @@ html{
     font-family:"Noto Sans KR", sans-serif;
 }
 body{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    border:1rem solid red;
     font-family:"Noto Sans KR", sans-serif;
     font-size:12rem;
     line-height:1;
