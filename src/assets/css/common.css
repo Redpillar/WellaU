@@ -16,6 +16,8 @@ body{
     font-size:12rem;
     line-height:1;
     color:#000;
+    /* pointer-events:none; */
+    overflow:hidden;
 }
 #app{
     font-family:"Noto Sans KR", sans-serif;

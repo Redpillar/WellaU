@@ -141,7 +141,14 @@ export default {
   mounted(){
     this.checkePath(this.pageStatus);
     const _body = document.querySElector("body");
+    const scrollPosition = window.pageYOffset;
     disableBodyScroll(_body)
+     _body.style.overflow = 'hidden';
+     _body.style.pointerEvents = 'none';
+     _body.style.position = 'fixed';
+     _body.style.top = `-${scrollPosition}px`;
+     _body.style.left = '0';
+     _body.style.right= '0';
   },
   methods : {
     // Type2 : 계속하기 클릭 이벤트
